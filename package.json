@@ -13,7 +13,7 @@
     "logs": "pebble logs"
   },
   "pebble": {
-    "displayName": "Flash Cards",
+    "displayName": "Flashcards",
     "uuid": "f040c3c2-63de-420a-8abe-6ba52fe65ce6",
     "projectType": "moddable",
     "sdkVersion": "3",

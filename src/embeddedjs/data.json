@@ -2,7 +2,7 @@
 	"appTitle": "Learn Dutch",
 	"sessionSize": 10,
 	"ui": {
-		"appName": "Flash Cards",
+		"appName": "Flashcards",
 		"startSession": "Start Session",
 		"reviewBookmarked": "Review Saved",
 		"chooseLevel": "Choose Level",

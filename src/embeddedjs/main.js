@@ -164,23 +164,30 @@ function drawLines(lines, font, color, y) {
 
 // ---- view machine ----------------------------------------------------------
 
-let view;
+let view, button;
 
+// Alloy only lets the system exit the app while "back" is NOT captured, so the
+// top menu releases that button and every other screen takes it over.
 function go(next) {
 	view = next;
+
+	const types = next.exitOnBack ? ["select", "up", "down"] : ["select", "up", "down", "back"];
+	if (button)
+		button.close();
+	button = new Button({
+		types,
+		onPush(down, type) {
+			if (down) view.onButton(type);
+		}
+	});
+
 	view.draw();
 }
-
-new Button({
-	types: ["select", "up", "down", "back"],
-	onPush(down, type) {
-		if (down) view.onButton(type);
-	}
-});
 
 function listView(title, labels, onSelect, onBack) {
 	let sel = 0;
 	return {
+		exitOnBack: !onBack,
 		draw() {
 			render.begin();
 			render.fillRectangle(white, 0, 0, W, H);
@@ -231,11 +238,16 @@ function messageView(lines) {
 }
 
 function cardView(cards, title, reviewMode) {
-	let i = 0, revealed = false;
+	let i = 0;
+	// One flag per card: has its translation been shown? A revealed card stays
+	// revealed when you come back to it, and the session is over only once every
+	// flag is set — until then UP and DOWN keep cycling through the deck.
+	const seen = cards.map(() => false);
 
 	return {
 		draw() {
 			const card = cards[i];
+			const revealed = seen[i];
 			const bar = card.indexOf("|");
 			const front = fitLines(card.slice(0, bar), BOLD);
 			const back = revealed ? fitLines(card.slice(bar + 1), REGULAR) : null;
@@ -270,20 +282,17 @@ function cardView(cards, title, reviewMode) {
 				return go(mainMenu());
 
 			if ("select" === type) {
-				if (!revealed)
-					revealed = true;
+				if (!seen[i])
+					seen[i] = true;
 				else if (!this.toggleBookmark())
 					return;
 			}
-			else if ("up" === type) {
-				i = (i + cards.length - 1) % cards.length;
-				revealed = false;
-			}
-			else if ("down" === type) {
-				if (i === (cards.length - 1))
+			else if (("up" === type) || ("down" === type)) {
+				// Revealing the last card never ends the session on its own —
+				// only the next move off that card does.
+				if (seen.every(Boolean))
 					return go(messageView([UI.sessionComplete, `${bookmarks.length} ${UI.savedCount}`]));
-				i += 1;
-				revealed = false;
+				i = (i + cards.length + ("down" === type ? 1 : -1)) % cards.length;
 			}
 			this.draw();
 		},
@@ -299,6 +308,7 @@ function cardView(cards, title, reviewMode) {
 				bookmarks.splice(found, 1);
 				if (reviewMode) {
 					cards.splice(i, 1);
+					seen.splice(i, 1);
 					if (!cards.length) {
 						saveBookmarks();
 						go(messageView([UI.noBookmarks]));
@@ -306,7 +316,6 @@ function cardView(cards, title, reviewMode) {
 					}
 					if (i >= cards.length)
 						i = 0;
-					revealed = false;
 				}
 			}
 			saveBookmarks();
@@ -334,7 +343,7 @@ function mainMenu() {
 			go(cardView(bookmarks.slice(), UI.reviewBookmarked, true));
 		else
 			go(messageView([UI.noBookmarks]));
-	});
+	});		// no onBack: BACK leaves the app
 }
 
 function levelMenu() {
