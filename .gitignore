@@ -1,0 +1,6 @@
+.DS_Store
+build/
+node_modules/
+.pebble/
+.lock-waf_darwin_build
+.vscode/settings.json

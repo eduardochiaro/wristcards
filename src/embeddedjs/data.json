@@ -1,0 +1,22 @@
+{
+	"appTitle": "Learn Dutch",
+	"sessionSize": 10,
+	"ui": {
+		"appName": "Flash Cards",
+		"startSession": "Start Session",
+		"reviewBookmarked": "Review Saved",
+		"chooseLevel": "Choose Level",
+		"noBookmarks": "No saved words",
+		"sessionComplete": "Session done",
+		"savedCount": "saved",
+		"bookmarked": "- SAVED -",
+		"saveFull": "SAVE LIST FULL",
+		"hintReveal": "SELECT: show",
+		"hintBookmark": "SELECT: save"
+	},
+	"levels": [
+		{ "name": "Basic", "file": "basic.txt", "cards": 334 },
+		{ "name": "Intermediate", "file": "intermediate.txt", "cards": 333 },
+		{ "name": "Advanced", "file": "advanced.txt", "cards": 333 }
+	]
+}

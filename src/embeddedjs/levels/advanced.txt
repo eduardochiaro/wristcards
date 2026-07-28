@@ -1,0 +1,333 @@
+het resultaat|result
+het vierkant|square (shape)
+de cirkel|circle
+het oppervlakte|area
+het onderzoek|research
+de graad|degree
+de bachelor|bachelor
+de master|master
+x is kleiner dan y|x < y
+x is groter dan y|x > y
+de stress|stress
+de verzekering|insurance
+het personeel|staff
+de afdeling|department
+het salaris|salary
+het adres|address
+de brief|letter (post)
+de kapitein|captain
+de detective|detective
+de piloot|pilot
+de professor|professor
+de leraar|teacher
+de advocaat|lawyer
+de secretaris|secretary
+de assistent|assistant
+de rechter|judge
+de directeur|director (business)
+de manager|manager
+de kok|cook
+de taxichauffeur|taxi driver
+de buschauffeur|bus driver
+de crimineel|criminal
+het model|model
+de artiest|artist
+het telefoonnummer|telephone number
+het signaal|signal (of phone)
+de app|app
+de chat|chat
+het bestand|file
+de URL|url
+het e-mailadres|e-mail address
+de website|website
+de e-mail|e-mail
+de mobiele telefoon|mobile phone
+de wet|law
+de gevangenis|prison
+het bewijsmateriaal|evidence
+de boete|fine
+de getuige|witness
+de rechtbank|court
+de handtekening|signature
+het verlies|loss
+de winst|profit
+de klant|customer
+het bedrag|amount
+de kredietkaart|credit card
+het wachtwoord|password
+de geldautomaat|cash machine
+het zwembad|swimming pool (competition)
+de elektriciteit|power
+de camera|camera
+de radio|radio
+het cadeau|present (gift)
+de fles|bottle
+de tas|bag
+de sleutel|key
+de pop|doll
+de engel|angel
+de kam|comb
+de tandpasta|toothpaste
+de tandenborstel|toothbrush
+de shampoo|shampoo
+de crème|cream (pharmaceutical)
+de zakdoek|tissue
+de lippenstift|lipstick
+de TV|TV
+de bioscoop|cinema
+het nieuws|news
+de zitplaats|seat
+het kaartje|ticket
+het scherm|screen (cinema)
+de muziek|music
+het podium|stage
+het publiek|audience
+het schilderij|painting
+de grap|joke
+het artikel|article
+de krant|newspaper
+het tijdschrift|magazine
+de advertentie|advertisement
+de natuur|nature
+de as|ash
+het vuur|fire (general)
+de diamant|diamond
+de maan|moon
+de aarde|earth
+de zon|sun
+de ster|star
+de planeet|planet
+het universum|universe
+de kust|coast
+het meer|lake
+het bos|forest
+de woestijn|desert (dry place)
+de heuvel|hill
+de rots|rock (stone)
+de rivier|river
+de vallei|valley
+de berg|mountain
+het eiland|island
+de oceaan|ocean
+de zee|sea
+het weer|weather
+het ijs|ice
+de sneeuw|snow
+de storm|storm
+de regen|rain
+de wind|wind
+de plant|plant
+de boom|tree
+het gras|grass
+de roos|rose
+de bloem|flower
+het gas|gas
+het metaal|metal
+het goud|gold
+het zilver|silver
+Zilver is goedkoper dan goud|Silver is cheaper than gold
+Goud is duurder dan zilver|Gold is more expensive than silver
+de vakantie|holiday
+het lid|member
+het hotel|hotel
+het strand|beach
+de gast|guest
+de verjaardag|birthday
+de Kerstmis|Christmas
+het Nieuwjaar|New Year
+de Pasen|Easter
+de oom|uncle
+de tante|aunt
+de grootmoeder|grandmother (paternal)
+de grootvader|grandfather (paternal)
+de grootmoeder|grandmother (maternal)
+de grootvader|grandfather (maternal)
+de dood|death
+het graf|grave
+de scheiding|divorce
+de bruid|bride
+de bruidegom|groom
+honderdeen|101
+honderdvijf|105
+honderdtien|110
+honderdeenenvijftig|151
+tweehonderd|200
+tweehonderdtwee|202
+tweehonderdzes|206
+tweehonderdtwintig|220
+tweehonderdtweeënzestig|262
+driehonderd|300
+driehonderddrie|303
+driehonderdzeven|307
+driehonderddertig|330
+driehonderddrieënzeventig|373
+vierhonderd|400
+vierhonderdvier|404
+vierhonderdacht|408
+vierhonderdveertig|440
+vierhonderdvierentachtig|484
+vijfhonderd|500
+vijfhonderdvijf|505
+vijfhonderdnegen|509
+vijfhonderdvijftig|550
+vijfhonderdvijfennegentig|595
+zeshonderd|600
+zeshonderdeen|601
+zeshonderdzes|606
+zeshonderdzestien|616
+zeshonderdzestig|660
+zevenhonderd|700
+zevenhonderdtwee|702
+zevenhonderdzeven|707
+zevenhonderdzevenentwintig|727
+zevenhonderdzeventig|770
+achthonderd|800
+achthonderddrie|803
+achthonderdacht|808
+achthonderdachtendertig|838
+achthonderdtachtig|880
+negenhonderd|900
+negenhonderdvier|904
+negenhonderdnegen|909
+negenhonderdnegenenveertig|949
+negenhonderdnegentig|990
+de tijger|tiger
+de muis|mouse (animal)
+de rat|rat
+het konijn|rabbit
+de leeuw|lion
+de ezel|donkey
+de olifant|elephant
+de vogel|bird
+de haan|cockerel
+de duif|pigeon
+de gans|goose
+het insect|insect
+de kever|bug
+de mug|mosquito
+de vlieg|fly
+de mier|ant
+de walvis|whale
+de haai|shark
+de dolfijn|dolphin
+de slak|snail
+de kikker|frog
+vaak|often
+onmiddellijk|immediately
+plotseling|suddenly
+hoewel|although
+de gymnastiek|gymnastics
+het tennis|tennis
+het hardlopen|running
+het wielrennen|cycling
+het golf|golf
+het schaatsen|ice skating
+het voetbal|football
+het basketbal|basketball
+het zwemmen|swimming
+het duiken|diving (under water)
+het hiken|hiking
+Verenigd Koninkrijk|United Kingdom
+Spanje|Spain
+Zwitserland|Switzerland
+Italië|Italy
+Frankrijk|France
+Duitsland|Germany
+Thailand|Thailand
+Singapore|Singapore
+Rusland|Russia
+Japan|Japan
+Israël|Israel
+India|India
+China|China
+Verenigde Staten van Amerika|The United States of America
+Mexico|Mexico
+Canada|Canada
+Chili|Chile
+Brazilië|Brazil
+Argentinië|Argentina
+Zuid-Afrika|South Africa
+Nigeria|Nigeria
+Marokko|Morocco
+Libië|Libya
+Kenia|Kenya
+Algerije|Algeria
+Egypte|Egypt
+Nieuw-Zeeland|New Zealand
+Australië|Australia
+Afrika|Africa
+Europa|Europe
+Azië|Asia
+Amerika|America
+een kwartier|quarter of an hour
+een half uur|half an hour
+drie kwartier|three quarters of an hour
+een uur|1:00
+vijf over twee|2:05
+tien over drie|3:10
+kwart over vier|4:15
+tien voor half zes|5:20
+vijf voor half zeven|6:25
+half acht|7:30
+vijf over half negen|8:35
+tien over half tien|9:40
+kwart voor elf|10:45
+tien voor twaalf|11:50
+vijf voor één|12:55
+één uur 's ochtends|one o'clock in the morning
+twee uur 's middags|two o'clock in the afternoon
+vorige week|last week
+deze week|this week
+volgende week|next week
+vorig jaar|last year
+dit jaar|this year
+volgend jaar|next year
+vorige maand|last month
+deze maand|this month
+volgende maand|next month
+een januari tweeduizend veertien|2014-01-01
+vijfentwintig februari tweeduizend drie|2003-02-25
+twaalf april negentien achtentachtig|1988-04-12
+dertien oktober achttien negenennegentig|1899-10-13
+dertig september negentienzeven|1907-09-30
+twaalf december tweeduizend|2000-12-12
+het voorhoofd|forehead
+de rimpel|wrinkle
+de kin|chin
+de wang|cheek
+de baard|beard
+de wimpers|eyelashes
+de wenkbrauw|eyebrow
+de taille|waist
+de nek|nape
+de borst|chest
+de duim|thumb
+de pink|little finger
+de ringvinger|ring finger
+de middelvinger|middle finger
+de wijsvinger|index finger
+de pols|wrist
+de vingernagel|fingernail
+de hiel|heel
+de wervelkolom|spine
+de spier|muscle
+het bot|bone (part of body)
+het skelet|skeleton
+de rib|rib
+de wervel|vertebra
+de blaas|bladder
+de ader|vein
+de slagader|artery
+de vagina|vagina
+het sperma|sperm
+de penis|penis
+de zaadbal|testicle
+sappig|juicy
+pittig|hot (spicy)
+zout|salty
+rauw|raw
+gekookt|boiled
+verlegen|shy
+gulzig|greedy
+streng|strict
+doof|deaf

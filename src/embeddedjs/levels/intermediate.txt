@@ -1,0 +1,333 @@
+eenenveertig|41
+vierenveertig|44
+achtenveertig|48
+vijftig|50
+eenenvijftig|51
+vijfenvijftig|55
+negenenvijftig|59
+zestig|60
+eenenzestig|61
+tweeënzestig|62
+zesenzestig|66
+zeventig|70
+eenenzeventig|71
+drieënzeventig|73
+zevenenzeventig|77
+tachtig|80
+eenentachtig|81
+vierentachtig|84
+achtentachtig|88
+negentig|90
+eenennegentig|91
+vijfennegentig|95
+negenennegentig|99
+honderd|100
+duizend|1000
+tienduizend|10.000
+honderdduizend|100.000
+één miljoen|1.000.000
+mijn hond|my dog
+jouw kat|your cat
+haar jurk|her dress
+zijn auto|his car
+zijn bal|its ball
+ons huis|our home
+jouw team|your team
+hun bedrijf|their company
+iedereen|everybody
+samen|together
+overig|other
+maakt niet uit|doesn't matter
+proost|cheers
+ontspan|relax
+Ik ben het ermee eens|I agree
+welkom|welcome
+geen zorgen|no worries
+sla rechtsaf|turn right
+sla linksaf|turn left
+ga rechtdoor|go straight
+Kom met mij mee|Come with me
+het ei|egg
+de kaas|cheese
+de melk|milk
+de vis|fish (to eat)
+het vlees|meat
+de groente|vegetable
+het fruit|fruit
+het bot|bone (food)
+de olie|oil
+het brood|bread
+de suiker|sugar
+de chocola|chocolate
+het snoep|candy
+de cake|cake
+de drank|drink
+het water|water
+de frisdrank|soda
+de koffie|coffee
+de thee|tea
+het bier|beer
+de wijn|wine
+de salade|salad
+de soep|soup
+het nagerecht|dessert
+het ontbijt|breakfast
+de lunch|lunch
+het avondeten|dinner
+de pizza|pizza
+de bus|bus
+de trein|train
+het treinstation|train station
+de bushalte|bus stop
+het vliegtuig|plane
+het schip|ship
+de vrachtwagen|lorry
+de fiets|bicycle
+de motorfiets|motorcycle
+de taxi|taxi
+het stoplicht|traffic light
+de parkeerplaats|car park
+de weg|road
+de kleding|clothing
+de schoen|shoe
+de jas|coat
+de trui|sweater
+het overhemd|shirt
+het jack|jacket
+het pak|suit
+de broek|trousers
+de jurk|dress
+het t-shirt|T-shirt
+de sok|sock
+de beha|bra
+de onderbroek|underpants
+de bril|glasses
+de handtas|handbag
+de damestas|purse
+de portemonnee|wallet
+de ring|ring
+de hoed|hat
+het horloge|watch
+de zak|pocket
+Hoe heet je?|What's your name?
+Mijn naam is David|My name is David
+Ik ben tweeëntwintig jaar oud|I'm 22 years old
+Hoe gaat het?|How are you?
+Gaat alles goed?|Are you ok?
+Waar is het toilet?|Where is the toilet?
+Ik mis je|I miss you
+de lente|spring
+de zomer|summer
+de herfst|autumn
+de winter|winter
+januari|January
+februari|February
+maart|March
+april|April
+mei|May
+juni|June
+juli|July
+augustus|August
+september|September
+oktober|October
+november|November
+december|December
+het winkelen|shopping
+de rekening|bill
+de markt|market
+de supermarkt|supermarket
+het gebouw|building
+het appartement|apartment
+de universiteit|university
+de boerderij|farm
+de kerk|church
+het restaurant|restaurant
+de bar|bar
+de sportschool|gym
+het park|park
+het toilet|toilet (public)
+de kaart|map
+de ambulance|ambulance
+de politie|police
+het pistool|gun
+de brandweerlieden|firefighters
+het land|country
+de buitenwijk|suburb
+het dorp|village
+de gezondheid|health
+het geneesmiddel|medicine
+het ongeval|accident
+de patiënt|patient
+de operatie|surgery
+de pil|pill
+de koorts|fever
+de verkoudheid|cold (sickness)
+de wond|wound
+de afspraak|appointment
+de hoest|cough
+de nek|neck
+de kont|bottom
+de schouder|shoulder
+de knie|knee
+het been|leg
+de arm|arm
+de buik|belly
+de boezem|bosom
+de rug|back (part of body)
+de tand|tooth
+de tong|tongue
+de lip|lip
+de vinger|finger
+de teen|toe
+de maag|stomach
+de long|lung
+de lever|liver
+de zenuw|nerve
+de nier|kidney
+de darm|intestine
+de kleur|colour
+oranje|orange (colour)
+grijs|grey
+bruin|brown
+roze|pink
+saai|boring
+zwaar|heavy
+licht|light (weight)
+eenzaam|lonely
+hongerig|hungry
+dorstig|thirsty
+verdrietig|sad
+steil|steep
+vlak|flat
+rond|round
+vierkant|square (adjective)
+smal|narrow
+breed|broad
+diep|deep
+ondiep|shallow
+reusachtig|huge
+noord|north
+oost|east
+zuid|south
+west|west
+vuil|dirty
+schoon|clean
+vol|full (not empty)
+leeg|empty
+duur|expensive
+goedkoop|cheap
+donker|dark
+licht|light (colour)
+sexy|sexy
+lui|lazy
+moedig|brave
+gul|generous
+knap|handsome
+lelijk|ugly
+mal|silly
+vriendelijk|friendly
+schuldig|guilty
+blind|blind
+dronken|drunk
+nat|wet
+droog|dry
+warm|warm
+luid|loud
+rustig|quiet
+stil|silent
+de keuken|kitchen
+de badkamer|bathroom
+de woonkamer|living room
+de slaapkamer|bedroom
+de tuin|garden
+de garage|garage
+de muur|wall
+de kelder|basement
+het toilet|toilet (at home)
+de trap|stairs
+het dak|roof
+het raam|window (building)
+het mes|knife
+de kop|cup (hot drinks)
+het glas|glass
+het bord|plate
+de beker|cup (cold drinks)
+de afvalbak|garbage bin
+de kom|bowl
+de tv|TV set
+het bureau|desk
+het bed|bed
+de spiegel|mirror
+de douche|shower
+de bank|sofa
+de foto|picture
+de klok|clock
+de tafel|table
+de stoel|chair
+het zwembad|swimming pool (garden)
+de deurbel|bell
+de buur|neighbour
+falen|to fail
+kiezen|to choose
+schieten|to shoot
+stemmen|to vote
+vallen|to fall
+verdedigen|to defend
+aanvallen|to attack
+stelen|to steal
+verbranden|to burn
+redden|to rescue
+roken|to smoke
+vliegen|to fly
+dragen|to carry
+spugen|to spit
+schoppen|to kick
+bijten|to bite
+ademen|to breathe
+ruiken|to smell
+huilen|to cry
+zingen|to sing
+glimlachen|to smile
+lachen|to laugh
+groeien|to grow
+krimpen|to shrink
+ruzie maken|to argue
+bedreigen|to threaten
+delen|to share
+voeden|to feed
+verstoppen|to hide
+waarschuwen|to warn
+zwemmen|to swim
+springen|to jump
+rollen|to roll
+optillen|to lift
+graven|to dig
+kopiëren|to copy
+bezorgen|to deliver
+zoeken|to look for
+oefenen|to practice
+reizen|to travel
+verven|to paint
+douchen|to take a shower
+openen|to open (unlock)
+op slot doen|to lock
+wassen|to wash
+bidden|to pray
+koken|to cook
+het boek|book
+de bibliotheek|library
+het huiswerk|homework
+het examen|exam
+de les|lesson
+de wetenschap|science
+de geschiedenis|history
+de kunst|art
+het Engels|English
+het Frans|French
+de pen|pen
+het potlood|pencil
+drie procent|3%
+de eerste|first
+de tweede|second (2nd)
+de derde|third
+de vierde|fourth

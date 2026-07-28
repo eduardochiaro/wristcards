@@ -1,0 +1,334 @@
+ik|I
+je/jij|you (singular)
+hij|he
+zij|she
+het|it
+we/wij|we
+jullie|you (plural)
+zij|they
+wat|what
+wie|who
+waar|where
+waarom|why
+hoe|how
+welke|which
+wanneer|when
+dan|then
+als|if
+echt|really
+maar|but
+omdat|because
+niet|not
+deze|this
+Ik heb dit nodig|I need this
+Hoeveel kost dit?|How much is this?
+dat|that
+alle|all
+of|or
+en|and
+weten|to know
+Ik weet het|I know
+Ik weet het niet|I don't know
+denken|to think
+komen|to come
+zetten|to put
+nemen|to take
+vinden|to find
+luisteren|to listen
+werken|to work
+praten|to talk
+geven|to give
+leuk vinden|to like
+helpen|to help
+houden van|to love
+bellen|to call
+wachten|to wait
+Ik vind je leuk|I like you
+Ik vind dit niet leuk|I don't like this
+Hou je van mij?|Do you love me?
+Ik hou van jou|I love you
+nul|0
+één|1
+twee|2
+drie|3
+vier|4
+vijf|5
+zes|6
+zeven|7
+acht|8
+negen|9
+tien|10
+elf|11
+twaalf|12
+dertien|13
+veertien|14
+vijftien|15
+zestien|16
+zeventien|17
+achttien|18
+negentien|19
+twintig|20
+nieuw|new
+oud|old (not new)
+weinig|few
+veel|many
+hoeveel?|how much?
+hoeveel?|how many?
+fout|wrong
+correct|correct
+slecht|bad
+goed|good
+gelukkig|happy
+kort|short (length)
+lang|long
+klein|small
+groot|big
+daar|there
+hier|here
+rechts|right
+links|left
+mooi|beautiful
+jong|young
+oud|old (not young)
+hallo|hello
+tot later|see you later
+oké|ok
+wees voorzichtig|take care
+maak je geen zorgen|don't worry
+natuurlijk|of course
+goedendag|good day
+Hoi|hi
+doei|bye bye
+tot ziens|good bye
+excuseer mij|excuse me
+sorry|sorry
+dankjewel|thank you
+alsjeblieft|please
+ik wil dit|I want this
+nu|now
+de namiddag|afternoon
+de ochtend|morning (9-11)
+de nacht|night
+de ochtend|morning (6-9)
+de avond|evening
+de middag|noon
+de middernacht|midnight
+het uur|hour
+de minuut|minute
+de seconde|second (time)
+de dag|day
+de week|week
+de maand|month
+het jaar|year
+de tijd|time
+de datum|date
+eergisteren|the day before yesterday
+gisteren|yesterday
+vandaag|today
+morgen|tomorrow
+overmorgen|the day after tomorrow
+de maandag|Monday
+de dinsdag|Tuesday
+de woensdag|Wednesday
+de donderdag|Thursday
+de vrijdag|Friday
+de zaterdag|Saturday
+de zondag|Sunday
+Morgen is het zaterdag|Tomorrow is Saturday
+het leven|life
+de vrouw|woman
+de man|man
+de liefde|love
+het vriendje|boyfriend
+de vriendin|girlfriend
+de vriend|friend
+de kus|kiss
+de seks|sex
+het kind|child
+de baby|baby
+het meisje|girl
+de jongen|boy
+de ma|mum
+de pa|dad
+de moeder|mother
+de vader|father
+de ouders|parents
+de zoon|son
+de dochter|daughter
+het zusje|little sister
+het broertje|little brother
+de grote zus|big sister
+de grote broer|big brother
+staan|to stand
+zitten|to sit
+liggen|to lie
+sluiten|to close
+openen|to open (a door)
+verliezen|to lose
+winnen|to win
+sterven|to die
+leven|to live
+inschakelen|to turn on
+uitschakelen|to turn off
+vermoorden|to kill
+verwonden|to injure
+aanraken|to touch
+kijken|to watch
+drinken|to drink
+eten|to eat
+lopen|to walk
+ontmoeten|to meet
+wedden|to bet
+kussen|to kiss
+volgen|to follow
+trouwen|to marry
+antwoorden|to answer
+vragen|to ask
+de vraag|question
+het bedrijf|company
+het bedrijf|business
+de baan|job
+het geld|money
+de telefoon|telephone
+het kantoor|office
+de dokter|doctor
+het ziekenhuis|hospital
+de verpleegster|nurse
+de politieagent|policeman
+de president|president
+wit|white
+zwart|black
+rood|red
+blauw|blue
+groen|green
+geel|yellow
+langzaam|slow
+snel|quick
+grappig|funny
+oneerlijk|unfair
+eerlijk|fair
+moeilijk|difficult
+gemakkelijk|easy
+Dit is moeilijk|This is difficult
+rijk|rich
+arm|poor
+sterk|strong
+zwak|weak
+veilig|safe
+moe|tired
+trots|proud
+vol|full (from eating)
+ziek|sick
+gezond|healthy
+boos|angry
+laag|low
+hoog|high
+recht|straight
+elk|every
+altijd|always
+eigenlijk|actually
+weer|again
+al|already
+minder|less
+meest|most
+meer|more
+Ik wil meer|I want more
+geen|none
+heel|very
+het dier|animal
+het varken|pig
+de koe|cow
+het paard|horse
+de hond|dog
+het schaap|sheep
+de aap|monkey
+de kat|cat
+de beer|bear
+de kip|chicken
+de eend|duck
+de vlinder|butterfly
+de bij|bee
+de vis|fish (animal)
+de spin|spider
+de slang|snake
+buiten|outside
+binnen|inside
+ver|far
+dichtbij|close
+beneden|below
+boven|above
+naast|beside
+voor|front
+achter|back (position)
+zoet|sweet
+zuur|sour
+raar|strange
+zacht|soft
+hard|hard
+schattig|cute
+dom|stupid
+gek|crazy
+druk|busy
+lang|tall
+klein|short (height)
+bezorgd|worried
+verrast|surprised
+cool|cool
+beleefd|well-behaved
+boosaardig|evil
+slim|clever
+koud|cold
+heet|hot (temperature)
+het hoofd|head
+de neus|nose
+het haar|hair
+de mond|mouth
+het oor|ear
+het oog|eye
+de hand|hand
+de voet|foot
+het hart|heart
+de hersenen|brain
+trekken|to pull
+duwen|to push
+drukken|to press
+slaan|to hit
+vangen|to catch
+vechten|to fight
+gooien|to throw
+rennen|to run
+lezen|to read
+schrijven|to write
+repareren|to fix
+tellen|to count
+knippen|to cut
+verkopen|to sell
+kopen|to buy
+betalen|to pay
+studeren|to study
+dromen|to dream
+slapen|to sleep
+spelen|to play
+vieren|to celebrate
+uitrusten|to rest
+genieten|to enjoy
+schoonmaken|to clean
+de school|school
+het huis|house
+de deur|door
+de man|husband
+de vrouw|wife
+de bruiloft|wedding
+de persoon|person
+de auto|car
+thuis|home
+de stad|city
+het nummer|number
+eenentwintig|21
+tweeëntwintig|22
+zesentwintig|26
+dertig|30
+eenendertig|31
+drieëndertig|33
+zevenendertig|37
+veertig|40

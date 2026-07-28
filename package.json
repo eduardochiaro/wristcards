@@ -1,0 +1,42 @@
+{
+  "name": "flash-cards",
+  "author": "Eduardo Chiaro",
+  "version": "1.0.0",
+  "keywords": ["flashcards", "pebble", "watchapp", "language learning", "vocabulary", "dutch"],
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "build": "pebble clean && pebble build",
+    "emulator": "npm run build && pebble install --emulator ",
+    "phone": "npm run build && pebble install --phone",
+    "config": "pebble emu-app-config --emulator",
+    "logs": "pebble logs"
+  },
+  "pebble": {
+    "displayName": "Flash Cards",
+    "uuid": "f040c3c2-63de-420a-8abe-6ba52fe65ce6",
+    "projectType": "moddable",
+    "sdkVersion": "3",
+    "enableMultiJS": true,
+    "targetPlatforms": [
+      "emery",
+      "gabbro"
+    ],
+    "watchapp": {
+      "watchface": false
+    },
+    "messageKeys": [
+      "dummy"
+    ],
+    "resources": {
+      "media": [
+        {
+          "menuIcon": "true",
+          "type": "png",
+          "name": "MENU_ICON",
+          "file": "menu_icon.png"
+        }
+      ]
+    }
+  }
+}
