@@ -23,14 +23,18 @@ const BODY = REGULAR[0], SMALL = REGULAR[1];
 
 const W = render.width, H = render.height;
 const MARGIN = screen.round ? 24 : 6;
-const MAXW = W - (MARGIN * 2);
 const EDGE = screen.round ? 34 : 6;			// top and bottom margin
 const HEADER_BOTTOM = EDGE + BOLD[2].height + 8;	// first row below the dotted rule
 
+// Space kept clear on the right for the button icons; only the card view uses it.
+let gutter = 0;
+const maxWidth = () => W - (MARGIN * 2) - gutter;
+
 const CARD_COLORS = {			// [face down, translation shown]
-	session: [render.makeColor(170, 255, 255), render.makeColor(85, 170, 255)],
+	session: [render.makeColor(170, 255, 255), render.makeColor(0, 170, 170)],
 	review: [render.makeColor(255, 255, 170), render.makeColor(255, 255, 0)]
 };
+const BRIGHT = render.makeColor(255, 0, 0);	// a saved card's bookmark
 
 // ---- bookmarks -------------------------------------------------------------
 
@@ -93,7 +97,7 @@ function wrapText(text, font) {
 	let line = "";
 	for (const word of text.split(" ")) {
 		const test = line ? `${line} ${word}` : word;
-		if (line && (render.getTextWidth(test, font) > MAXW)) {
+		if (line && (render.getTextWidth(test, font) > maxWidth())) {
 			lines.push(line);
 			line = word;
 		}
@@ -109,7 +113,7 @@ function fitLines(text, family) {
 	let font = family[family.length - 1], lines;
 	for (const candidate of family) {
 		lines = wrapText(text, candidate);
-		if (lines.every(l => render.getTextWidth(l, candidate) <= MAXW)) {
+		if (lines.every(l => render.getTextWidth(l, candidate) <= maxWidth())) {
 			font = candidate;
 			break;
 		}
@@ -118,7 +122,7 @@ function fitLines(text, family) {
 }
 
 function drawCentered(text, font, color, y) {
-	render.drawText(text, font, color, (W - render.getTextWidth(text, font)) >> 1, y);
+	render.drawText(text, font, color, ((W - gutter) - render.getTextWidth(text, font)) >> 1, y);
 }
 
 function clockText() {
@@ -152,6 +156,67 @@ function drawHeader() {
 	const dots = insetAt(y, 1);
 	for (let x = dots; x < (W - dots); x += 3)
 		render.fillRectangle(black, x, y, 1, 1);
+}
+
+// ---- button icons ----------------------------------------------------------
+
+// Redrawn from assets/*.svg with Poco rectangles. The .pdc files in resources/
+// are only readable through the native C draw command API, which this app,
+// being pure JS on Poco, never calls.
+const CHEV = 7;					// chevron half width; 3px stroke, as in the SVG
+const CHEV_H = CHEV + 3;
+const MARK_W = 13, MARK_H = 19;
+const ICON_W = Math.max((CHEV * 2) + 1, MARK_W);
+const GUTTER = ICON_W + 10;
+// One row per button: UP top right, SELECT middle right, DOWN bottom right.
+// Emery's buttons sit further apart than gabbro's, whose circle also runs out
+// of width at the extremes.
+const SPREAD = screen.round ? 0.22 : 0.28;
+const UP_Y = (H * (0.5 - SPREAD)) | 0, SELECT_Y = H >> 1, DOWN_Y = (H * (0.5 + SPREAD)) | 0;
+
+function iconX(y, height) {		// left edge of the icon column at that row
+	return W - insetAt(y, height) - ICON_W;
+}
+
+function drawChevron(color, y, down) {
+	const cx = iconX(y, CHEV_H) + (ICON_W >> 1);
+	for (let i = 0; i <= CHEV; i++) {
+		const top = y + (down ? CHEV - i : i);
+		render.fillRectangle(color, cx - i, top, 1, 3);
+		render.fillRectangle(color, cx + i, top, 1, 3);
+	}
+}
+
+// mark.svg: a flag with a chamfered top and a V notch cut out of the bottom.
+function drawMark(color, x, y, w, h) {
+	const chamfer = ((w * 2) / 7) | 0;
+	const notch = (h / 3) | 0;
+	const mid = x + (w >> 1);
+	for (let r = 0; r < h; r++) {
+		const inset = r < chamfer ? chamfer - r : 0;
+		const left = x + inset, right = x + w - inset;
+		const cut = r - (h - notch);
+		if (cut < 0) {
+			render.fillRectangle(color, left, y + r, right - left, 1);
+			continue;
+		}
+		render.fillRectangle(color, left, y + r, Math.max(0, mid - cut - left), 1);
+		render.fillRectangle(color, mid + cut + 1, y + r, Math.max(0, right - mid - cut - 1), 1);
+	}
+}
+
+// Outlined while the card is unsaved, filled bright once it is bookmarked.
+function drawBookmark(y, saved, background) {
+	const x = iconX(y, MARK_H) + ((ICON_W - MARK_W) >> 1);
+	drawMark(black, x, y, MARK_W, MARK_H);
+	drawMark(saved ? BRIGHT : background, x + 2, y + 2, MARK_W - 4, MARK_H - 4);
+}
+
+// question.svg is a question mark, and the watch already has one in every font.
+function drawQuestion(y) {
+	const font = BOLD[1];
+	const w = render.getTextWidth("?", font);
+	render.drawText("?", font, black, iconX(y, font.height) + ((ICON_W - w) >> 1), y);
 }
 
 function drawLines(lines, font, color, y) {
@@ -248,6 +313,10 @@ function cardView(cards, title, reviewMode) {
 		draw() {
 			const card = cards[i];
 			const revealed = seen[i];
+			const saved = bookmarks.indexOf(card) >= 0;
+			const background = CARD_COLORS[reviewMode ? "review" : "session"][revealed ? 1 : 0];
+			gutter = GUTTER;		// keep the text clear of the button icons
+
 			const bar = card.indexOf("|");
 			const front = fitLines(card.slice(0, bar), BOLD);
 			const back = revealed ? fitLines(card.slice(bar + 1), REGULAR) : null;
@@ -257,13 +326,12 @@ function cardView(cards, title, reviewMode) {
 				height += 8 + (back.lines.length * back.font.height);
 
 			render.begin();
-			render.fillRectangle(CARD_COLORS[reviewMode ? "review" : "session"][revealed ? 1 : 0],
-				0, 0, W, H);
+			render.fillRectangle(background, 0, 0, W, H);
 			drawHeader();
 			const top = HEADER_BOTTOM;
-			drawCentered(`${title} ${i + 1}/${cards.length}`, BOLD[2], black, top);
+			drawCentered(title, BOLD[2], black, top);
 
-			// Centre the card text in what is left between the subtitle and the hint.
+			// Centre the card text in what is left between the subtitle and the footer.
 			const bottom = H - EDGE - SMALL.height;
 			let y = top + SMALL.height + ((bottom - top - SMALL.height - height) >> 1);
 			y = drawLines(front.lines, front.font, black, y);
@@ -271,11 +339,18 @@ function cardView(cards, title, reviewMode) {
 				drawLines(back.lines, back.font, black, y + 8);
 
 			// Before the reveal SELECT shows the translation; after it, it toggles the bookmark.
-			const hint = !revealed ? UI.hintReveal
-				: bookmarks.indexOf(card) >= 0 ? UI.bookmarked
-				: bookmarks.length >= MAX_BOOKMARKS ? UI.saveFull : UI.hintBookmark;
-			drawCentered(hint, SMALL, black, H - EDGE - SMALL.height);
+			drawChevron(black, UP_Y - (CHEV_H >> 1), false);
+			if (revealed)
+				drawBookmark(SELECT_Y - (MARK_H >> 1), saved, background);
+			else
+				drawQuestion(SELECT_Y - (BOLD[1].height >> 1));
+			drawChevron(black, DOWN_Y - (CHEV_H >> 1), true);
+
+			const footer = (revealed && !saved && (bookmarks.length >= MAX_BOOKMARKS))
+				? UI.saveFull : `${i + 1}/${cards.length}`;
+			drawCentered(footer, SMALL, black, bottom);
 			render.end();
+			gutter = 0;
 		},
 		onButton(type) {
 			if ("back" === type)

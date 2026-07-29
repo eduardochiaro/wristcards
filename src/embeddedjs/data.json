@@ -9,10 +9,7 @@
 		"noBookmarks": "No saved words",
 		"sessionComplete": "Session done",
 		"savedCount": "saved",
-		"bookmarked": "- SAVED -",
-		"saveFull": "SAVE LIST FULL",
-		"hintReveal": "SELECT: show",
-		"hintBookmark": "SELECT: save"
+		"saveFull": "SAVE LIST FULL"
 	},
 	"levels": [
 		{ "name": "Basic", "file": "basic.txt", "cards": 334 },
