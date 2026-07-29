@@ -9,9 +9,7 @@
 	"data": {
 		"*": [
 			"./data.json",
-			"./levels/basic.txt",
-			"./levels/intermediate.txt",
-			"./levels/advanced.txt"
+			"./levels/*"
 		]
 	}
 }

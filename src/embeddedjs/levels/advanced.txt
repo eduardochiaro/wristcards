@@ -1,3 +1,4 @@
+# Maths & Study
 het resultaat|result
 het vierkant|square (shape)
 de cirkel|circle
@@ -8,6 +9,7 @@ de bachelor|bachelor
 de master|master
 x is kleiner dan y|x < y
 x is groter dan y|x > y
+# Professions
 de stress|stress
 de verzekering|insurance
 het personeel|staff
@@ -32,6 +34,7 @@ de buschauffeur|bus driver
 de crimineel|criminal
 het model|model
 de artiest|artist
+# Phone & Web
 het telefoonnummer|telephone number
 het signaal|signal (of phone)
 de app|app
@@ -42,6 +45,7 @@ het e-mailadres|e-mail address
 de website|website
 de e-mail|e-mail
 de mobiele telefoon|mobile phone
+# Law & Money
 de wet|law
 de gevangenis|prison
 het bewijsmateriaal|evidence
@@ -56,6 +60,7 @@ het bedrag|amount
 de kredietkaart|credit card
 het wachtwoord|password
 de geldautomaat|cash machine
+# Objects
 het zwembad|swimming pool (competition)
 de elektriciteit|power
 de camera|camera
@@ -73,6 +78,7 @@ de shampoo|shampoo
 de crème|cream (pharmaceutical)
 de zakdoek|tissue
 de lippenstift|lipstick
+# Media & Arts
 de TV|TV
 de bioscoop|cinema
 het nieuws|news
@@ -88,6 +94,7 @@ het artikel|article
 de krant|newspaper
 het tijdschrift|magazine
 de advertentie|advertisement
+# Landscape
 de natuur|nature
 de as|ash
 het vuur|fire (general)
@@ -110,6 +117,7 @@ de berg|mountain
 het eiland|island
 de oceaan|ocean
 de zee|sea
+# Weather
 het weer|weather
 het ijs|ice
 de sneeuw|snow
@@ -127,6 +135,7 @@ het goud|gold
 het zilver|silver
 Zilver is goedkoper dan goud|Silver is cheaper than gold
 Goud is duurder dan zilver|Gold is more expensive than silver
+# Holidays
 de vakantie|holiday
 het lid|member
 het hotel|hotel
@@ -147,6 +156,7 @@ het graf|grave
 de scheiding|divorce
 de bruid|bride
 de bruidegom|groom
+# Numbers 100-500
 honderdeen|101
 honderdvijf|105
 honderdtien|110
@@ -169,6 +179,7 @@ vierhonderdvierentachtig|484
 vijfhonderd|500
 vijfhonderdvijf|505
 vijfhonderdnegen|509
+# Numbers 500-999
 vijfhonderdvijftig|550
 vijfhonderdvijfennegentig|595
 zeshonderd|600
@@ -191,6 +202,7 @@ negenhonderdvier|904
 negenhonderdnegen|909
 negenhonderdnegenenveertig|949
 negenhonderdnegentig|990
+# Animals
 de tijger|tiger
 de muis|mouse (animal)
 de rat|rat
@@ -212,6 +224,7 @@ de haai|shark
 de dolfijn|dolphin
 de slak|snail
 de kikker|frog
+# Sports
 vaak|often
 onmiddellijk|immediately
 plotseling|suddenly
@@ -227,6 +240,7 @@ het basketbal|basketball
 het zwemmen|swimming
 het duiken|diving (under water)
 het hiken|hiking
+# Countries
 Verenigd Koninkrijk|United Kingdom
 Spanje|Spain
 Zwitserland|Switzerland
@@ -259,6 +273,7 @@ Afrika|Africa
 Europa|Europe
 Azië|Asia
 Amerika|America
+# Time & Dates
 een kwartier|quarter of an hour
 een half uur|half an hour
 drie kwartier|three quarters of an hour
@@ -291,6 +306,7 @@ twaalf april negentien achtentachtig|1988-04-12
 dertien oktober achttien negenennegentig|1899-10-13
 dertig september negentienzeven|1907-09-30
 twaalf december tweeduizend|2000-12-12
+# Body Detail
 het voorhoofd|forehead
 de rimpel|wrinkle
 de kin|chin
@@ -322,6 +338,7 @@ de vagina|vagina
 het sperma|sperm
 de penis|penis
 de zaadbal|testicle
+# Taste
 sappig|juicy
 pittig|hot (spicy)
 zout|salty

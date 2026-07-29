@@ -6,14 +6,15 @@
 		"startSession": "Start Session",
 		"reviewBookmarked": "Review Saved",
 		"chooseLevel": "Choose Level",
+		"allGroups": "All",
 		"noBookmarks": "No saved words",
 		"sessionComplete": "Session done",
 		"savedCount": "saved",
 		"saveFull": "SAVE LIST FULL"
 	},
 	"levels": [
-		{ "name": "Basic", "file": "basic.txt", "cards": 334 },
-		{ "name": "Intermediate", "file": "intermediate.txt", "cards": 333 },
-		{ "name": "Advanced", "file": "advanced.txt", "cards": 333 }
+		{ "name": "Basic", "file": "basic.txt" },
+		{ "name": "Intermediate", "file": "intermediate.txt" },
+		{ "name": "Advanced", "file": "advanced.txt" }
 	]
 }

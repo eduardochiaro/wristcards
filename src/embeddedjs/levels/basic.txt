@@ -1,3 +1,4 @@
+# Pronouns
 ik|I
 je/jij|you (singular)
 hij|he
@@ -26,6 +27,7 @@ dat|that
 alle|all
 of|or
 en|and
+# Verbs
 weten|to know
 Ik weet het|I know
 Ik weet het niet|I don't know
@@ -47,6 +49,7 @@ Ik vind je leuk|I like you
 Ik vind dit niet leuk|I don't like this
 Hou je van mij?|Do you love me?
 Ik hou van jou|I love you
+# Numbers 0-20
 nul|0
 één|1
 twee|2
@@ -68,6 +71,7 @@ zeventien|17
 achttien|18
 negentien|19
 twintig|20
+# Adjectives
 nieuw|new
 oud|old (not new)
 weinig|few
@@ -90,6 +94,7 @@ links|left
 mooi|beautiful
 jong|young
 oud|old (not young)
+# Greetings
 hallo|hello
 tot later|see you later
 oké|ok
@@ -105,6 +110,7 @@ sorry|sorry
 dankjewel|thank you
 alsjeblieft|please
 ik wil dit|I want this
+# Time & Days
 nu|now
 de namiddag|afternoon
 de ochtend|morning (9-11)
@@ -135,6 +141,7 @@ de vrijdag|Friday
 de zaterdag|Saturday
 de zondag|Sunday
 Morgen is het zaterdag|Tomorrow is Saturday
+# Family
 het leven|life
 de vrouw|woman
 de man|man
@@ -159,6 +166,7 @@ het zusje|little sister
 het broertje|little brother
 de grote zus|big sister
 de grote broer|big brother
+# Actions
 staan|to stand
 zitten|to sit
 liggen|to lie
@@ -185,6 +193,7 @@ trouwen|to marry
 antwoorden|to answer
 vragen|to ask
 de vraag|question
+# Work
 het bedrijf|company
 het bedrijf|business
 de baan|job
@@ -196,12 +205,14 @@ het ziekenhuis|hospital
 de verpleegster|nurse
 de politieagent|policeman
 de president|president
+# Colours
 wit|white
 zwart|black
 rood|red
 blauw|blue
 groen|green
 geel|yellow
+# Qualities
 langzaam|slow
 snel|quick
 grappig|funny
@@ -235,6 +246,7 @@ meer|more
 Ik wil meer|I want more
 geen|none
 heel|very
+# Animals
 het dier|animal
 het varken|pig
 de koe|cow
@@ -251,6 +263,7 @@ de bij|bee
 de vis|fish (animal)
 de spin|spider
 de slang|snake
+# Position
 buiten|outside
 binnen|inside
 ver|far
@@ -260,6 +273,7 @@ boven|above
 naast|beside
 voor|front
 achter|back (position)
+# Character
 zoet|sweet
 zuur|sour
 raar|strange
@@ -279,6 +293,7 @@ boosaardig|evil
 slim|clever
 koud|cold
 heet|hot (temperature)
+# Body
 het hoofd|head
 de neus|nose
 het haar|hair
@@ -289,6 +304,7 @@ de hand|hand
 de voet|foot
 het hart|heart
 de hersenen|brain
+# More Verbs
 trekken|to pull
 duwen|to push
 drukken|to press
@@ -313,6 +329,7 @@ vieren|to celebrate
 uitrusten|to rest
 genieten|to enjoy
 schoonmaken|to clean
+# Places
 de school|school
 het huis|house
 de deur|door
@@ -324,6 +341,7 @@ de auto|car
 thuis|home
 de stad|city
 het nummer|number
+# Numbers 21-40
 eenentwintig|21
 tweeëntwintig|22
 zesentwintig|26

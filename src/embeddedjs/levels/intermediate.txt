@@ -1,3 +1,4 @@
+# Big Numbers
 eenenveertig|41
 vierenveertig|44
 achtenveertig|48
@@ -26,6 +27,7 @@ duizend|1000
 tienduizend|10.000
 honderdduizend|100.000
 één miljoen|1.000.000
+# Possessives
 mijn hond|my dog
 jouw kat|your cat
 haar jurk|her dress
@@ -34,6 +36,7 @@ zijn bal|its ball
 ons huis|our home
 jouw team|your team
 hun bedrijf|their company
+# Directions
 iedereen|everybody
 samen|together
 overig|other
@@ -47,6 +50,7 @@ sla rechtsaf|turn right
 sla linksaf|turn left
 ga rechtdoor|go straight
 Kom met mij mee|Come with me
+# Food & Drink
 het ei|egg
 de kaas|cheese
 de melk|milk
@@ -75,6 +79,7 @@ het ontbijt|breakfast
 de lunch|lunch
 het avondeten|dinner
 de pizza|pizza
+# Transport
 de bus|bus
 de trein|train
 het treinstation|train station
@@ -88,6 +93,7 @@ de taxi|taxi
 het stoplicht|traffic light
 de parkeerplaats|car park
 de weg|road
+# Clothing
 de kleding|clothing
 de schoen|shoe
 de jas|coat
@@ -109,6 +115,7 @@ de ring|ring
 de hoed|hat
 het horloge|watch
 de zak|pocket
+# Small Talk
 Hoe heet je?|What's your name?
 Mijn naam is David|My name is David
 Ik ben tweeëntwintig jaar oud|I'm 22 years old
@@ -116,6 +123,7 @@ Hoe gaat het?|How are you?
 Gaat alles goed?|Are you ok?
 Waar is het toilet?|Where is the toilet?
 Ik mis je|I miss you
+# Months
 de lente|spring
 de zomer|summer
 de herfst|autumn
@@ -132,6 +140,7 @@ september|September
 oktober|October
 november|November
 december|December
+# In Town
 het winkelen|shopping
 de rekening|bill
 de markt|market
@@ -154,6 +163,7 @@ de brandweerlieden|firefighters
 het land|country
 de buitenwijk|suburb
 het dorp|village
+# Health
 de gezondheid|health
 het geneesmiddel|medicine
 het ongeval|accident
@@ -165,6 +175,7 @@ de verkoudheid|cold (sickness)
 de wond|wound
 de afspraak|appointment
 de hoest|cough
+# Body
 de nek|neck
 de kont|bottom
 de schouder|shoulder
@@ -185,11 +196,13 @@ de lever|liver
 de zenuw|nerve
 de nier|kidney
 de darm|intestine
+# Colours
 de kleur|colour
 oranje|orange (colour)
 grijs|grey
 bruin|brown
 roze|pink
+# Adjectives
 saai|boring
 zwaar|heavy
 licht|light (weight)
@@ -210,6 +223,7 @@ noord|north
 oost|east
 zuid|south
 west|west
+# More Adjectives
 vuil|dirty
 schoon|clean
 vol|full (not empty)
@@ -235,6 +249,7 @@ warm|warm
 luid|loud
 rustig|quiet
 stil|silent
+# At Home
 de keuken|kitchen
 de badkamer|bathroom
 de woonkamer|living room
@@ -267,6 +282,7 @@ de stoel|chair
 het zwembad|swimming pool (garden)
 de deurbel|bell
 de buur|neighbour
+# Verbs
 falen|to fail
 kiezen|to choose
 schieten|to shoot
@@ -291,6 +307,7 @@ glimlachen|to smile
 lachen|to laugh
 groeien|to grow
 krimpen|to shrink
+# More Verbs
 ruzie maken|to argue
 bedreigen|to threaten
 delen|to share
@@ -314,6 +331,7 @@ op slot doen|to lock
 wassen|to wash
 bidden|to pray
 koken|to cook
+# School
 het boek|book
 de bibliotheek|library
 het huiswerk|homework

@@ -49,33 +49,111 @@ function saveBookmarks() {
 
 // ---- deck ------------------------------------------------------------------
 
-// Each level is its own file of "front|back" lines, opened only when that level
-// is played. The file stays in flash: the JS heap has room for a few hundred
-// objects at most, so only the ten lines a session needs are ever decoded.
+// Each level is one file, opened only while that level is played. A line
+// starting with "#" names the group the lines below it belong to; every other
+// line is a "front|back" card. The file stays in flash and the mod's JS heap is
+// a couple of kilobytes, so only the ten lines a session needs are ever decoded
+// — and where each group starts is counted off the file rather than recorded
+// anywhere, which is why nothing can fall out of step with the cards.
 const BLOCK = 512;
+const HASH = 35, NEWLINE = 10;		// neither is ever a UTF-8 continuation byte
 
-function readCards(file, wanted) {		// wanted: line numbers, ascending
-	const deck = new Resource(file);
+// Hand every line's byte range to `each`, until it returns false.
+function eachLine(deck, each) {
 	const total = deck.byteLength;
-	const cards = [];
-	let start = 0, line = 0, next = 0, pos = 0;
+	let start = 0, line = 0, pos = 0, first = 0;
 
-	while ((pos < total) && (next < wanted.length)) {
+	while (pos < total) {
 		const end = Math.min(pos + BLOCK, total);
 		const bytes = new Uint8Array(deck.slice(pos, end));
 		for (let i = 0; i < bytes.length; i++) {
-			if (10 !== bytes[i])		// "\n" — never a UTF-8 continuation byte
+			if ((pos + i) === start)	// the line may have begun in an earlier block
+				first = bytes[i];
+			if (NEWLINE !== bytes[i])
 				continue;
-			const stop = pos + i;
-			if (line === wanted[next]) {
-				cards.push(String.fromArrayBuffer(deck.slice(start, stop)));
-				next += 1;
-			}
+			if (false === each(line, start, pos + i, first))
+				return;
 			line += 1;
-			start = stop + 1;
+			start = pos + i + 1;
 		}
 		pos = end;
 	}
+}
+
+// Every question below is answered by one pass over the file, keeping a couple
+// of numbers. Holding the group list in RAM instead costs about a kilobyte,
+// which is enough to run the heap out mid-session.
+function countGroups(file) {
+	const deck = new Resource(file);
+	let groups = 0;
+	eachLine(deck, (line, start, stop, first) => {
+		if (HASH === first)
+			groups += 1;
+	});
+	return groups;
+}
+
+function countCards(file) {
+	const deck = new Resource(file);
+	let cards = 0;
+	eachLine(deck, (line, start, stop, first) => {
+		if (HASH !== first)
+			cards += 1;
+	});
+	return cards;
+}
+
+// The name on group `index`'s header line.
+function groupName(file, index) {
+	const deck = new Resource(file);
+	let group = -1, name = "";
+
+	eachLine(deck, (line, start, stop, first) => {
+		if (HASH !== first)
+			return;
+		group += 1;
+		if (group < index)
+			return;
+		name = String.fromArrayBuffer(deck.slice(start + 2, stop));	// past "# "
+		return false;
+	});
+	return name;
+}
+
+// How many cards come before group `index`, and how many are in it.
+function groupRange(file, index) {
+	const deck = new Resource(file);
+	let group = -1, from = 0, count = 0;
+
+	eachLine(deck, (line, start, stop, first) => {
+		if (HASH === first) {
+			group += 1;
+			return (group <= index) ? undefined : false;
+		}
+		if (group < index)
+			from += 1;
+		else
+			count += 1;
+	});
+	return { from, count };
+}
+
+function readCards(file, wanted) {		// wanted: card numbers, ascending
+	const deck = new Resource(file);
+	const cards = [];
+	let card = 0, next = 0;
+
+	eachLine(deck, (line, start, stop, first) => {
+		if (HASH === first)		// a header is not a card
+			return;
+		if (card === wanted[next]) {
+			cards.push(String.fromArrayBuffer(deck.slice(start, stop)));
+			next += 1;
+			if (next === wanted.length)
+				return false;
+		}
+		card += 1;
+	});
 	return cards;
 }
 
@@ -249,33 +327,47 @@ function go(next) {
 	view.draw();
 }
 
-function listView(title, labels, onSelect, onBack) {
-	let sel = 0;
+// `label` is asked for the text of a row only while that row is on screen: the
+// group menu reads its names off the deck file, and keeping the whole list would
+// leave the heap too short for the session that follows.
+function listView(title, count, label, onSelect, onBack) {
+	let sel = 0, top = 0;			// top: first label of the visible window
+	const step = BODY.height + 8;
+	const first = HEADER_BOTTOM + BOLD[2].height + 4;
+	// A group list is longer than any watch screen, so only the rows that fit
+	// below the title are drawn and the window follows the selection.
+	const rows = Math.max(2, Math.min(count, ((H - EDGE - first) / step) | 0));
+
 	return {
 		exitOnBack: !onBack,
 		draw() {
+			if (sel < top)
+				top = sel;
+			else if (sel >= (top + rows))
+				top = sel - rows + 1;
+
 			render.begin();
 			render.fillRectangle(white, 0, 0, W, H);
 			drawHeader();
 			drawCentered(title, BOLD[2], black, HEADER_BOTTOM);
 
-			const step = BODY.height + 8;
-			let y = ((H - (labels.length * step)) >> 1) + 4;
-			labels.forEach((label, i) => {
+			const shown = Math.min(rows, count - top);
+			let y = first + ((H - EDGE - first - (shown * step)) >> 1) + 4;
+			for (let i = top; i < (top + shown); i++) {
 				if (i === sel) {
 					const pad = insetAt(y - 4, step);
 					render.fillRectangle(black, pad, y - 4, W - (2 * pad), step);
 				}
-				drawCentered(label, BODY, i === sel ? white : black, y);
+				drawCentered(label(i), BODY, i === sel ? white : black, y);
 				y += step;
-			});
+			}
 			render.end();
 		},
 		onButton(type) {
 			if ("up" === type)
-				sel = (sel + labels.length - 1) % labels.length;
+				sel = (sel + count - 1) % count;
 			else if ("down" === type)
-				sel = (sel + 1) % labels.length;
+				sel = (sel + 1) % count;
 			else if ("select" === type)
 				return onSelect(sel);
 			else if (onBack)
@@ -410,8 +502,10 @@ function shuffled(array) {
 	return copy;
 }
 
+const MAIN_LABELS = [UI.startSession, UI.reviewBookmarked];
+
 function mainMenu() {
-	return listView(DATA.appTitle, [UI.startSession, UI.reviewBookmarked], sel => {
+	return listView(DATA.appTitle, MAIN_LABELS.length, i => MAIN_LABELS[i], sel => {
 		if (0 === sel)
 			go(levelMenu());
 		else if (bookmarks.length)
@@ -421,12 +515,28 @@ function mainMenu() {
 	});		// no onBack: BACK leaves the app
 }
 
+function startSession(file, title, wanted) {
+	go(cardView(shuffled(readCards(file, wanted)), title, false));
+}
+
 function levelMenu() {
-	return listView(UI.chooseLevel, DATA.levels.map(l => l.name), sel => {
-		const level = DATA.levels[sel];
-		const cards = readCards(level.file, pickLines(DATA.sessionSize, level.cards));
-		go(cardView(shuffled(cards), level.name, false));
-	}, () => go(mainMenu()));
+	return listView(UI.chooseLevel, DATA.levels.length, i => DATA.levels[i].name,
+		sel => go(groupMenu(DATA.levels[sel].file, DATA.levels[sel].name)),
+		() => go(mainMenu()));
+}
+
+// The level itself is the first entry: it draws from every group at once.
+function groupMenu(file, title) {
+	return listView(title, countGroups(file) + 1,
+		i => (0 === i) ? UI.allGroups : groupName(file, i - 1),
+		sel => {
+			if (0 === sel)
+				return startSession(file, title, pickLines(DATA.sessionSize, countCards(file)));
+			const group = groupRange(file, sel - 1);
+			startSession(file, groupName(file, sel - 1),
+				pickLines(DATA.sessionSize, group.count).map(i => i + group.from));
+		},
+		() => go(levelMenu()));
 }
 
 go(mainMenu());
