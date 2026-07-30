@@ -1,0 +1,18 @@
+{
+	"appTitle": "Learn Spanish",
+	"ui": {},
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "es-basic.txt"
+		},
+		{
+			"name": "Intermediate",
+			"file": "es-intermediate.txt"
+		},
+		{
+			"name": "Advanced",
+			"file": "es-advanced.txt"
+		}
+	]
+}

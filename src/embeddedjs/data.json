@@ -1,20 +1,22 @@
 {
-	"appTitle": "Learn Dutch",
 	"sessionSize": 10,
 	"ui": {
-		"appName": "Flashcards",
+		"appName": "Wristcards",
 		"startSession": "Start Session",
 		"reviewBookmarked": "Review Saved",
 		"chooseLevel": "Choose Level",
+		"language": "Language",
 		"allGroups": "All",
 		"noBookmarks": "No saved words",
 		"sessionComplete": "Session done",
 		"savedCount": "saved",
 		"saveFull": "SAVE LIST FULL"
 	},
-	"levels": [
-		{ "name": "Basic", "file": "basic.txt" },
-		{ "name": "Intermediate", "file": "intermediate.txt" },
-		{ "name": "Advanced", "file": "advanced.txt" }
+	"languages": [
+		{ "code": "nl", "name": "Dutch" },
+		{ "code": "fr", "name": "French" },
+		{ "code": "de", "name": "German" },
+		{ "code": "it", "name": "Italian" },
+		{ "code": "es", "name": "Spanish" }
 	]
 }

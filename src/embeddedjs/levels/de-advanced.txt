@@ -1,0 +1,371 @@
+# School
+das Buch|book
+die Bücherei|library
+die Hausaufgabe|homework
+die Prüfung|exam
+die Schulstunde|lesson
+die Wissenschaft|science
+die Geschichte|history
+die Kunst|art
+Englisch|English
+Französisch|French
+der Stift|pen
+der Bleistift|pencil
+drei Prozent|3%
+der Erste|first
+der Zweite|second (2nd)
+der Dritte|third
+der Vierte|fourth
+das Ergebnis|result
+das Quadrat|square (shape)
+der Kreis|circle
+die Fläche|area
+die Forschung|research
+# Work and money
+der akademische Grad|degree
+der Bachelor|bachelor
+der Master|master
+x ist kleiner als y|x < y
+x ist größer als y|x > y
+der Stress|stress
+die Versicherung|insurance
+die Belegschaft|staff
+die Abteilung|department
+das Gehalt|salary
+die Adresse|address
+der Brief|letter (post)
+# Jobs
+der Kapitän|captain
+der Detektiv|detective
+der Pilot|pilot
+der Professor|professor
+der Lehrer|teacher
+der Anwalt|lawyer
+die Sekretärin|secretary
+der Assistent|assistant
+der Richter|judge
+der Direktor|director (business)
+der Manager|manager
+der Koch|cook
+der Taxifahrer|taxi driver
+der Busfahrer|bus driver
+der Verbrecher|criminal
+das Model|model
+der Künstler|artist
+# Technology
+die Telefonnummer|telephone number
+der Empfang|signal (of phone)
+die App|app
+der Chat|chat
+die Datei|file
+die URL|url
+die E-Mail Adresse|e-mail address
+die Webseite|website
+die E-Mail|e-mail
+das Mobiltelefon|mobile phone
+# Law
+das Gesetz|law
+das Gefängnis|prison
+der Beweis|evidence
+die Strafe|fine
+der Zeuge|witness
+das Gericht|court
+die Unterschrift|signature
+der Verlust|loss
+der Gewinn|profit
+# Shopping
+der Kunde|customer
+der Betrag|amount
+die Kreditkarte|credit card
+das Passwort|password
+der Bankomat|cash machine
+das Schwimmbecken|swimming pool (competition)
+der Strom|power
+der Fotoapparat|camera
+der Radio|radio
+das Geschenk|present (gift)
+die Flasche|bottle
+die Tasche|bag
+# Things
+der Schlüssel|key
+die Puppe|doll
+der Engel|angel
+der Kamm|comb
+die Zahnpasta|toothpaste
+die Zahnbürste|toothbrush
+das Shampoo|shampoo
+die Creme|cream (pharmaceutical)
+das Taschentuch|tissue
+der Lippenstift|lipstick
+das Fernsehen|TV
+das Kino|cinema
+# Media
+die Nachrichten|news
+der Sitz|seat
+die Eintrittskarte|ticket
+die Leinwand|screen (cinema)
+die Musik|music
+die Bühne|stage
+das Publikum|audience
+das Gemälde|painting
+der Witz|joke
+der Artikel|article
+die Zeitung|newspaper
+das Magazin|magazine
+die Werbung|advertisement
+# Nature
+die Natur|nature
+die Asche|ash
+das Feuer|fire (general)
+der Diamant|diamond
+der Mond|moon
+die Erde|earth
+die Sonne|sun
+der Stern|star
+der Planet|planet
+das Universum|universe
+die Küste|coast
+der See|lake
+der Wald|forest
+die Wüste|desert (dry place)
+der Hügel|hill
+der Fels|rock (stone)
+der Fluss|river
+das Tal|valley
+der Berg|mountain
+die Insel|island
+der Ozean|ocean
+das Meer|sea
+das Wetter|weather
+# Weather and materials
+das Eis|ice
+der Schnee|snow
+der Sturm|storm
+der Regen|rain
+der Wind|wind
+die Pflanze|plant
+der Baum|tree
+das Gras|grass
+die Rose|rose
+die Blume|flower
+das Gas|gas
+das Metall|metal
+das Gold|gold
+das Silber|silver
+Silber ist billiger als Gold|Silver is cheaper than gold
+Gold ist teurer als Silber|Gold is more expensive than silver
+# Holidays
+der Urlaub|holiday
+das Mitglied|member
+das Hotel|hotel
+der Strand|beach
+der Gast|guest
+der Geburtstag|birthday
+Weihnachten|Christmas
+Neujahr|New Year
+Ostern|Easter
+# Relatives
+der Onkel|uncle
+die Tante|aunt
+die Großmutter|grandmother (paternal)
+der Großvater|grandfather (paternal)
+die Großmutter|grandmother (maternal)
+der Großvater|grandfather (maternal)
+der Tod|death
+das Grab|grave
+die Scheidung|divorce
+die Braut|bride
+der Bräutigam|groom
+# Hundreds
+einhunderteins|101
+einhundertfünf|105
+einhundertzehn|110
+einhunderteinundfünfzig|151
+zweihundert|200
+zweihundertzwei|202
+zweihundertsechs|206
+zweihundertzwanzig|220
+zweihundertzweiundsechzig|262
+dreihundert|300
+dreihundertdrei|303
+dreihundertsieben|307
+dreihundertdreißig|330
+dreihundertdreiundsiebzig|373
+vierhundert|400
+vierhundertvier|404
+vierhundertacht|408
+vierhundertvierzig|440
+vierhundertvierundachtzig|484
+fünfhundert|500
+fünfhundertfünf|505
+fünfhundertneun|509
+fünfhundertfünfzig|550
+fünfhundertfünfundneunzig|595
+sechshundert|600
+sechshunderteins|601
+sechshundertsechs|606
+sechshundertsechzehn|616
+sechshundertsechzig|660
+siebenhundert|700
+siebenhundertzwei|702
+siebenhundertsieben|707
+siebenhundertsiebenundzwanzig|727
+siebenhundertsiebzig|770
+achthundert|800
+achthundertdrei|803
+achthundertacht|808
+achthundertachtunddreißig|838
+achthundertachtzig|880
+neunhundert|900
+neunhundertvier|904
+neunhundertneun|909
+neunhundertneunundvierzig|949
+neunhundertneunzig|990
+# More animals
+der Tiger|tiger
+die Maus|mouse (animal)
+die Ratte|rat
+das Kaninchen|rabbit
+der Löwe|lion
+der Esel|donkey
+der Elefant|elephant
+der Vogel|bird
+der Hahn|cockerel
+die Taube|pigeon
+die Gans|goose
+das Insekt|insect
+der Käfer|bug
+die Stechmücke|mosquito
+die Fliege|fly
+die Ameise|ant
+der Wal|whale
+der Hai|shark
+der Delfin|dolphin
+die Schnecke|snail
+der Frosch|frog
+# Sport
+oft|often
+sofort|immediately
+plötzlich|suddenly
+obwohl|although
+Turnen|gymnastics
+Tennis|tennis
+Laufen|running
+Radfahren|cycling
+Golf|golf
+Eislaufen|ice skating
+Fußball|football
+Basketball|basketball
+Schwimmen|swimming
+Tauchen|diving (under the water)
+Wandern|hiking
+# Countries
+Großbritannien|United Kingdom
+Spanien|Spain
+Schweiz|Switzerland
+Italien|Italy
+Frankreich|France
+Deutschland|Germany
+Thailand|Thailand
+Singapur|Singapore
+Russland|Russia
+Japan|Japan
+Israel|Israel
+Indien|India
+China|China
+Vereinigte Staaten von Amerika|The United States of America
+Mexiko|Mexico
+Kanada|Canada
+Chile|Chile
+Brasilien|Brazil
+Argentinien|Argentina
+Südafrika|South Africa
+Nigeria|Nigeria
+Marokko|Morocco
+Libyen|Libya
+Kenia|Kenya
+Algerien|Algeria
+Ägypten|Egypt
+Neuseeland|New Zealand
+Australien|Australia
+Afrika|Africa
+Europa|Europe
+Asien|Asia
+Amerika|America
+# Telling time
+die Viertelstunde|quarter of an hour
+die halbe Stunde|half an hour
+die Dreiviertelstunde|three quarters of an hour
+ein Uhr|1:00
+fünf nach zwei|2:05
+zehn nach drei|3:10
+Viertel nach vier|4:15
+zwanzig nach fünf|5:20
+fünf vor halb sieben|6:25
+halb acht|7:30
+fünf nach halb neun|8:35
+zwanzig vor zehn|9:40
+Viertel vor elf|10:45
+zehn vor zwölf|11:50
+fünf vor eins|12:55
+ein Uhr früh|one o'clock in the morning
+zwei Uhr nachmittags|two o'clock in the afternoon
+# Dates
+letzte Woche|last week
+diese Woche|this week
+nächste Woche|next week
+letztes Jahr|last year
+dieses Jahr|this year
+nächstes Jahr|next year
+letzten Monat|last month
+diesen Monat|this month
+nächsten Monat|next month
+erster Januar zweitausendvierzehn|2014-01-01
+fünfundzwanzigster Februar zweitausenddrei|2003-02-25
+zwölfter April neunzehnhundertachtundachtzig|1988-04-12
+dreizehnter Oktober achtzehnhundertneunundneunzig|1899-10-13
+dreißigster September neunzehnhundertsieben|1907-09-30
+zwölfter Dezember zweitausend|2000-12-12
+# Face and body
+die Stirn|forehead
+die Falte|wrinkle
+das Kinn|chin
+die Wange|cheek
+der Bart|beard
+die Wimpern|eyelashes
+die Augenbraue|eyebrow
+die Taille|waist
+der Nacken|nape
+die Brust|chest
+der Daumen|thumb
+der kleine Finger|little finger
+der Ringfinger|ring finger
+der Mittelfinger|middle finger
+der Zeigefinger|index finger
+das Handgelenk|wrist
+der Fingernagel|fingernail
+die Ferse|heel
+die Wirbelsäule|spine
+der Muskel|muscle
+der Knochen|bone (part of body)
+das Skelett|skeleton
+die Rippe|rib
+der Wirbel|vertebra
+# Inside the body
+die Blase|bladder
+die Vene|vein
+die Arterie|artery
+die Vagina|vagina
+das Sperma|sperm
+der Penis|penis
+der Hoden|testicle
+# Taste and character
+saftig|juicy
+scharf|hot (spicy)
+salzig|salty
+roh|raw
+gekocht|boiled
+schüchtern|shy
+geizig|greedy
+streng|strict
+taub|deaf

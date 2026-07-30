@@ -1,0 +1,371 @@
+# School
+le livre|book
+la bibliothèque|library
+les devoirs|homework
+l'examen|exam
+la leçon|lesson
+la science|science
+l'histoire|history
+l'art|art
+l'anglais|English
+le français|French
+le stylo|pen
+le crayon|pencil
+trois pour cent|3%
+premièr|first
+deuxième|second (2nd)
+troisième|third
+quatrième|fourth
+le résultat|result
+le carré|square (shape)
+le cercle|circle
+l'aire|area
+la recherche|research
+# Work and money
+le degré universitaire|degree
+la licence|bachelor
+la maîtrise|master
+x est inférieur à y|x < y
+x est supérieur à y|x > y
+le stress|stress
+l'assurance|insurance
+le personnel|staff
+le département|department
+le salaire|salary
+l'adresse|address
+la lettre|letter (post)
+# Jobs
+le capitaine|captain
+le détective|detective
+le pilote|pilot
+le professeur|professor
+le professeur|teacher
+l'avocat|lawyer
+la secrétaire|secretary
+l'assistant|assistant
+le juge|judge
+le directeur|director (business)
+le supérieur|manager
+le cuisinier|cook
+le chauffeur de taxi|taxi driver
+le chauffeur|bus driver
+le criminel|criminal
+le mannequin|model
+l'artiste|artist
+# Technology
+le numéro de téléphone|telephone number
+le signal|signal (of phone)
+l'appli|app
+le chat|chat
+le fichier|file
+l'URL|url
+l'adresse e-mail|e-mail address
+le site internet|website
+l'e-mail|e-mail
+le téléphone portable|mobile phone
+# Law
+la loi|law
+la prison|prison
+la preuve|evidence
+l'amende|fine
+le témoin|witness
+le tribunal|court
+la signature|signature
+la perte|loss
+le profit|profit
+# Shopping
+le client|customer
+le montant|amount
+la carte de crédit|credit card
+le mot de passe|password
+le distributeur de billets|cash machine
+la piscine|swimming pool (competition)
+le courant|power
+l'appareil photo|camera
+la radio|radio
+le cadeau|present (gift)
+la bouteille|bottle
+le sac|bag
+# Things
+la clé|key
+la poupée|doll
+l'ange|angel
+le peigne|comb
+le dentifrice|toothpaste
+la brosse à dents|toothbrush
+le shampooing|shampoo
+la crème|cream (pharmaceutical)
+le mouchoir en papier|tissue
+le rouge à lèvres|lipstick
+la télé|TV
+le cinéma|cinema
+# Media
+le journal|news
+le siège|seat
+le ticket|ticket
+l'écran|screen (cinema)
+la musique|music
+la scène|stage
+le public|audience
+la peinture|painting
+la blague|joke
+l'article|article
+le journal|newspaper
+le magazine|magazine
+la publicité|advertisement
+# Nature
+la nature|nature
+la cendre|ash
+le feu|fire (general)
+le diamant|diamond
+la lune|moon
+la terre|earth
+le soleil|sun
+l'étoile|star
+la planète|planet
+l'univers|universe
+la côte|coast
+le lac|lake
+la forêt|forest
+le désert|desert (dry place)
+la colline|hill
+le rocher|rock (stone)
+la rivière|river
+la vallée|valley
+la montagne|mountain
+l'île|island
+l'océan|ocean
+la mer|sea
+le temps|weather
+# Weather and materials
+la glace|ice
+la neige|snow
+la tempête|storm
+la pluie|rain
+le vent|wind
+la plante|plant
+l'arbre|tree
+l'herbe|grass
+la rose|rose
+la fleur|flower
+le gaz|gas
+le métal|metal
+l'or|gold
+l'argent|silver
+L'argent est moins cher que l'or|Silver is cheaper than gold
+L'or est plus cher que l'argent|Gold is more expensive than silver
+# Holidays
+les vacances|holiday
+le membre|member
+l'hôtel|hotel
+la plage|beach
+l'invité|guest
+l'anniversaire|birthday
+Noël|Christmas
+le nouvel an|New Year
+Pâques|Easter
+# Relatives
+l'oncle|uncle
+la tante|aunt
+la grand-mère|grandmother (paternal)
+le grand-père|grandfather (paternal)
+la grand-mère|grandmother (maternal)
+le grand-père|grandfather (maternal)
+le mort|death
+la tombe|grave
+le divorce|divorce
+la mariée|bride
+le marié|groom
+# Hundreds
+cent un|101
+cent cinq|105
+cent dix|110
+cent cinquante et un|151
+deux cents|200
+deux cent deux|202
+deux cent six|206
+deux cent vingt|220
+deux cent soixante-deux|262
+trois cents|300
+trois cent trois|303
+trois cent sept|307
+trois cent trente|330
+trois cent soixante-treize|373
+quatre cents|400
+quatre cent quatre|404
+quatre cent huit|408
+quatre cent quarante|440
+quatre cent quatre-vingt- quatre|484
+cinq cents|500
+cinq cent cinq|505
+cinq cent neuf|509
+cinq cent cinquante|550
+cinq cent quatre-vingt- quinze|595
+six cents|600
+six cent un|601
+six cent six|606
+six cent seize|616
+six cent soixante|660
+sept cents|700
+sept cent deux|702
+sept cent sept|707
+sept cent vingt-sept|727
+sept cent soixante-dix|770
+huit cents|800
+huit cent trois|803
+huit cent huit|808
+huit cent trente-huit|838
+huit cent quatre-vingt|880
+neuf cents|900
+neuf cent quatre|904
+neuf cent neuf|909
+neuf cent quarante-neuf|949
+neuf cent quatre-vingt-dix|990
+# More animals
+le tigre|tiger
+la souris|mouse (animal)
+le rat|rat
+le lapin|rabbit
+le lion|lion
+l'âne|donkey
+l'éléphant|elephant
+l'oiseau|bird
+le coq|cockerel
+le pigeon|pigeon
+l'oie|goose
+l'insecte|insect
+le coléoptère|bug
+le moustique|mosquito
+la mouche|fly
+la fourmi|ant
+la baleine|whale
+le requin|shark
+le dauphin|dolphin
+l'escargot|snail
+la grenouille|frog
+# Sport
+souvent|often
+immédiatement|immediately
+soudainement|suddenly
+bien que|although
+la gymnastique|gymnastics
+le tennis|tennis
+la course à pied|running
+le cyclisme|cycling
+le golf|golf
+le patinage sur glace|ice skating
+le football|football
+le basketball|basketball
+la natation|swimming
+la plongée|diving (under the water)
+la randonnée|hiking
+# Countries
+le Royaume-Uni|United Kingdom
+l'Espagne|Spain
+la Suisse|Switzerland
+l'Italie|Italy
+la France|France
+l'Allemagne|Germany
+la Thaïlande|Thailand
+le Singapour|Singapore
+la Russie|Russia
+le Japon|Japan
+l'Israël|Israel
+l'Inde|India
+la Chine|China
+les États-Unis d'Amérique|The United States of America
+le Mexique|Mexico
+le Canada|Canada
+le Chili|Chile
+le Brésil|Brazil
+l'Argentine|Argentina
+l'Afrique du Sud|South Africa
+le Nigeria|Nigeria
+le Maroc|Morocco
+la Libye|Libya
+le Kenya|Kenya
+l'Algerie|Algeria
+l'Égypte|Egypt
+la Nouvelle-Zélande|New Zealand
+l'Australie|Australia
+l'Afrique|Africa
+l'Europe|Europe
+l'Asie|Asia
+l'Amérique|America
+# Telling time
+un quart d'heure|quarter of an hour
+une demi-heure|half an hour
+trois quarts d'heure|three quarters of an hour
+une heure|1:00
+deux heures cinq|2:05
+trois heures dix|3:10
+quatre heures et quart|4:15
+cinq heures vingt|5:20
+six heures vingt-cinq|6:25
+sept heures et demie|7:30
+huit heures trente-cinq|8:35
+dix heure moins vingt|9:40
+onze heures moins le quart|10:45
+douze heures moins dix|11:50
+une heure moins cinq|12:55
+une heure du matin|one o'clock in the morning
+deux heures de l'après-midi|two o'clock in the afternoon
+# Dates
+semaine dernière|last week
+cette semaine|this week
+semaine prochaine|next week
+année dernière|last year
+cette année|this year
+année prochaine|next year
+mois dernier|last month
+ce mois-ci|this month
+mois prochain|next month
+premier janvier deux mille quatorze|2014-01-01
+vingt-cinq février deux mille trois|2003-02-25
+douze avril dix-neuf cent quatre-vingt-huit|1988-04-12
+treize octobre dix-huit cent quatre-vingt-dix-neuf|1899-10-13
+trente septembre dix-neuf cent sept|1907-09-30
+douze décembre de l'an deux mille|2000-12-12
+# Face and body
+le front|forehead
+la ride|wrinkle
+le menton|chin
+la joue|cheek
+la barbe|beard
+les cils|eyelashes
+le sourcil|eyebrow
+la taille|waist
+la nuque|nape
+la poitrine|chest
+le pouce|thumb
+le petit doigt|little finger
+l'annulaire|ring finger
+le médius|middle finger
+l'index|index finger
+le poignet|wrist
+l'ongle|fingernail
+le talon|heel
+la colonne vertébrale|spine
+le muscle|muscle
+l'os|bone (part of body)
+le squelette|skeleton
+la côte|rib
+la vertèbre|vertebra
+# Inside the body
+la vessie|bladder
+la veine|vein
+l'artère|artery
+le vagin|vagina
+le sperme|sperm
+le pénis|penis
+la testicule|testicle
+# Taste and character
+juteux|juicy
+épicé|hot (spicy)
+salé|salty
+brut|raw
+bouilli|boiled
+timide|shy
+gourmand|greedy
+strict|strict
+sourd|deaf

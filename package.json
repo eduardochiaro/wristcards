@@ -1,10 +1,17 @@
 {
-  "name": "flash-cards",
+  "name": "wristcards",
   "author": "Eduardo Chiaro",
   "version": "1.0.0",
-  "keywords": ["flashcards", "pebble", "watchapp", "language learning", "vocabulary", "dutch"],
+  "keywords": [
+    "wristcards",
+    "flashcards",
+    "pebble",
+    "watchapp",
+    "language learning",
+    "vocabulary",
+    "dutch"
+  ],
   "private": true,
-  "dependencies": {},
   "scripts": {
     "build": "pebble clean && pebble build",
     "emulator": "npm run build && pebble install --emulator ",
@@ -13,7 +20,7 @@
     "logs": "pebble logs"
   },
   "pebble": {
-    "displayName": "Flashcards",
+    "displayName": "Wristcards",
     "uuid": "f040c3c2-63de-420a-8abe-6ba52fe65ce6",
     "projectType": "moddable",
     "sdkVersion": "3",

@@ -1,0 +1,341 @@
+# Bigger numbers
+vingt et un|21
+vingt-deux|22
+vingt-six|26
+trente|30
+trente et un|31
+trente-trois|33
+trente-sept|37
+quarante|40
+quarante et un|41
+quarante-quatre|44
+quarante-huit|48
+cinquante|50
+cinquante et un|51
+cinquante-cinq|55
+cinquante-neuf|59
+soixante|60
+soixante et un|61
+soixante-deux|62
+soixante-six|66
+soixante-dix|70
+soixante et onze|71
+soixante-treize|73
+soixante-dix-sept|77
+quatre-vingts|80
+quatre-vingt-un|81
+quatre-vingt-quatre|84
+quatre-vingt-huit|88
+quatre-vingt-dix|90
+quatre-vingt-onze|91
+quatre-vingt-quinze|95
+quatre-vingt-dix-neuf|99
+cent|100
+mille|1000
+dix mille|10.000
+cent mille|100.000
+un million|1.000.000
+# Possessives
+mon chien|my dog
+votre chat|your cat
+sa robe|her dress
+sa voiture|his car
+sa balle|its ball
+notre maison|our home
+votre équipe|your team
+leur entreprise|their company
+tout le monde|everybody
+ensemble|together
+# Useful phrases
+autre|other
+Ça n'a pas d'importance|doesn't matter
+Santé|cheers
+se détendre|relax
+je suis d'accord|I agree
+bienvenue|welcome
+pas de soucis|no worries
+tourne à droite|turn right
+tourne à gauche|turn left
+Va tout droit|go straight
+Viens avec moi|Come with me
+# Food
+l'œuf|egg
+le fromage|cheese
+le lait|milk
+le poisson|fish (to eat)
+la viande|meat
+le légume|vegetable
+le fruit|fruit
+l'os|bone (food)
+l'huile|oil
+le pain|bread
+le sucre|sugar
+le chocolat|chocolate
+le bonbon|candy
+le gâteau|cake
+# Drinks
+la boisson|drink
+l'eau|water
+l'eau gazeuse|soda
+le café|coffee
+le thé|tea
+la bière|beer
+le vin|wine
+la salade|salad
+la soupe|soup
+le dessert|dessert
+le petit déjeuner|breakfast
+le déjeuner|lunch
+le dîner|dinner
+la pizza|pizza
+# Transport
+le bus|bus
+le train|train
+la gare|train station
+l'arrêt de bus|bus stop
+l'avion|plane
+le navire|ship
+le camion|lorry
+le vélo|bicycle
+la moto|motorcycle
+le taxi|taxi
+le feu|traffic light
+le parking|car park
+la route|road
+# Clothing
+le vêtement|clothing
+la chaussure|shoe
+le manteau|coat
+le pull|sweater
+la chemise|shirt
+la veste|jacket
+le costume|suit
+le pantalon|trousers
+la robe|dress
+le t-shirt|T-shirt
+la chaussette|sock
+le soutien-gorge|bra
+la culotte|underpants
+la paire de lunettes|glasses
+le sac à main|handbag
+le porte-monnaie|purse
+le portefeuille|wallet
+la bague|ring
+le chapeau|hat
+la montre|watch
+la poche|pocket
+# Small talk
+Quel est ton nom ?|What's your name?
+Je m'appelle David|My name is David
+J'ai 22 ans|I'm 22 years old
+comment ça va ?|How are you?
+Ça va?|Are you ok?
+Où sont les toilettes ?|Where is the toilet?
+Tu me manques|I miss you
+# Seasons and months
+le printemps|spring
+l'été|summer
+l'automne|autumn
+l'hiver|winter
+janvier|January
+février|February
+mars|March
+avril|April
+mai|May
+juin|June
+juillet|July
+août|August
+septembre|September
+octobre|October
+novembre|November
+décembre|December
+# In town
+le shopping|shopping
+la facture|bill
+le marché|market
+le supermarché|supermarket
+le bâtiment|building
+l'appartement|apartment
+l'université|university
+la ferme|farm
+l'église|church
+le restaurant|restaurant
+le bar|bar
+le centre de fitness|gym
+le parc|park
+les toilettes|toilet (public)
+la carte|map
+l'ambulance|ambulance
+la police|police
+le pistolet|gun
+les pompiers|firefighters
+le pays|country
+la banlieue|suburb
+le village|village
+la santé|health
+le médicament|medicine
+# Health
+l'accident|accident
+le patient|patient
+la opération|surgery
+la pilule|pill
+la fièvre|fever
+le rhume|cold (sickness)
+la plaie|wound
+le rendez-vous|appointment
+la toux|cough
+le cou|neck
+les fesses|bottom
+l'épaule|shoulder
+# More body
+le genou|knee
+la cuisse|leg
+le bras|arm
+le ventre|belly
+le sein|bosom
+le dos|back (part of body)
+la dent|tooth
+la langue|tongue
+la lèvre|lip
+le doigt|finger
+l'orteil|toe
+l'estomac|stomach
+le poumon|lung
+le foie|liver
+le nerf|nerve
+le rein|kidney
+l'intestin|intestine
+# Colours and shapes
+la couleur|colour
+orange|orange (colour)
+gris|grey
+brun|brown
+rose|pink
+ennuyeux|boring
+lourd|heavy
+léger|light (weight)
+solitaire|lonely
+affamé|hungry
+assoiffé|thirsty
+triste|sad
+raide|steep
+plat|flat
+rond|round
+angulaire|square (adjective)
+étroit|narrow
+large|broad
+profond|deep
+peu profond|shallow
+énorme|huge
+# More opposites
+Nord|north
+Est|east
+Sud|south
+Ouest|west
+sale|dirty
+propre|clean
+plein|full (not empty)
+vide|empty
+cher|expensive
+pas cher|cheap
+sombre|dark
+lumineux|light (colour)
+sexy|sexy
+paresseux|lazy
+courageux|brave
+généreux|generous
+beau|handsome
+laid|ugly
+idiot|silly
+amical|friendly
+coupable|guilty
+aveugle|blind
+ivre|drunk
+mouillé|wet
+sec|dry
+chaud|warm
+bruyant|loud
+calme|quiet
+silencieux|silent
+# The house
+la cuisine|kitchen
+la salle de bain|bathroom
+le salon|living room
+la chambre à coucher|bedroom
+le jardin|garden
+le garage|garage
+le mur|wall
+le sous-sol|basement
+les toilettes|toilet (at home)
+les escaliers|stairs
+le toit|roof
+la fenêtre|window (building)
+le couteau|knife
+la tasse|cup (for hot drinks)
+le verre|glass
+l'assiette|plate
+le gobelet|cup (for cold drinks)
+la poubelle|garbage bin
+le bol|bowl
+le poste de télévision|TV set
+le bureau|desk
+le lit|bed
+le miroir|mirror
+la douche|shower
+le canapé|sofa
+la photographie|picture
+l'horloge|clock
+la table|table
+la chaise|chair
+la piscine|swimming pool (garden)
+la cloche|bell
+le voisin|neighbour
+# More verbs
+échouer|to fail
+choisir|to choose
+tirer|to shoot
+voter|to vote
+tomber|to fall
+défendre|to defend
+attaquer|to attack
+voler|to steal
+brûler|to burn
+secourir|to rescue
+fumer|to smoke
+voler|to fly
+porter|to carry
+cracher|to spit
+frapper avec le pied|to kick
+mordre|to bite
+respirer|to breathe
+sentir|to smell
+pleurer|to cry
+chanter|to sing
+sourire|to smile
+rire|to laugh
+grandir|to grow
+rétrécir|to shrink
+# Even more verbs
+se disputer|to argue
+menacer|to threaten
+partager|to share
+alimenter|to feed
+cacher|to hide
+avertir|to warn
+nager|to swim
+sauter|to jump
+rouler|to roll
+soulever|to lift
+creuser|to dig
+copier|to copy
+livrer|to deliver
+chercher|to look for
+s'entraîner|to practice
+voyager|to travel
+peindre|to paint
+se doucher|to take a shower
+ouvrir|to open (unlock)
+verrouiller|to lock
+laver|to wash
+prier|to pray
+cuire|to cook

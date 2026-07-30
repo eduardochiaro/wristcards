@@ -1,0 +1,18 @@
+{
+	"appTitle": "Learn Italian",
+	"ui": {},
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "it-basic.txt"
+		},
+		{
+			"name": "Intermediate",
+			"file": "it-intermediate.txt"
+		},
+		{
+			"name": "Advanced",
+			"file": "it-advanced.txt"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+{
+	"appTitle": "Learn Dutch",
+	"ui": {},
+	"levels": [
+		{ "name": "Basic", "file": "nl-basic.txt" },
+		{ "name": "Intermediate", "file": "nl-intermediate.txt" },
+		{ "name": "Advanced", "file": "nl-advanced.txt" }
+	]
+}

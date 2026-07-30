@@ -1,0 +1,18 @@
+{
+	"appTitle": "Learn German",
+	"ui": {},
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "de-basic.txt"
+		},
+		{
+			"name": "Intermediate",
+			"file": "de-intermediate.txt"
+		},
+		{
+			"name": "Advanced",
+			"file": "de-advanced.txt"
+		}
+	]
+}

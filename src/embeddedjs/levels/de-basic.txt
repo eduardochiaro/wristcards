@@ -1,0 +1,346 @@
+# Pronouns
+ich|I
+du|you (singular)
+er|he
+sie|she
+es|it
+wir|we
+ihr|you (plural)
+sie|they
+was|what
+wer|who
+wo|where
+warum|why
+# Linking words
+wie|how
+welches|which
+wann|when
+dann|then
+wenn|if
+wirklich|really
+aber|but
+weil|because
+nicht|not
+dieses|this
+Ich brauche das|I need this
+Wie viel kostet das?|How much is this?
+das|that
+alle|all
+oder|or
+und|and
+# First verbs
+wissen|to know
+Ich weiß|I know
+Ich weiß nicht|I don't know
+denken|to think
+kommen|to come
+legen|to put
+nehmen|to take
+finden|to find
+zuhören|to listen
+arbeiten|to work
+sprechen|to talk
+geben|to give (somebody something)
+mögen|to like
+helfen|to help
+lieben|to love
+telefonieren|to call
+warten|to wait
+Ich mag dich|I like you
+Ich mag das nicht|I don't like this
+Liebst du mich?|Do you love me?
+Ich liebe dich|I love you
+# Numbers
+null|0
+eins|1
+zwei|2
+drei|3
+vier|4
+fünf|5
+sechs|6
+sieben|7
+acht|8
+neun|9
+zehn|10
+elf|11
+zwölf|12
+dreizehn|13
+vierzehn|14
+fünfzehn|15
+sechzehn|16
+siebzehn|17
+achtzehn|18
+neunzehn|19
+zwanzig|20
+# Opposites
+neu|new
+alt|old (not new)
+wenige|few
+viele|many
+wie viel?|how much?
+wie viele?|how many?
+falsch|wrong
+richtig|correct
+schlecht|bad
+gut|good
+glücklich|happy
+kurz|short (length)
+lang|long
+klein|small
+groß|big
+dort|there
+hier|here
+rechts|right
+links|left
+schön|beautiful
+jung|young
+alt|old (not young)
+# Greetings
+Hallo|hello
+Bis später|see you later
+ok|ok
+Pass auf|take care
+Mach dir keine Sorgen|don't worry
+natürlich|of course
+Guten Tag|good day
+Hallo|hi
+Tschüss|bye bye
+Auf Wiedersehen|good bye
+Entschuldigen Sie|excuse me
+Entschuldigung|sorry
+danke|thank you
+bitte|please
+Ich möchte das|I want this
+jetzt|now
+# Time
+der Nachmittag|afternoon
+der Vormittag|morning (9:00-11:00)
+die Nacht|night
+der Morgen|morning (6:00-9:00)
+der Abend|evening
+der Mittag|noon
+Mitternacht|midnight
+die Stunde|hour
+die Minute|minute
+die Sekunde|second (time)
+der Tag|day
+die Woche|week
+der Monat|month
+das Jahr|year
+die Uhrzeit|time
+das Datum|date (time)
+# Days
+vorgestern|the day before yesterday
+gestern|yesterday
+heute|today
+morgen|tomorrow
+übermorgen|the day after tomorrow
+der Montag|Monday
+der Dienstag|Tuesday
+der Mittwoch|Wednesday
+der Donnerstag|Thursday
+der Freitag|Friday
+der Samstag|Saturday
+der Sonntag|Sunday
+Morgen ist Samstag|Tomorrow is Saturday
+# People
+das Leben|life
+die Frau|woman
+der Mann|man
+die Liebe|love
+der Freund|boyfriend
+die Freundin|girlfriend
+der Freund|friend
+der Kuss|kiss
+der Sex|sex
+das Kind|child
+das Baby|baby
+das Mädchen|girl
+der Junge|boy
+die Mama|mum
+der Papa|dad
+die Mutter|mother
+der Vater|father
+die Eltern|parents
+der Sohn|son
+die Tochter|daughter
+die kleine Schwester|little sister
+der kleine Bruder|little brother
+die große Schwester|big sister
+der große Bruder|big brother
+# Everyday verbs
+stehen|to stand
+sitzen|to sit
+liegen|to lie
+schließen|to close
+öffnen|to open (e.g. a door)
+verlieren|to lose
+gewinnen|to win
+sterben|to die
+leben|to live
+einschalten|to turn on
+ausschalten|to turn off
+töten|to kill
+verletzen|to injure
+berühren|to touch
+sehen|to watch
+trinken|to drink
+essen|to eat
+gehen|to walk
+sich treffen|to meet
+wetten|to bet
+küssen|to kiss
+folgen|to follow
+heiraten|to marry
+antworten|to answer
+fragen|to ask
+# Work
+die Frage|question
+das Unternehmen|company
+das Business|business
+der Job|job
+das Geld|money
+das Telefon|telephone
+das Büro|office
+der Arzt|doctor
+das Krankenhaus|hospital
+die Krankenschwester|nurse
+der Polizist|policeman
+der Staatspräsident|president (of a state)
+# Colours
+weiß|white
+schwarz|black
+rot|red
+blau|blue
+grün|green
+gelb|yellow
+# Qualities
+langsam|slow
+schnell|quick
+lustig|funny
+unfair|unfair
+fair|fair
+schwer|difficult
+einfach|easy
+Das ist schwer|This is difficult
+reich|rich
+arm|poor
+stark|strong
+schwach|weak
+sicher|safe (adjective)
+müde|tired
+stolz|proud
+satt|full (from eating)
+krank|sick
+gesund|healthy
+wütend|angry
+tief|low
+hoch|high
+gerade|straight (line)
+jeder|every
+immer|always
+# Amounts
+eigentlich|actually
+wieder|again
+schon|already
+weniger|less
+höchst|most
+mehr|more
+Ich möchte mehr|I want more
+keine|none
+sehr|very
+# Animals
+das Tier|animal
+das Schwein|pig
+die Kuh|cow
+das Pferd|horse
+der Hund|dog
+das Schaf|sheep
+der Affe|monkey
+die Katze|cat
+der Bär|bear
+das Huhn|chicken (animal)
+die Ente|duck
+der Schmetterling|butterfly
+die Biene|bee
+der Fisch|fish (animal)
+die Spinne|spider
+die Schlange|snake
+# Place and taste
+außen|outside
+innen|inside
+fern|far
+nahe|close
+unter|below
+über|above
+neben|beside
+vorne|front
+hinten|back (position)
+süß|sweet
+sauer|sour
+# Character
+eigenartig|strange
+weich|soft
+hart|hard
+süß|cute
+blöd|stupid
+verrückt|crazy
+beschäftigt|busy
+groß|tall
+klein|short (height)
+besorgt|worried
+überrascht|surprised
+cool|cool
+brav|well-behaved
+böse|evil
+klug|clever
+kalt|cold (adjective)
+heiß|hot (temperature)
+# The body
+der Kopf|head
+die Nase|nose
+das Haar|hair
+der Mund|mouth
+das Ohr|ear
+das Auge|eye
+die Hand|hand
+der Fuß|foot
+das Herz|heart
+das Gehirn|brain
+# Action verbs
+ziehen|to pull (... open)
+drücken|to push (... open)
+drücken|to press (a button)
+schlagen|to hit
+fangen|to catch
+kämpfen|to fight
+werfen|to throw
+laufen|to run
+lesen|to read
+schreiben|to write
+reparieren|to fix
+zählen|to count
+schneiden|to cut
+verkaufen|to sell
+kaufen|to buy
+bezahlen|to pay
+lernen|to study
+träumen|to dream
+schlafen|to sleep
+spielen|to play
+feiern|to celebrate
+ausruhen|to rest
+genießen|to enjoy
+putzen|to clean
+# Home and city
+die Schule|school
+das Haus|house
+die Tür|door
+der Ehemann|husband
+die Ehefrau|wife
+die Hochzeit|wedding
+die Person|person
+das Auto|car
+das Zuhause|home
+die Stadt|city
+die Zahl|number

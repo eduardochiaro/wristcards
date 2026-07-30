@@ -1,0 +1,346 @@
+# Pronouns
+yo|I
+tú|you (singular)
+él|he
+ella|she
+eso|it
+nosotros|we
+ustedes|you (plural)
+ellos|they
+qué|what
+quién|who
+dónde|where
+por qué|why
+# Linking words
+cómo|how
+cuál|which
+cuándo|when
+entonces|then
+si|if
+realmente|really
+pero|but
+porque|because
+no|not
+este|this
+Necesito esto|I need this
+¿Cuánto cuesta esto?|How much is this?
+ese|that
+todos|all
+o|or
+y|and
+# First verbs
+saber|to know
+Lo sé|I know
+No lo sé|I don't know
+pensar|to think
+venir|to come
+poner|to put
+tomar|to take
+encontrar|to find
+escuchar|to listen
+trabajar|to work
+hablar|to talk
+dar|to give (somebody something)
+gustar|to like
+ayudar|to help
+amar|to love
+llamar|to call
+esperar|to wait
+Me gustas|I like you
+No me gusta esto|I don't like this
+¿Me quieres?|Do you love me?
+Te amo|I love you
+# Numbers
+cero|0
+uno|1
+dos|2
+tres|3
+cuatro|4
+cinco|5
+seis|6
+siete|7
+ocho|8
+nueve|9
+diez|10
+once|11
+doce|12
+trece|13
+catorce|14
+quince|15
+dieciséis|16
+diecisiete|17
+dieciocho|18
+diecinueve|19
+veinte|20
+# Opposites
+nuevo|new
+viejo|old (not new)
+pocos|few
+muchos|many
+¿cuánto?|how much?
+¿cuántos?|how many?
+incorrecto|wrong
+correcto|correct
+malo|bad
+bueno|good
+feliz|happy
+corto|short (length)
+largo|long
+pequeño|small
+grande|big
+allá|there
+aquí|here
+derecha|right
+izquierda|left
+hermoso|beautiful
+joven|young
+viejo|old (not young)
+# Greetings
+hola|hello
+nos vemos más tarde|see you later
+vale|ok
+cuidate|take care
+no te preocupes|don't worry
+por supuesto|of course
+buen día|good day
+hola|hi
+hasta luego|bye bye
+adiós|good bye
+discúlpeme|excuse me
+perdón|sorry
+gracias|thank you
+por favor|please
+Quiero esto|I want this
+ahora|now
+# Time
+la tarde|afternoon
+la mañana|morning (9:00-11:00)
+la noche|night
+la mañana|morning (6:00-9:00)
+la noche|evening
+el mediodía|noon
+la medianoche|midnight
+la hora|hour
+el minuto|minute
+el segundo|second (time)
+el día|day
+la semana|week
+el mes|month
+el año|year
+el tiempo|time
+la fecha|date (time)
+# Days
+anteayer|the day before yesterday
+ayer|yesterday
+hoy|today
+mañana|tomorrow
+pasado mañana|the day after tomorrow
+el lunes|Monday
+el martes|Tuesday
+el miércoles|Wednesday
+el jueves|Thursday
+el viernes|Friday
+el sábado|Saturday
+el domingo|Sunday
+Mañana es sábado|Tomorrow is Saturday
+# People
+la vida|life
+la mujer|woman
+el hombre|man
+el amor|love
+el novio|boyfriend
+la novia|girlfriend
+el amigo|friend
+el beso|kiss
+el sexo|sex
+el niño|child
+el bebé|baby
+la niña|girl
+el niño|boy
+la mamá|mum
+el papá|dad
+la madre|mother
+el padre|father
+los padres|parents
+el hijo|son
+la hija|daughter
+la hermana menor|little sister
+el hermano menor|little brother
+la hermana mayor|big sister
+el hermano mayor|big brother
+# Everyday verbs
+estar de pie|to stand
+sentarse|to sit
+acostarse|to lie
+cerrar|to close
+abrir|to open (e.g. a door)
+perder|to lose
+ganar|to win
+morir|to die
+vivir|to live
+encender|to turn on
+apagar|to turn off
+matar|to kill
+dañar|to injure
+tocar|to touch
+ver|to watch
+beber|to drink
+comer|to eat
+caminar|to walk
+encontrarse|to meet
+apostar|to bet
+besar|to kiss
+seguir|to follow
+casarse|to marry
+responder|to answer
+preguntar|to ask
+# Work
+la pregunta|question
+la empresa|company
+el negocio|business
+el trabajo|job
+el dinero|money
+el teléfono|telephone
+la oficina|office
+el médico|doctor
+el hospital|hospital
+la enfermera|nurse
+el policía|policeman
+el presidente|president (of a state)
+# Colours
+blanco|white
+negro|black
+rojo|red
+azul|blue
+verde|green
+amarillo|yellow
+# Qualities
+lento|slow
+rápido|quick
+divertido|funny
+injusto|unfair
+justo|fair
+difícil|difficult
+fácil|easy
+Esto es difícil|This is difficult
+rico|rich
+pobre|poor
+fuerte|strong
+débil|weak
+seguro|safe (adjective)
+cansado|tired
+orgulloso|proud
+satisfecho|full (from eating)
+enfermo|sick
+saludable|healthy
+enojado|angry
+bajo|low
+alto|high
+recto|straight (line)
+cada|every
+siempre|always
+# Amounts
+en realidad|actually
+de nuevo|again
+ya|already
+menos|less
+el más/la más|most
+más|more
+Quiero más|I want more
+ninguno|none
+muy|very
+# Animals
+el animal|animal
+el cerdo|pig
+la vaca|cow
+el caballo|horse
+el perro|dog
+la oveja|sheep
+el mono|monkey
+el gato|cat
+el oso|bear
+el pollo|chicken (animal)
+el pato|duck
+la mariposa|butterfly
+la abeja|bee
+el pez|fish (animal)
+la araña|spider
+la serpiente|snake
+# Place and taste
+fuera|outside
+dentro|inside
+lejos|far
+cerca|close
+abajo|below
+arriba|above
+junto a|beside
+frente|front
+atrás|back (position)
+dulce|sweet
+agrio|sour
+# Character
+extraño|strange
+suave|soft
+duro|hard
+lindo|cute
+estúpido|stupid
+loco|crazy
+ocupado|busy
+alto|tall
+bajo|short (height)
+preocupado|worried
+sorprendido|surprised
+genial|cool
+bien educado|well-behaved
+malvado|evil
+listo|clever
+frío|cold (adjective)
+caliente|hot (temperature)
+# The body
+la cabeza|head
+la nariz|nose
+el cabello|hair
+la boca|mouth
+la oreja|ear
+el ojo|eye
+la mano|hand
+el pie|foot
+el corazón|heart
+el cerebro|brain
+# Action verbs
+tirar|to pull (... open)
+empujar|to push (... open)
+presionar|to press (a button)
+golpear|to hit
+atrapar|to catch
+pelear|to fight
+lanzar|to throw
+correr|to run
+leer|to read
+escribir|to write
+arreglar|to fix
+contar|to count
+cortar|to cut
+vender|to sell
+comprar|to buy
+pagar|to pay
+estudiar|to study
+soñar|to dream
+dormir|to sleep
+jugar|to play
+celebrar|to celebrate
+descansar|to rest
+disfrutar|to enjoy
+limpiar|to clean
+# Home and city
+la escuela|school
+la casa|house
+la puerta|door
+el marido|husband
+la esposa|wife
+la boda|wedding
+la persona|person
+el coche|car
+el hogar|home
+la ciudad|city
+el número|number

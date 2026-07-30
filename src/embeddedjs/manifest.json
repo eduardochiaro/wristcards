@@ -9,6 +9,7 @@
 	"data": {
 		"*": [
 			"./data.json",
+			"./langs/*",
 			"./levels/*"
 		]
 	}

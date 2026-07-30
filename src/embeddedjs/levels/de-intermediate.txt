@@ -1,0 +1,341 @@
+# Bigger numbers
+einundzwanzig|21
+zweiundzwanzig|22
+sechsundzwanzig|26
+dreißig|30
+einunddreißig|31
+dreiunddreißig|33
+siebenunddreißig|37
+vierzig|40
+einundvierzig|41
+vierundvierzig|44
+achtundvierzig|48
+fünfzig|50
+einundfünfzig|51
+fünfundfünfzig|55
+neunundfünfzig|59
+sechzig|60
+einundsechzig|61
+zweiundsechzig|62
+sechsundsechzig|66
+siebzig|70
+einundsiebzig|71
+dreiundsiebzig|73
+siebenundsiebzig|77
+achtzig|80
+einundachtzig|81
+vierundachtzig|84
+achtundachtzig|88
+neunzig|90
+einundneunzig|91
+fünfundneunzig|95
+neunundneunzig|99
+einhundert|100
+eintausend|1000
+zehntausend|10.000
+einhunderttausend|100.000
+eine Million|1.000.000
+# Possessives
+mein Hund|my dog
+deine Katze|your cat
+ihr Kleid|her dress
+sein Auto|his car
+sein Ball|its ball
+unser Haus|our home
+euer Team|your team
+ihr Unternehmen|their company
+jeder|everybody
+zusammen|together
+# Useful phrases
+sonstiges|other
+Macht nichts|doesn't matter
+Prost|cheers
+Entspann dich|relax
+Ich stimme zu|I agree
+Willkommen|welcome
+Kein Problem|no worries
+Biege rechts ab|turn right
+Biege links ab|turn left
+Geh geradeaus|go straight
+Komm mit|Come with me
+# Food
+das Ei|egg
+der Käse|cheese
+die Milch|milk
+der Fisch|fish (to eat)
+das Fleisch|meat
+das Gemüse|vegetable
+das Obst|fruit
+der Knochen|bone (food)
+das Öl|oil
+das Brot|bread
+der Zucker|sugar
+die Schokolade|chocolate
+das Bonbon|candy
+der Kuchen|cake
+# Drinks
+das Getränk|drink
+das Wasser|water
+das Soda|soda
+der Kaffee|coffee
+der Tee|tea
+das Bier|beer
+der Wein|wine
+der Salat|salad
+die Suppe|soup
+der Nachtisch|dessert
+das Frühstück|breakfast
+das Mittagessen|lunch
+das Abendessen|dinner
+die Pizza|pizza
+# Transport
+der Bus|bus
+der Zug|train
+der Bahnhof|train station
+die Bushaltestelle|bus stop
+das Flugzeug|plane
+das Schiff|ship
+der Lastwagen|lorry
+das Fahrrad|bicycle
+das Motorrad|motorcycle
+das Taxi|taxi
+die Ampel|traffic light
+der Parkplatz|car park
+die Straße|road
+# Clothing
+die Kleidung|clothing
+der Schuh|shoe
+der Mantel|coat
+der Pullover|sweater
+das Hemd|shirt
+die Jacke|jacket
+der Anzug|suit
+die Hose|trousers
+das Kleid|dress
+das T-Shirt|T-shirt
+die Socke|sock
+der BH|bra
+die Unterhose|underpants
+die Brille|glasses
+die Handtasche|handbag
+die Geldbörse|purse
+die Geldtasche|wallet
+der Ring|ring
+der Hut|hat
+die Armbanduhr|watch
+die Hosentasche|pocket
+# Small talk
+Wie heißt du?|What's your name?
+Ich heiße David|My name is David
+Ich bin 22 Jahre alt|I'm 22 years old
+Wie geht es dir?|How are you?
+Geht es dir gut?|Are you ok?
+Wo ist das WC?|Where is the toilet?
+Ich vermisse dich|I miss you
+# Seasons and months
+der Frühling|spring
+der Sommer|summer
+der Herbst|autumn
+der Winter|winter
+der Januar|January
+der Februar|February
+der März|March
+der April|April
+der Mai|May
+der Juni|June
+der Juli|July
+der August|August
+der September|September
+der Oktober|October
+der November|November
+der Dezember|December
+# In town
+das Einkaufen|shopping
+die Rechnung|bill
+der Markt|market
+der Supermarkt|supermarket
+das Gebäude|building
+die Wohnung|apartment
+die Universität|university
+der Bauernhof|farm
+die Kirche|church
+das Restaurant|restaurant
+die Bar|bar
+das Fitnessstudio|gym
+der Park|park
+das WC|toilet (public)
+die Karte|map
+die Rettung|ambulance
+die Polizei|police
+die Pistole|gun
+die Feuerwehr|firefighters
+das Land|country
+der Vorort|suburb
+das Dorf|village
+die Gesundheit|health
+das Medikament|medicine
+# Health
+der Unfall|accident
+der Patient|patient
+die Operation|surgery
+die Tablette|pill
+das Fieber|fever
+die Erkältung|cold (sickness)
+die Wunde|wound
+der Termin|appointment
+der Husten|cough
+der Hals|neck
+das Gesäß|bottom
+die Schulter|shoulder
+# More body
+das Knie|knee
+das Bein|leg
+der Arm|arm
+der Bauch|belly
+der Busen|bosom
+der Rücken|back (part of body)
+der Zahn|tooth
+die Zunge|tongue
+die Lippe|lip
+der Finger|finger
+die Zehe|toe
+der Magen|stomach
+die Lunge|lung
+die Leber|liver
+der Nerv|nerve
+die Niere|kidney
+der Darm|intestine
+# Colours and shapes
+die Farbe|colour
+orange|orange (colour)
+grau|grey
+braun|brown
+pink|pink
+langweilig|boring
+schwer|heavy
+leicht|light (weight)
+einsam|lonely
+hungrig|hungry
+durstig|thirsty
+traurig|sad
+steil|steep
+flach|flat
+rund|round
+eckig|square (adjective)
+schmal|narrow
+breit|broad
+tief|deep
+seicht|shallow
+riesig|huge
+# More opposites
+der Norden|north
+der Osten|east
+der Süden|south
+der Westen|west
+schmutzig|dirty
+sauber|clean
+voll|full (not empty)
+leer|empty
+teuer|expensive
+billig|cheap
+dunkel|dark
+hell|light (colour)
+sexy|sexy
+faul|lazy
+mutig|brave
+großzügig|generous
+gutaussehend|handsome
+hässlich|ugly
+albern|silly
+freundlich|friendly
+schuldig|guilty
+blind|blind
+betrunken|drunk
+nass|wet
+trocken|dry
+warm|warm
+laut|loud
+leise|quiet
+still|silent
+# The house
+die Küche|kitchen
+das Badezimmer|bathroom
+das Wohnzimmer|living room
+das Schlafzimmer|bedroom
+der Garten|garden
+die Garage|garage
+die Wand|wall
+der Keller|basement
+das Klo|toilet (at home)
+die Treppe|stairs
+das Dach|roof
+das Fenster|window (building)
+das Messer|knife
+die Tasse|cup (for hot drinks)
+das Glas|glass
+der Teller|plate
+der Becher|cup (for cold drinks)
+der Mistkübel|garbage bin
+die Schüssel|bowl
+der Fernseher|TV set
+der Schreibtisch|desk
+das Bett|bed
+der Spiegel|mirror
+die Dusche|shower
+das Sofa|sofa
+das Bild|picture
+die Uhr|clock
+der Tisch|table
+der Sessel|chair
+der Swimmingpool|swimming pool (garden)
+die Klingel|bell
+der Nachbar|neighbour
+# More verbs
+scheitern|to fail
+wählen|to choose
+schießen|to shoot
+wählen|to vote
+fallen|to fall
+verteidigen|to defend
+angreifen|to attack
+stehlen|to steal
+brennen|to burn
+retten|to rescue
+rauchen|to smoke
+fliegen|to fly
+tragen|to carry
+spucken|to spit
+kicken|to kick
+beißen|to bite
+atmen|to breathe
+riechen|to smell
+weinen|to cry
+singen|to sing
+lächeln|to smile
+lachen|to laugh
+wachsen|to grow
+schrumpfen|to shrink
+# Even more verbs
+streiten|to argue
+drohen|to threaten
+teilen|to share
+füttern|to feed
+verstecken|to hide
+warnen|to warn
+schwimmen|to swim
+springen|to jump
+rollen|to roll
+heben|to lift
+graben|to dig
+kopieren|to copy
+liefern|to deliver
+suchen|to look for
+üben|to practice
+reisen|to travel
+malen|to paint
+duschen|to take a shower
+aufsperren|to open (unlock)
+abschließen|to lock
+waschen|to wash
+beten|to pray
+kochen|to cook

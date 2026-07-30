@@ -8,7 +8,12 @@ import assert from "node:assert";
 const root = new URL("../src/embeddedjs/", import.meta.url);
 const data = JSON.parse(readFileSync(new URL("data.json", root)));
 
-for (const level of data.levels) {
+// Every language's levels, checked as one list.
+const levels = data.languages.flatMap(({ code, name }) =>
+	JSON.parse(readFileSync(new URL(`langs/${code}.json`, root))).levels
+		.map(level => ({ ...level, name: `${name} ${level.name}` })));
+
+for (const level of levels) {
 	const text = readFileSync(new URL(`levels/${level.file}`, root), "utf8");
 	assert.ok(text.endsWith("\n"), `${level.file}: needs a trailing newline`);
 

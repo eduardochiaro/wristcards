@@ -2,7 +2,11 @@ import Poco from "commodetto/Poco";
 import Button from "pebble/button";
 
 const DATA = JSON.parse(String.fromArrayBuffer(new Resource("data.json")));
-const UI = DATA.ui;
+
+// data.json holds what every language shares; langs/<code>.json holds the title,
+// the level list and any wording that language wants said differently. Only the
+// chosen one is ever resident, so a new language costs flash and no RAM.
+let UI, LEVELS, APP_TITLE, language;
 
 const render = new Poco(screen);
 const black = render.makeColor(0, 0, 0);
@@ -39,12 +43,35 @@ const BRIGHT = render.makeColor(255, 0, 0);	// a saved card's bookmark
 // ---- bookmarks -------------------------------------------------------------
 
 // A card is one "front|back" string, the same text as its line in the deck file.
-const BM_KEY = "bookmarks";
+// Each language keeps its own list: the same string can be a card in two of them,
+// and a review session is only coherent within one.
 const MAX_BOOKMARKS = 50;		// Pebble's persistent storage is only a few KB
-let bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
+let bookmarks = [], BM_KEY;
 
 function saveBookmarks() {
 	localStorage.setItem(BM_KEY, JSON.stringify(bookmarks));
+}
+
+// ---- language ---------------------------------------------------------------
+
+const LANG_KEY = "lang";
+
+function loadLang(code) {
+	const lang = JSON.parse(String.fromArrayBuffer(new Resource(`${code}.json`)));
+	UI = Object.assign({}, DATA.ui, lang.ui);
+	LEVELS = lang.levels;
+	APP_TITLE = lang.appTitle;
+	language = code;
+	localStorage.setItem(LANG_KEY, code);
+
+	BM_KEY = `bm-${code}`;
+	// Before there were languages there was one list, and it was Dutch.
+	const first = localStorage.getItem("bookmarks");
+	if (first && ("nl" === code) && !localStorage.getItem(BM_KEY)) {
+		localStorage.setItem(BM_KEY, first);
+		localStorage.removeItem?.("bookmarks");
+	}
+	bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
 }
 
 // ---- deck ------------------------------------------------------------------
@@ -502,12 +529,14 @@ function shuffled(array) {
 	return copy;
 }
 
-const MAIN_LABELS = [UI.startSession, UI.reviewBookmarked];
-
+// Built per visit rather than once: switching language rewrites UI.
 function mainMenu() {
-	return listView(DATA.appTitle, MAIN_LABELS.length, i => MAIN_LABELS[i], sel => {
+	const labels = [UI.startSession, UI.reviewBookmarked, UI.language];
+	return listView(APP_TITLE, labels.length, i => labels[i], sel => {
 		if (0 === sel)
 			go(levelMenu());
+		else if (2 === sel)
+			go(languageMenu());
 		else if (bookmarks.length)
 			go(cardView(bookmarks.slice(), UI.reviewBookmarked, true));
 		else
@@ -515,13 +544,22 @@ function mainMenu() {
 	});		// no onBack: BACK leaves the app
 }
 
+function languageMenu() {
+	return listView(UI.language, DATA.languages.length, i => DATA.languages[i].name,
+		sel => {
+			loadLang(DATA.languages[sel].code);
+			go(mainMenu());
+		},
+		() => go(mainMenu()));
+}
+
 function startSession(file, title, wanted) {
 	go(cardView(shuffled(readCards(file, wanted)), title, false));
 }
 
 function levelMenu() {
-	return listView(UI.chooseLevel, DATA.levels.length, i => DATA.levels[i].name,
-		sel => go(groupMenu(DATA.levels[sel].file, DATA.levels[sel].name)),
+	return listView(UI.chooseLevel, LEVELS.length, i => LEVELS[i].name,
+		sel => go(groupMenu(LEVELS[sel].file, LEVELS[sel].name)),
 		() => go(mainMenu()));
 }
 
@@ -539,5 +577,9 @@ function groupMenu(file, title) {
 		() => go(levelMenu()));
 }
 
+// A code left over from a build that carried a language this one doesn't would
+// throw on a missing resource, with no screen up yet to say so.
+const saved = localStorage.getItem(LANG_KEY);
+loadLang(DATA.languages.some(l => l.code === saved) ? saved : DATA.languages[0].code);
 go(mainMenu());
 watch.addEventListener("minutechange", () => view.draw());		// keep the header clock honest

@@ -1,0 +1,18 @@
+{
+	"appTitle": "Learn French",
+	"ui": {},
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "fr-basic.txt"
+		},
+		{
+			"name": "Intermediate",
+			"file": "fr-intermediate.txt"
+		},
+		{
+			"name": "Advanced",
+			"file": "fr-advanced.txt"
+		}
+	]
+}

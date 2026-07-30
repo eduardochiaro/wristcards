@@ -1,0 +1,341 @@
+# Bigger numbers
+veintiuno|21
+veintidós|22
+veintiséis|26
+treinta|30
+treinta y uno|31
+treinta y tres|33
+treinta y siete|37
+cuarenta|40
+cuarenta y uno|41
+cuarenta y cuatro|44
+cuarenta y ocho|48
+cincuenta|50
+cincuenta y uno|51
+cincuenta y cinco|55
+cincuenta y nueve|59
+sesenta|60
+sesenta y uno|61
+sesenta y dos|62
+sesenta y seis|66
+setenta|70
+setenta y uno|71
+setenta y tres|73
+setenta y siete|77
+ochenta|80
+ochenta y uno|81
+ochenta y cuatro|84
+ochenta y ocho|88
+noventa|90
+noventa y uno|91
+noventa y cinco|95
+noventa y nueve|99
+cien|100
+mil|1000
+diez mil|10.000
+cien mil|100.000
+un millón|1.000.000
+# Possessives
+mi perro|my dog
+tu gato|your cat
+su vestido|her dress
+su coche|his car
+su pelota|its ball
+nuestra casa|our home
+vuestro equipo|your team
+su empresa|their company
+todo el mundo|everybody
+juntos|together
+# Useful phrases
+otro|other
+no importa|doesn't matter
+¡Salud!|cheers
+relajarse|relax
+estoy de acuerdo|I agree
+bienvenido|welcome
+sin preocupaciones|no worries
+gira a la derecha|turn right
+gira a la izquierda|turn left
+ve recto|go straight
+Ven conmigo|Come with me
+# Food
+el huevo|egg
+el queso|cheese
+la leche|milk
+el pescado|fish (to eat)
+la carne|meat
+la verdura|vegetable
+la fruta|fruit
+el hueso|bone (food)
+el aceite|oil
+el pan|bread
+el azúcar|sugar
+el chocolate|chocolate
+el caramelo|candy
+el pastel|cake
+# Drinks
+la bebida|drink
+el agua|water
+la soda|soda
+el café|coffee
+el té|tea
+la cerveza|beer
+el vino|wine
+la ensalada|salad
+la sopa|soup
+el postre|dessert
+el desayuno|breakfast
+el almuerzo|lunch
+la cena|dinner
+la pizza|pizza
+# Transport
+el autobús|bus
+el tren|train
+la estación de tren|train station
+la parada de autobús|bus stop
+el avión|plane
+el barco|ship
+el camión|lorry
+la bicicleta|bicycle
+la motocicleta|motorcycle
+el taxi|taxi
+el semáforo|traffic light
+el estacionamiento|car park
+la carretera|road
+# Clothing
+la ropa|clothing
+el zapato|shoe
+el abrigo|coat
+el suéter|sweater
+la camisa|shirt
+la chaqueta|jacket
+el traje|suit
+los pantalones|trousers
+el vestido|dress
+la camiseta|T-shirt
+el calcetín|sock
+el sujetador|bra
+los calzoncillos|underpants
+las gafas|glasses
+el bolso|handbag
+el monedero|purse
+la billetera|wallet
+el anillo|ring
+el sombrero|hat
+el reloj|watch
+el bolsillo|pocket
+# Small talk
+¿Cómo te llamas?|What's your name?
+Mi nombre es David|My name is David
+Tengo 22 años|I'm 22 years old
+¿Cómo estás?|How are you?
+¿Estás bien?|Are you ok?
+¿Dónde está el baño?|Where is the toilet?
+Te extraño|I miss you
+# Seasons and months
+la primavera|spring
+el verano|summer
+el otoño|autumn
+el invierno|winter
+enero|January
+febrero|February
+marzo|March
+abril|April
+mayo|May
+junio|June
+julio|July
+agosto|August
+septiembre|September
+octubre|October
+noviembre|November
+diciembre|December
+# In town
+la compra|shopping
+la factura|bill
+el mercado|market
+el supermercado|supermarket
+el edificio|building
+el piso|apartment
+la universidad|university
+la granja|farm
+la iglesia|church
+el restaurante|restaurant
+el bar|bar
+el gimnasio|gym
+el parque|park
+el inodoro|toilet (public)
+el mapa|map
+la ambulancia|ambulance
+la policía|police
+la pistola|gun
+los bomberos|firefighters
+el país|country
+el suburbio|suburb
+el pueblo|village
+la salud|health
+el medicamento|medicine
+# Health
+el accidente|accident
+el paciente|patient
+la operación|surgery
+la pastilla|pill
+la fiebre|fever
+el resfriado|cold (sickness)
+la herida|wound
+la cita|appointment
+la tos|cough
+el cuello|neck
+el trasero|bottom
+el hombro|shoulder
+# More body
+la rodilla|knee
+la pierna|leg
+el brazo|arm
+el vientre|belly
+la mama|bosom
+la espalda|back (part of body)
+el diente|tooth
+la lengua|tongue
+el labio|lip
+el dedo|finger
+el dedo del pie|toe
+el estómago|stomach
+el pulmón|lung
+el hígado|liver
+el nervio|nerve
+el riñón|kidney
+el intestino|intestine
+# Colours and shapes
+el color|colour
+naranja|orange (colour)
+gris|grey
+marrón|brown
+rosa|pink
+aburrido|boring
+pesado|heavy
+ligero|light (weight)
+solitario|lonely
+hambriento|hungry
+sediento|thirsty
+triste|sad
+empinado|steep
+plano|flat
+redondo|round
+cuadrado|square (adjective)
+estrecho|narrow
+ancho|broad
+profundo|deep
+poco profundo|shallow
+enorme|huge
+# More opposites
+norte|north
+este|east
+sur|south
+oeste|west
+sucio|dirty
+limpio|clean
+lleno|full (not empty)
+vacío|empty
+caro|expensive
+barato|cheap
+oscuro|dark
+claro|light (colour)
+sexy|sexy
+vago|lazy
+valiente|brave
+generoso|generous
+guapo|handsome
+feo|ugly
+tonto|silly
+amistoso|friendly
+culpable|guilty
+ciego|blind
+borracho|drunk
+mojado|wet
+seco|dry
+cálido|warm
+ruidoso|loud
+tranquilo|quiet
+silencioso|silent
+# The house
+la cocina|kitchen
+el baño|bathroom
+la sala de estar|living room
+el dormitorio|bedroom
+el jardín|garden
+el garaje|garage
+la pared|wall
+el sótano|basement
+el inodoro|toilet (at home)
+la escalera|stairs
+el techo|roof
+la ventana|window (building)
+el cuchillo|knife
+la taza|cup (for hot drinks)
+el vaso|glass
+el plato|plate
+el vaso|cup (for cold drinks)
+el cubo de basura|garbage bin
+el cuenco|bowl
+el televisor|TV set
+el escritorio|desk
+la cama|bed
+el espejo|mirror
+la ducha|shower
+el sofá|sofa
+el cuadro|picture
+el reloj|clock
+la mesa|table
+la silla|chair
+la piscina|swimming pool (garden)
+la campana|bell
+el vecino|neighbour
+# More verbs
+fallar|to fail
+elegir|to choose
+disparar|to shoot
+votar|to vote
+caer|to fall
+defender|to defend
+atacar|to attack
+robar|to steal
+quemar|to burn
+rescatar|to rescue
+fumar|to smoke
+volar|to fly
+llevar|to carry
+escupir|to spit
+patear|to kick
+morder|to bite
+respirar|to breathe
+oler|to smell
+llorar|to cry
+cantar|to sing
+sonreír|to smile
+reír|to laugh
+crecer|to grow
+encoger|to shrink
+# Even more verbs
+argumentar|to argue
+amenazar|to threaten
+compartir|to share
+alimentar|to feed
+ocultar|to hide
+advertir|to warn
+nadar|to swim
+saltar|to jump
+rodar|to roll
+levantar|to lift
+cavar|to dig
+copiar|to copy
+entregar|to deliver
+buscar|to look for
+practicar|to practice
+viajar|to travel
+pintar|to paint
+ducharse|to take a shower
+abrir|to open (unlock)
+bloquear|to lock
+lavar|to wash
+orar|to pray
+cocinar|to cook

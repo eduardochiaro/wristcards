@@ -1,0 +1,346 @@
+# Pronouns
+je|I
+tu|you (singular)
+il|he
+elle|she
+il|it
+nous|we
+vous|you (plural)
+ils|they
+quoi|what
+qui|who
+où|where
+pourquoi|why
+# Linking words
+comment|how
+lequel|which
+quand|when
+puis|then
+si|if
+vraiment|really
+mais|but
+parce que|because
+pas|not
+cette|this
+J'ai besoin de ça|I need this
+Combien ça coûte ?|How much is this?
+ça|that
+tous|all
+ou|or
+et|and
+# First verbs
+savoir|to know
+je sais|I know
+Je ne sais pas|I don't know
+penser|to think
+venir|to come
+mettre|to put
+prendre|to take
+trouver|to find
+écouter|to listen
+travailler|to work
+parler|to talk
+donner|to give (somebody something)
+apprécier|to like
+aider|to help
+aimer|to love
+téléphoner à|to call
+attendre|to wait
+Je t'aime bien|I like you
+Je n'aime pas ça|I don't like this
+Est-ce que tu m'aimes ?|Do you love me?
+Je t'aime|I love you
+# Numbers
+zéro|0
+un|1
+deux|2
+trois|3
+quatre|4
+cinq|5
+six|6
+sept|7
+huit|8
+neuf|9
+dix|10
+onze|11
+douze|12
+treize|13
+quatorze|14
+quinze|15
+seize|16
+dix-sept|17
+dix-huit|18
+dix-neuf|19
+vingt|20
+# Opposites
+nouveau|new
+vieux|old (not new)
+peu|few
+beaucoup|many
+combien ?|how much?
+combien ?|how many?
+faux|wrong
+correct|correct
+mauvais|bad
+bon|good
+heureux|happy
+court|short (length)
+long|long
+petit|small
+grand|big
+là|there
+ici|here
+droite|right
+gauche|left
+beau|beautiful
+jeune|young
+vieux|old (not young)
+# Greetings
+bonjour|hello
+à plus tard|see you later
+d'accord|ok
+prends soin de toi|take care
+ne t'inquiètes pas|don't worry
+bien sûr|of course
+bonne journée|good day
+salut|hi
+au revoir|bye bye
+au revoir|good bye
+excusez-moi|excuse me
+désolé|sorry
+merci|thank you
+S'il vous plaît|please
+Je veux ça|I want this
+maintenant|now
+# Time
+l'après-midi|afternoon
+la matinée|morning (9:00-11:00)
+la nuit|night
+le matin|morning (6:00-9:00)
+la soirée|evening
+midi|noon
+minuit|midnight
+l'heure|hour
+la minute|minute
+la seconde|second (time)
+le jour|day
+la semaine|week
+le mois|month
+l'année|year
+le temps|time
+la date|date (time)
+# Days
+avant-hier|the day before yesterday
+hier|yesterday
+aujourd'hui|today
+demain|tomorrow
+après-demain|the day after tomorrow
+lundi|Monday
+mardi|Tuesday
+mercredi|Wednesday
+jeudi|Thursday
+vendredi|Friday
+samedi|Saturday
+dimanche|Sunday
+Demain c'est samedi|Tomorrow is Saturday
+# People
+la vie|life
+la femme|woman
+l'homme|man
+l'amour|love
+le petit ami|boyfriend
+la petite amie|girlfriend
+l'ami|friend
+le baiser|kiss
+le sexe|sex
+l'enfant|child
+le bébé|baby
+la fille|girl
+le garçon|boy
+la maman|mum
+le papa|dad
+la mère|mother
+le père|father
+les parents|parents
+le fils|son
+la fille|daughter
+la petite sœur|little sister
+le petit frère|little brother
+la grande sœur|big sister
+le grand frère|big brother
+# Everyday verbs
+être debout|to stand
+s'asseoir|to sit
+s'allonger|to lie
+fermer|to close
+ouvrir|to open (e.g. a door)
+perdre|to lose
+gagner|to win
+mourir|to die
+vivre|to live
+allumer|to turn on
+éteindre|to turn off
+tuer|to kill
+blesser|to injure
+toucher|to touch
+regarder|to watch
+boire|to drink
+manger|to eat
+marcher|to walk
+rencontrer|to meet
+parier|to bet
+embrasser|to kiss
+suivre|to follow
+marier|to marry
+répondre|to answer
+demander|to ask
+# Work
+la question|question
+l'entreprise|company
+le commerce|business
+l'emploi|job
+l'argent|money
+le téléphone|telephone
+le bureau|office
+le médecin|doctor
+l'hôpital|hospital
+l'infirmière|nurse
+le policier|policeman
+le président|president (of a state)
+# Colours
+blanc|white
+noir|black
+rouge|red
+bleu|blue
+vert|green
+jaune|yellow
+# Qualities
+lent|slow
+rapide|quick
+drôle|funny
+injuste|unfair
+juste|fair
+difficile|difficult
+facile|easy
+C'est difficile|This is difficult
+riche|rich
+pauvre|poor
+fort|strong
+faible|weak
+sûr|safe (adjective)
+fatigué|tired
+fier|proud
+rassasié|full (from eating)
+malade|sick
+sain|healthy
+furieux|angry
+bas|low
+haut|high
+droit|straight (line)
+tous|every
+toujours|always
+# Amounts
+en fait|actually
+encore|again
+déjà|already
+moins|less
+le plus|most
+plus|more
+Je veux plus|I want more
+aucun|none
+très|very
+# Animals
+l'animal|animal
+le cochon|pig
+la vache|cow
+le cheval|horse
+le chien|dog
+le mouton|sheep
+le singe|monkey
+le chat|cat
+l'ours|bear
+la poule|chicken (animal)
+le canard|duck
+le papillon|butterfly
+l'abeille|bee
+le poisson|fish (animal)
+l'araignée|spider
+le serpent|snake
+# Place and taste
+à l'extérieur|outside
+à l'intérieur|inside
+loin|far
+près|close
+dessous|below
+au-dessus|above
+à côté de|beside
+avant|front
+arrière|back (position)
+sucré|sweet
+aigre|sour
+# Character
+étrange|strange
+doux|soft
+dur|hard
+mignon|cute
+stupide|stupid
+fou|crazy
+occupé|busy
+grand|tall
+petit|short (height)
+inquiet|worried
+surpris|surprised
+cool|cool
+sage|well-behaved
+mauvais|evil
+intelligent|clever
+froid|cold (adjective)
+chaud|hot (temperature)
+# The body
+la tête|head
+le nez|nose
+le cheveu|hair
+la bouche|mouth
+l'oreille|ear
+l'œil|eye
+la main|hand
+le pied|foot
+le cœur|heart
+le cerveau|brain
+# Action verbs
+tirer|to pull (... open)
+pousser|to push (... open)
+appuyer|to press (a button)
+frapper|to hit
+attraper|to catch
+se battre|to fight
+jeter|to throw
+courir|to run
+lire|to read
+écrire|to write
+réparer|to fix
+compter|to count
+couper|to cut
+vendre|to sell
+acheter|to buy
+payer|to pay
+étudier|to study
+rêver|to dream
+dormir|to sleep
+jouer|to play
+célébrer|to celebrate
+se reposer|to rest
+jouir|to enjoy
+nettoyer|to clean
+# Home and city
+l'école|school
+la maison|house
+la porte|door
+le mari|husband
+la femme|wife
+le mariage|wedding
+personne|person
+la voiture|car
+la résidence|home
+la ville|city
+le chiffre|number

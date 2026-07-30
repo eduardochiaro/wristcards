@@ -1,0 +1,341 @@
+# Bigger numbers
+ventuno|21
+ventidue|22
+ventisei|26
+trenta|30
+trentuno|31
+trentatré|33
+trentasette|37
+quaranta|40
+quarantuno|41
+quarantaquattro|44
+quarantotto|48
+cinquanta|50
+cinquantuno|51
+cinquantacinque|55
+cinquantanove|59
+sessanta|60
+sessantuno|61
+sessantadue|62
+sessantasei|66
+settanta|70
+settantuno|71
+settantatré|73
+settantasette|77
+ottanta|80
+ottantuno|81
+ottantaquattro|84
+ottantotto|88
+novanta|90
+novantuno|91
+novantacinque|95
+novantanove|99
+cento|100
+mille|1000
+diecimila|10.000
+centomila|100.000
+un milione|1.000.000
+# Possessives
+il mio cane|my dog
+il tuo gatto|your cat
+il suo vestito|her dress
+la sua macchina|his car
+la sua palla|its ball
+la nostra casa|our home
+la tua squadra|your team
+la loro azienda|their company
+tutti|everybody
+insieme|together
+# Useful phrases
+altro|other
+non fa niente|doesn't matter
+salute!|cheers
+rilassati|relax
+sono d'accordo|I agree
+benvenuto|welcome
+non c'è problema|no worries
+gira a destra|turn right
+gira a sinistra|turn left
+vai dritto|go straight
+vieni con me|Come with me
+# Food
+l'uovo|egg
+il formaggio|cheese
+il latte|milk
+il pesce|fish (to eat)
+la carne|meat
+la verdura|vegetable
+il frutto|fruit
+l'osso|bone (food)
+l'olio|oil
+il pane|bread
+lo zucchero|sugar
+il cioccolato|chocolate
+la caramella|candy
+la torta|cake
+# Drinks
+la bevanda|drink
+l'acqua|water
+l'acqua frizzante|soda
+il caffè|coffee
+il tè|tea
+la birra|beer
+il vino|wine
+l'insalata|salad
+la zuppa|soup
+il dolce|dessert
+la colazione|breakfast
+il pranzo|lunch
+la cena|dinner
+la pizza|pizza
+# Transport
+l'autobus|bus
+il treno|train
+la stazione|train station
+la fermata dell'autobus|bus stop
+l'aereo|plane
+la nave|ship
+il camion|lorry
+la bicicletta|bicycle
+la moto|motorcycle
+il taxi|taxi
+il semaforo|traffic light
+il parcheggio auto|car park
+la strada|road
+# Clothing
+il vestito|clothing
+la scarpa|shoe
+il cappotto|coat
+il maglione|sweater
+la camicia|shirt
+la giacca|jacket
+il completo|suit
+i pantaloni|trousers
+il vestito|dress
+la maglietta|T-shirt
+il calzino|sock
+il reggiseno|bra
+le mutande|underpants
+l'occhiale|glasses
+la borsa|handbag
+la borsetta|purse
+il portafoglio|wallet
+l'anello|ring
+il cappello|hat
+l'orologio|watch
+la tasca|pocket
+# Small talk
+come ti chiami?|What's your name?
+mi chiamo David|My name is David
+ho 22 anni|I'm 22 years old
+come stai?|How are you?
+stai bene?|Are you ok?
+dov'è il bagno?|Where is the toilet?
+mi manchi|I miss you
+# Seasons and months
+la primavera|spring
+l'estate|summer
+l'autunno|autumn
+l'inverno|winter
+gennaio|January
+febbraio|February
+marzo|March
+aprile|April
+maggio|May
+giugno|June
+luglio|July
+agosto|August
+settembre|September
+ottobre|October
+novembre|November
+dicembre|December
+# In town
+l'acquisto|shopping
+il conto|bill
+il mercato|market
+il supermercato|supermarket
+l'edificio|building
+l'appartamento|apartment
+l'università|university
+la fattoria|farm
+la chiesa|church
+il ristorante|restaurant
+il bar|bar
+la palestra|gym
+il parco|park
+il gabinetto|toilet (public)
+la mappa|map
+l'ambulanza|ambulance
+la polizia|police
+la pistola|gun
+i pompiere|firefighters
+la nazione|country
+il sobborgo|suburb
+il villaggio|village
+la salute|health
+la medicina|medicine
+# Health
+l'incidente|accident
+il paziente|patient
+la chirurgia|surgery
+la pillola|pill
+la febbre|fever
+il raffreddore|cold (sickness)
+la ferita|wound
+l'appuntamento|appointment
+la tosse|cough
+il collo|neck
+il fondoschiena|bottom
+la spalla|shoulder
+# More body
+il ginocchio|knee
+la gamba|leg
+il braccio|arm
+la pancia|belly
+il seno|bosom
+la schiena|back (part of body)
+il dente|tooth
+la lingua|tongue
+il labbro|lip
+il dito|finger
+il dito del piede|toe
+lo stomaco|stomach
+il polmone|lung
+il fegato|liver
+il nervo|nerve
+il rene|kidney
+l'intestino|intestine
+# Colours and shapes
+il colore|colour
+arancione|orange (colour)
+grigio|grey
+marrone|brown
+rosa|pink
+noioso|boring
+pesante|heavy
+leggero|light (weight)
+solitario|lonely
+affamato|hungry
+assetato|thirsty
+triste|sad
+ripido|steep
+piatto|flat
+tondo|round
+angolare|square (adjective)
+stretto|narrow
+ampio|broad
+profondo|deep
+poco profondo|shallow
+enorme|huge
+# More opposites
+nord|north
+est|east
+sud|south
+ovest|west
+sporco|dirty
+pulito|clean
+pieno|full (not empty)
+vuoto|empty
+costoso|expensive
+economico|cheap
+scuro|dark
+chiaro|light (colour)
+sexy|sexy
+pigro|lazy
+coraggioso|brave
+generoso|generous
+bello|handsome
+brutto|ugly
+sciocco|silly
+amichevole|friendly
+colpevole|guilty
+cieco|blind
+ubriaco|drunk
+bagnato|wet
+asciutto|dry
+caldo|warm
+forte|loud
+tranquillo|quiet
+silenzioso|silent
+# The house
+la cucina|kitchen
+il bagno|bathroom
+il salotto|living room
+la camera da letto|bedroom
+il giardino|garden
+il garage|garage
+il muro|wall
+il seminterrato|basement
+il gabinetto|toilet (at home)
+le scale|stairs
+il tetto|roof
+la finestra|window (building)
+il coltello|knife
+la tazza|cup (for hot drinks)
+il bicchiere|glass
+il piatto|plate
+la tazza|cup (for cold drinks)
+il bidone della spazzatura|garbage bin
+la ciotola|bowl
+l'apparecchio televisivo|TV set
+la scrivania|desk
+il letto|bed
+lo specchio|mirror
+la doccia|shower
+il divano|sofa
+la foto|picture
+l'orologio|clock
+il tavolo|table
+la sedia|chair
+la piscina|swimming pool (garden)
+il campanello|bell
+il vicino|neighbour
+# More verbs
+fallire|to fail
+scegliere|to choose
+sparare|to shoot
+votare|to vote
+cadere|to fall
+difendere|to defend
+attaccare|to attack
+rubare|to steal
+bruciare|to burn
+salvare|to rescue
+fumare|to smoke
+volare|to fly
+portare|to carry
+sputare|to spit
+calciare|to kick
+mordere|to bite
+respirare|to breathe
+odorare|to smell
+piangere|to cry
+cantare|to sing
+sorridere|to smile
+ridere|to laugh
+crescere|to grow
+rimpicciolire|to shrink
+# Even more verbs
+litigare|to argue
+minacciare|to threaten
+condividere|to share
+nutrire|to feed
+nascondere|to hide
+avvisare|to warn
+nuotare|to swim
+saltare|to jump
+rotolare|to roll
+sollevare|to lift
+scavare|to dig
+copiare|to copy
+consegnare|to deliver
+cercare|to look for
+praticare|to practice
+viaggiare|to travel
+dipingere|to paint
+fare la doccia|to take a shower
+aprire|to open (unlock)
+chiudere|to lock
+lavare|to wash
+pregare|to pray
+cucinare|to cook

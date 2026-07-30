@@ -1,0 +1,346 @@
+# Pronouns
+io|I
+tu|you (singular)
+lui|he
+lei|she
+esso|it
+noi|we
+voi|you (plural)
+loro|they
+cosa|what
+chi|who
+dove|where
+perché|why
+# Linking words
+come|how
+quale|which
+quando|when
+dopo|then
+se|if
+davvero|really
+ma|but
+perché|because
+non|not
+questo|this
+ho bisogno di questo|I need this
+quanto costa?|How much is this?
+quello|that
+tutto|all
+o|or
+e|and
+# First verbs
+sapere|to know
+lo so|I know
+non lo so|I don't know
+pensare|to think
+venire|to come
+mettere|to put
+prendere|to take
+trovare|to find
+ascoltare|to listen
+lavorare|to work
+parlare|to talk
+dare|to give (somebody something)
+piacere|to like
+aiutare|to help
+amare|to love
+fare una telefonata|to call
+aspettare|to wait
+mi piaci|I like you
+questo non mi piace|I don't like this
+mi ami?|Do you love me?
+ti amo|I love you
+# Numbers
+zero|0
+uno|1
+due|2
+tre|3
+quattro|4
+cinque|5
+sei|6
+sette|7
+otto|8
+nove|9
+dieci|10
+undici|11
+dodici|12
+tredici|13
+quattordici|14
+quindici|15
+sedici|16
+diciassette|17
+diciotto|18
+diciannove|19
+venti|20
+# Opposites
+nuovo|new
+vecchio|old (not new)
+poco|few
+tanto|many
+quanto?|how much?
+quanti?|how many?
+sbagliato|wrong
+corretto|correct
+cattivo|bad
+buono|good
+contento|happy
+corto|short (length)
+lungo|long
+piccolo|small
+grande|big
+lì|there
+qui|here
+destra|right
+sinistra|left
+bella|beautiful
+giovane|young
+vecchio|old (not young)
+# Greetings
+salve|hello
+a dopo|see you later
+ok|ok
+stai attento|take care
+non ti preoccupare|don't worry
+certo|of course
+buongiorno|good day
+ciao|hi
+ciao|bye bye
+arrivederci|good bye
+mi scusi|excuse me
+scusa|sorry
+grazie|thank you
+per favore|please
+io voglio questo|I want this
+adesso|now
+# Time
+il pomeriggio|afternoon
+la mattina|morning (9:00-11:00)
+la notte|night
+la mattina presto|morning (6:00-9:00)
+la sera|evening
+il mezzogiorno|noon
+la mezzanotte|midnight
+l'ora|hour
+il minuto|minute
+il secondo|second (time)
+il giorno|day
+la settimana|week
+il mese|month
+l'anno|year
+il tempo|time
+la data|date (time)
+# Days
+l'altro ieri|the day before yesterday
+ieri|yesterday
+oggi|today
+domani|tomorrow
+dopodomani|the day after tomorrow
+lunedì|Monday
+martedì|Tuesday
+mercoledì|Wednesday
+giovedì|Thursday
+venerdì|Friday
+sabato|Saturday
+domenica|Sunday
+domani è Sabato|Tomorrow is Saturday
+# People
+la vita|life
+la donna|woman
+l'uomo|man
+l'amore|love
+il ragazzo|boyfriend
+la ragazza|girlfriend
+l'amico|friend
+il bacio|kiss
+il sesso|sex
+il bambino|child
+il bebè|baby
+la ragazza|girl
+il ragazzo|boy
+la mamma|mum
+il papà|dad
+la madre|mother
+il padre|father
+i genitori|parents
+il figlio|son
+la figlia|daughter
+la sorella minore|little sister
+il fratello minore|little brother
+la sorella maggiore|big sister
+il fratello maggiore|big brother
+# Everyday verbs
+stare in piedi|to stand
+sedere|to sit
+sdraiarsi|to lie
+chiudere|to close
+aprire|to open (e.g. a door)
+perdere|to lose
+vincere|to win
+morire|to die
+vivere|to live
+accendere|to turn on
+spegnere|to turn off
+uccidere|to kill
+ferire|to injure
+toccare|to touch
+guardare|to watch
+bere|to drink
+mangiare|to eat
+camminare|to walk
+incontrare|to meet
+scommettere|to bet
+baciare|to kiss
+seguire|to follow
+sposare|to marry
+rispondere|to answer
+chiedere|to ask
+# Work
+la domanda|question
+la compagnia|company
+il commercio|business
+il lavoro|job
+il denaro|money
+il telefono|telephone
+l'ufficio|office
+il dottore|doctor
+l'ospedale|hospital
+l'infermiera|nurse
+il poliziotto|policeman
+il presidente|president (of a state)
+# Colours
+bianco|white
+nero|black
+rosso|red
+blu|blue
+verde|green
+giallo|yellow
+# Qualities
+lento|slow
+veloce|quick
+divertente|funny
+ingiusto|unfair
+giusto|fair
+difficile|difficult
+facile|easy
+questo è difficile|This is difficult
+ricco|rich
+povero|poor
+forte|strong
+debole|weak
+sicuro|safe (adjective)
+stanco|tired
+orgoglioso|proud
+sazio|full (from eating)
+malato|sick
+sano|healthy
+arrabbiato|angry
+basso|low
+alto|high
+dritto|straight (line)
+ogni|every
+sempre|always
+# Amounts
+in realtà|actually
+di nuovo|again
+già|already
+meno|less
+il più|most
+di più|more
+ne voglio ancora|I want more
+nessuno|none
+molto|very
+# Animals
+l'animale|animal
+il maiale|pig
+la mucca|cow
+il cavallo|horse
+il cane|dog
+la pecora|sheep
+la scimmia|monkey
+il gatto|cat
+l'orso|bear
+il pollo|chicken (animal)
+l'anatra|duck
+la farfalla|butterfly
+l'ape|bee
+il pesce|fish (animal)
+il ragno|spider
+il serpente|snake
+# Place and taste
+fuori|outside
+dentro|inside
+lontano|far
+vicino|close
+sotto|below
+sopra|above
+di fianco|beside
+fronte|front
+retro|back (position)
+dolce|sweet
+aspro|sour
+# Character
+strano|strange
+morbido|soft
+duro|hard
+carino|cute
+stupido|stupid
+pazzo|crazy
+occupato|busy
+alto|tall
+basso|short (height)
+preoccupato|worried
+sorpreso|surprised
+fico|cool
+educato|well-behaved
+cattivo|evil
+intelligente|clever
+freddo|cold (adjective)
+caldo|hot (temperature)
+# The body
+la testa|head
+il naso|nose
+il capello|hair
+la bocca|mouth
+l'orecchio|ear
+l'occhio|eye
+la mano|hand
+il piede|foot
+il cuore|heart
+il cervello|brain
+# Action verbs
+tirare|to pull (... open)
+spingere|to push (... open)
+premere|to press (a button)
+colpire|to hit
+catturare|to catch
+combattere|to fight
+lanciare|to throw
+correre|to run
+leggere|to read
+scrivere|to write
+aggiustare|to fix
+contare|to count
+tagliare|to cut
+vendere|to sell
+comprare|to buy
+pagare|to pay
+studiare|to study
+sognare|to dream
+dormire|to sleep
+giocare|to play
+festeggiare|to celebrate
+riposare|to rest
+godere|to enjoy
+pulire|to clean
+# Home and city
+la scuola|school
+la casa|house
+la porta|door
+il marito|husband
+la moglie|wife
+il matrimonio|wedding
+la persona|person
+l'automobile|car
+la casa|home
+la città|city
+il numero|number
