@@ -1,0 +1,38 @@
+[
+	{
+		"code": "nl",
+		"name": "Wristcards NL",
+		"uuid": "f040c3c2-63de-420a-8abe-6ba52fe65ce6",
+		"colors": [[170, 255, 255], [0, 170, 170]]
+	},
+	{
+		"code": "fr",
+		"name": "Wristcards FR",
+		"uuid": "6db376eb-08b3-4435-be17-3edd9fba3a60",
+		"colors": [[170, 170, 255], [85, 170, 255]]
+	},
+	{
+		"code": "de",
+		"name": "Wristcards DE",
+		"uuid": "e76c92b8-82d5-4c61-ae96-d7573543742d",
+		"colors": [[255, 170, 170], [255, 85, 85]]
+	},
+	{
+		"code": "it",
+		"name": "Wristcards IT",
+		"uuid": "dc362346-406e-4015-97f2-8c04809247ec",
+		"colors": [[170, 255, 170], [85, 170, 85]]
+	},
+	{
+		"code": "es",
+		"name": "Wristcards ES",
+		"uuid": "e64e522d-19e1-4017-924e-46028dfd30cb",
+		"colors": [[255, 170, 85], [255, 85, 0]]
+	},
+	{
+		"code": "opera",
+		"name": "Wristcards Opera",
+		"uuid": "02f166a1-0b65-45fd-bd63-49b957f71a6d",
+		"colors": [[255, 170, 255], [255, 85, 255]]
+	}
+]

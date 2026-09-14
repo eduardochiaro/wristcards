@@ -14,10 +14,12 @@
   "private": true,
   "scripts": {
     "build": "pebble clean && pebble build",
-    "emulator": "npm run build && pebble install --emulator ",
-    "phone": "npm run build && pebble install --phone",
+    "emulator": "node scripts/release.js --emulator",
+    "phone": "node scripts/release.js --phone",
     "config": "pebble emu-app-config --emulator",
-    "logs": "pebble logs"
+    "logs": "pebble logs",
+    "release": "node scripts/release.js",
+    "screenshot": "./scripts/screenshot.sh"
   },
   "pebble": {
     "displayName": "Wristcards",

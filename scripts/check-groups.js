@@ -6,10 +6,11 @@ import { readFileSync } from "node:fs";
 import assert from "node:assert";
 
 const root = new URL("../src/embeddedjs/", import.meta.url);
-const data = JSON.parse(readFileSync(new URL("data.json", root)));
+const apps = JSON.parse(readFileSync(new URL("../apps.json", import.meta.url)));
 
-// Every language's levels, checked as one list.
-const levels = data.languages.flatMap(({ code, name }) =>
+// Every language's levels, checked as one list. Each ships as its own app, but
+// they are all built from these files.
+const levels = apps.flatMap(({ code, name }) =>
 	JSON.parse(readFileSync(new URL(`langs/${code}.json`, root))).levels
 		.map(level => ({ ...level, name: `${name} ${level.name}` })));
 

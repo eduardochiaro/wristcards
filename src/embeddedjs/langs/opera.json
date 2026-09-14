@@ -1,0 +1,9 @@
+{
+	"appTitle": "Learn French Opera",
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "opera-basic.txt"
+		}
+	]
+}

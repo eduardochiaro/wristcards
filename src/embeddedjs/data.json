@@ -1,22 +1,15 @@
 {
+	"language": "nl",
 	"sessionSize": 10,
 	"ui": {
 		"appName": "Wristcards",
 		"startSession": "Start Session",
 		"reviewBookmarked": "Review Saved",
 		"chooseLevel": "Choose Level",
-		"language": "Language",
 		"allGroups": "All",
 		"noBookmarks": "No saved words",
 		"sessionComplete": "Session done",
 		"savedCount": "saved",
 		"saveFull": "SAVE LIST FULL"
-	},
-	"languages": [
-		{ "code": "nl", "name": "Dutch" },
-		{ "code": "fr", "name": "French" },
-		{ "code": "de", "name": "German" },
-		{ "code": "it", "name": "Italian" },
-		{ "code": "es", "name": "Spanish" }
-	]
+	}
 }
