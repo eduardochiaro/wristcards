@@ -35,6 +35,10 @@ Each entry's `colors` is the session card's pair, face down and revealed, as
 `[r, g, b]` in multiples of 85 — the Pebble palette — dark enough to tell apart
 and light enough for black text. Review mode keeps its yellow in every app.
 
+`"ordered": true` turns sampling off: the whole group becomes the session, in
+the deck's own order, unshuffled. The opera app is a libretto, read first line
+to last; every other app draws `sessionSize` cards at random.
+
 `apps.json` is the record of the UUIDs and must stay in the repository. A watch
 identifies an app by its UUID alone: reissue one and the watch installs a
 second, empty copy alongside the old one instead of upgrading it, and the saved

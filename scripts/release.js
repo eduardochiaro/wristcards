@@ -67,6 +67,7 @@ for (const app of building) {
 		data.language = app.code;
 		if (app.colors)
 			data.colors = app.colors;
+		data.ordered = !!app.ordered;
 	});
 	edit(path.join(work, "package.json"), pkg => {
 		pkg.pebble.uuid = app.uuid;

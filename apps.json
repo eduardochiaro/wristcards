@@ -33,6 +33,7 @@
 		"code": "opera",
 		"name": "Wristcards Opera",
 		"uuid": "02f166a1-0b65-45fd-bd63-49b957f71a6d",
-		"colors": [[255, 170, 255], [255, 85, 255]]
+		"colors": [[255, 170, 255], [255, 85, 255]],
+		"ordered": true
 	}
 ]

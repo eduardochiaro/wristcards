@@ -7,13 +7,14 @@ import Button from "pebble/button";
 // language's decks left the JS heap with nothing to work in.
 //
 // Nothing keeps the parsed files alive; only the handful of values below stay.
-let UI, SESSION_SIZE, LEVELS, APP_TITLE, CARD_RGB;
+let UI, SESSION_SIZE, LEVELS, APP_TITLE, CARD_RGB, ORDERED;
 
 function readShared() {
 	const data = JSON.parse(String.fromArrayBuffer(new Resource("data.json")));
 	UI = data.ui;
 	SESSION_SIZE = data.sessionSize;
 	CARD_RGB = data.colors;		// release.js copies these from apps.json
+	ORDERED = !!data.ordered;
 	return data.language;
 }
 
@@ -186,8 +187,15 @@ function readCards(file, wanted) {		// wanted: card numbers, ascending
 	return cards;
 }
 
+// An ordered deck is a text to be read, not a pile to be sampled: every line of
+// the group is in the session and the file's own order is the session's order.
 function pickLines(count, total) {
 	const lines = [];
+	if (ORDERED) {
+		for (let i = 0; i < total; i++)
+			lines.push(i);
+		return lines;
+	}
 	count = Math.min(count, total);
 	while (lines.length < count) {
 		const line = (Math.random() * total) | 0;
@@ -545,7 +553,8 @@ function mainMenu() {
 }
 
 function startSession(file, title, wanted) {
-	go(cardView(shuffled(readCards(file, wanted)), title, false));
+	const cards = readCards(file, wanted);
+	go(cardView(ORDERED ? cards : shuffled(cards), title, false));
 }
 
 function levelMenu() {
