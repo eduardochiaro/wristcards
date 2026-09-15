@@ -22,6 +22,7 @@ const UI = {
 	startSession: "Start Session",
 	reviewBookmarked: "Review Saved",
 	chooseLevel: "Choose Level",
+	allGroups: "All Groups",
 	noBookmarks: "No saved words",
 	sessionComplete: "Session done",
 	savedCount: "saved",
@@ -249,8 +250,9 @@ function go(next) {
 }
 
 // `label` is asked for the text of a row only while that row is on screen: the
-// group menu reads its names off the deck file, and keeping the whole list would
-// leave the heap too short for the session that follows.
+// group menu cuts its names out of the line the phone sent, and keeping the whole
+// list as separate strings would leave the heap too short for the session that
+// follows.
 function listView(title, count, label, onSelect, onBack) {
 	let sel = 0, top = 0;			// top: first label of the visible window
 	const step = BODY.height + 8;
@@ -431,11 +433,13 @@ function mainMenu() {
 	});		// no onBack: BACK leaves the app
 }
 
-// Asking for a session is all the watch does: the phone picks the cards, shuffles
-// them if the deck is not an ordered one, and sends them over one at a time.
-function startSession(level) {
-	session = { level, cards: [] };
-	say(WANT, level);
+// Asking is all the watch does: the phone picks the cards, shuffles them if the
+// deck is not an ordered one, and sends them over one at a time. A level made of
+// groups answers with their names instead, and the session is asked for a second
+// time once one is picked. `title` is what the cards will be headed by.
+function ask(key, value, title) {
+	session = { title, cards: [] };
+	say(key, value);
 	go(messageView([UI.loading], !DECK));
 	// Asking costs nothing if the phone is not there, but waiting forever does.
 	waiting = setTimeout(() => go(messageView([UI.noPhone], !DECK)), 8000);
@@ -443,8 +447,32 @@ function startSession(level) {
 
 function levelMenu() {
 	return listView(UI.chooseLevel, LEVELS.length, i => LEVELS[i],
-		sel => startSession(sel),
+		sel => ask(WANT, sel, LEVELS[sel]),
 		() => go(mainMenu()));
+}
+
+// The names arrive as one string, a name per line, and stay that way: a list of
+// twenty of them costs about a kilobyte, which is enough to run the heap out
+// mid-session. Each row is cut out of it only while it is on screen.
+function nth(list, index) {
+	let at = 0;
+	while (index--)
+		at = list.indexOf("\n", at) + 1;
+	const end = list.indexOf("\n", at);
+	return (end < 0) ? list.slice(at) : list.slice(at, end);
+}
+
+// The level itself is the first row: it draws from every group at once, and from
+// the groups whose names did not fit in the message as well.
+function groupMenu(list, title) {
+	let count = 2;			// the level, then the first group
+	for (let at = list.indexOf("\n"); at >= 0; at = list.indexOf("\n", at + 1))
+		count += 1;
+
+	return listView(title, count,
+		i => (0 === i) ? UI.allGroups : nth(list, i - 1),
+		sel => ask(PICK, sel, (0 === sel) ? title : nth(list, sel - 1)),
+		() => go(levelMenu()));
 }
 
 // ---- the phone --------------------------------------------------------------
@@ -456,7 +484,8 @@ function levelMenu() {
 // The keys are numbered as package.json's messageKeys list is numbered. Numbers
 // rather than names because a name table is memory this app does not have.
 const HELLO = 10000, ACK = 10001, OOPS = 10002, WANT = 10003, META = 10004,
-	CARD = 10005, DONE = 10006, FAIL = 10007, SEQ = 10008;
+	CARD = 10005, DONE = 10006, FAIL = 10007, SEQ = 10008, GROUPS = 10009,
+	PICK = 10010;
 
 const NO_DECK = ["No cards yet", "Use the phone app"];
 
@@ -492,9 +521,11 @@ const message = new Message({
 			localStorage.setItem("m", map.get(META));
 			applyDeck();
 		}
+		else if (map.has(GROUPS))
+			go(groupMenu(map.get(GROUPS), session?.title ?? UI.chooseLevel));
 		else if (map.has(DONE)) {
 			if (session?.cards.length)
-				go(cardView(session.cards, LEVELS[session.level], false));
+				go(cardView(session.cards, session.title, false));
 			else
 				go(messageView([UI.noCards], !DECK));
 			session = undefined;
@@ -540,13 +571,6 @@ function applyDeck() {
 	CARD_COLORS.session = (DECK?.c ?? PLAIN_RGB).map(c => render.makeColor(c[0], c[1], c[2]));
 
 	BM_KEY = `bm:${DECK ? DECK.i : ""}`;
-	// Wristcards NL upgrades in place and its saved words are under the old
-	// unqualified key. Carry them over once.	//@@ drop after a release or two
-	const kept = localStorage.getItem("bookmarks");
-	if (kept && ("bm:nl" === BM_KEY)) {
-		localStorage.setItem(BM_KEY, kept);
-		localStorage.removeItem("bookmarks");
-	}
 	bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
 
 	go(DECK ? mainMenu() : messageView(NO_DECK, true));

@@ -48,7 +48,9 @@
       "card",
       "done",
       "fail",
-      "seq"
+      "seq",
+      "groups",
+      "pick"
     ],
     "resources": {
       "media": [

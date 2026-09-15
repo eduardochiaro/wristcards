@@ -22,6 +22,8 @@ the phone.
     hello            ──▶
                      ◀──     the deck's name, colours, levels
     want level 2     ──▶
+                     ◀──     the level's group names
+    group 4          ──▶
                      ◀──     card, card, card … done
 
 Every message is answered by its own number, and that answer, not the radio's,
@@ -61,18 +63,20 @@ ten.
 
 ### Level files
 
-A level file is one card per line, `front|back`, under `# Group` headings. The
-headings are there for whoever edits the file; the watch never sees them, and
-neither does the phone — it keeps the lines that hold a `|`, drops the rest, and
-streams them one by one. Blank lines are fine.
+A level file is one card per line, `front|back`, under `# Group` headings. A
+heading opens a group and the cards below it belong to it, which is what the
+watch's second menu is: pick a level, then one group of it or all of them at
+once. The phone keeps the groups; the watch is sent their names, one line each,
+and only for the level being played. Blank lines are fine.
 
     # Greetings
     hallo|hello
     dank je wel|thank you
 
-A single `.txt` works on its own as a one-level deck, which is what the settings
-page's link and paste fields take; `packs/example.txt` is one, and doubles as
-the format's documentation. `npm run check` reads every pack's levels and fails
+A file with no headings at all is one group, and the watch goes straight from the
+level to the cards. A single `.txt` works on its own as a one-level deck, which
+is what the settings page's link and paste fields take; `packs/example.txt` is
+one, and doubles as the format's documentation. `npm run check` reads every pack's levels and fails
 on a header with no name, a duplicate group, a card above the first header, a
 line with no `|`, an empty group, or a missing trailing newline.
 

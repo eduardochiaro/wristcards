@@ -99,6 +99,9 @@
 
 	var params = new URLSearchParams(location.search);
 	var current = params.get("v") || "";
+	// What the watch is playing now, so it comes back selected. A pasted deck
+	// arrives whole, a link as its url, a ready-made one as nothing but its id.
+	var kind = params.get("d") ? "text" : (params.get("u") ? "url" : "pack");
 	// The emulator hands back a localhost URL to navigate to; a real phone takes
 	// the pebblejs://close form. Same payload either way.
 	var returnTo = params.get("return_to");
@@ -109,7 +112,7 @@
 		label.className = "deck";
 		label.innerHTML = '<input type="radio" name="choice" value="pack:' + pack.id + '">' +
 			'<span>' + pack.name + '<br><span class="sub">' + pack.sub + '</span></span>';
-		if (pack.id === current)
+		if (("pack" === kind) && (pack.id === current))
 			label.querySelector("input").checked = true;
 		list.appendChild(label);
 	});
@@ -117,6 +120,15 @@
 	var text = document.getElementById("text");
 	var count = document.getElementById("count");
 	var save = document.getElementById("save");
+
+	if ("url" === kind)
+		document.getElementById("url").value = params.get("u");
+	else if ("text" === kind) {
+		text.value = params.get("d");
+		document.getElementById("title").value = params.get("t") || "";
+	}
+	if ("pack" !== kind)
+		document.querySelector('input[value="' + kind + '"]').checked = true;
 
 	function tally() {
 		var over = text.value.length > CAP;

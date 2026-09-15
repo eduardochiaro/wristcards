@@ -14,12 +14,14 @@ var PACKS = "https://cdn.eduardochiaro.com/wristcards/";
 var CONFIG = "https://eduardochiaro.com/wristcards/config.html";
 var MAX_LEVELS = 12;
 var MAX_ORDERED = 50;		// an ordered level is read through; this is one sitting
-var CACHE = "c1:";		// bump when the cached shape changes
+var CACHE = "c2:";		// bump when the cached shape changes
+var MAX_NAMES = 400;		// group names in one message, once the keys have theirs
 var RETRIES = 3;
 var PATIENCE = 5000;		// how long to wait for the watch's answer
 
 var live = false;		// has the watch said hello since the app opened
-var deck = null;		// {meta, levels: [[card, ...]]} once one is loaded
+var deck = null;		// {meta, levels: [[{n, c}, ...]]} once one is loaded
+var wanted = 0;			// the level the watch is working through
 var queue = null;		// messages not yet acknowledged, oldest first
 var seq = 0;
 var tries = 0;
@@ -57,7 +59,18 @@ Pebble.addEventListener("appmessage", function (e) {
 		return;
 	}
 	if ("want" in payload) {
-		serve(payload.want);
+		wanted = payload.want;
+		var groups = deck && deck.levels[wanted];
+		// A level with groups is answered by their names; the watch picks one and
+		// asks again. One group, or none, is a session straight away.
+		if (groups && (groups.length > 1))
+			push([{ groups: names(groups) }]);
+		else
+			serve(wanted, 0);
+		return;
+	}
+	if ("pick" in payload) {
+		serve(wanted, payload.pick);
 		return;
 	}
 	if ("ack" in payload) {
@@ -97,14 +110,39 @@ function describe() {
 	});
 }
 
+// The names of a level's groups, one per line, capped at what one message holds.
+// Whatever is cut off is still played by the first row of the watch's menu, which
+// draws from every group at once.
+function names(groups) {
+	var list = "";
+	for (var i = 0; i < groups.length; i++) {
+		var next = list ? (list + "\n" + groups[i].n) : groups[i].n;
+		if (next.length > MAX_NAMES)
+			break;
+		list = next;
+	}
+	return list;
+}
+
+function every(groups) {
+	var cards = [];
+	for (var i = 0; i < groups.length; i++)
+		cards = cards.concat(groups[i].c);
+	return cards;
+}
+
 // A session: the cards themselves, one per message, then the word that they are
-// all there. An ordered deck is read through in its own order; any other is
-// dealt from at random.
-function serve(level) {
-	if (!deck || !deck.levels[level])
+// all there. `group` is nought for the whole level, otherwise the group's place
+// in the list the watch was sent. An ordered deck is read through in its own
+// order; any other is dealt from at random.
+function serve(level, group) {
+	var groups = deck && deck.levels[level];
+	if (!groups)
 		return push([{ fail: "No deck" }]);
 
-	var cards = deck.levels[level], chosen = [];
+	var picked = group && groups[group - 1];
+	var cards = picked ? picked.c : every(groups);
+	var chosen = [];
 	if (deck.meta.o)
 		chosen = cards.slice(0, MAX_ORDERED);
 	else {
@@ -170,9 +208,19 @@ function stop() {
 
 // ---- the user's choice ------------------------------------------------------
 
+// The page opens with whatever is in play already filled in, so a second visit
+// finds the deck still chosen. A pack is named by its id; anything else has to
+// carry its link, or its text, because nothing on the page could find it again.
+// ponytail: the page caps a pasted deck at 2000 characters, so the query stays
+// under ~6 KB. Move it to the fragment if a phone ever balks at the length.
 Pebble.addEventListener("showConfiguration", function () {
 	var want = get("want") || {};
-	Pebble.openURL(CONFIG + "?v=" + encodeURIComponent(want.id || ""));
+	var query = "?v=" + encodeURIComponent(want.id || "");
+	if (want.url && (0 !== want.url.indexOf(PACKS)))
+		query += "&u=" + encodeURIComponent(want.url);
+	if (want.text)
+		query += "&t=" + encodeURIComponent(want.title || "") + "&d=" + encodeURIComponent(want.text);
+	Pebble.openURL(CONFIG + query);
 });
 
 Pebble.addEventListener("webviewclosed", function (e) {
@@ -219,8 +267,8 @@ function fingerprint(text) {
 // ---- packs ------------------------------------------------------------------
 
 // A pack is <id>.json — the level list — and the level files beside it. A single
-// .txt is a pack of one level. Either way what is kept is the cards themselves:
-// a "#" line is a heading in the text, not a card.
+// .txt is a pack of one level. Either way a level is kept as its groups: a "#"
+// line opens one and names it, and the lines under it are its cards.
 //
 // The description uses one letter per field because the whole of it has to reach
 // the watch in a single 512-byte message:
@@ -240,7 +288,7 @@ function load(want, done, fail) {
 			id: want.id,
 			size: 10,
 			meta: { i: want.id, t: want.title, l: [want.title] },
-			levels: [cards(want.text)]
+			levels: [parse(want.text)]
 		});
 		return done();
 	}
@@ -251,7 +299,7 @@ function load(want, done, fail) {
 				id: want.id,
 				size: 10,
 				meta: { i: want.id, t: want.id, l: [want.id] },
-				levels: [cards(text)]
+				levels: [parse(text)]
 			});
 			done();
 		}, fail);
@@ -289,7 +337,7 @@ function load(want, done, fail) {
 				return done();
 			}
 			fetch(base + pack.levels[i].file, function (text) {
-				levels.push(cards(text));
+				levels.push(parse(text));
 				next(i + 1);
 			}, fail);
 		})(0);
@@ -301,10 +349,25 @@ function keep(loaded) {
 	set(CACHE + loaded.id, loaded);		// a re-open costs no network
 }
 
-function cards(text) {
-	return text.split("\n").filter(function (line) {
-		return line && ("#" !== line.charAt(0)) && (line.indexOf("|") > 0);
+// "# Name" opens a group, "front|back" is a card, everything else is nothing. A
+// file with no headings at all is one group, and the watch skips the menu for it.
+function parse(text) {
+	var groups = [], open = null;
+	text.split("\n").forEach(function (line) {
+		if ("#" === line.charAt(0)) {
+			open = { n: line.slice(1).trim(), c: [] };
+			groups.push(open);
+			return;
+		}
+		if (line.indexOf("|") <= 0)
+			return;
+		if (!open) {
+			open = { n: "Cards", c: [] };
+			groups.push(open);
+		}
+		open.c.push(line);
 	});
+	return groups.filter(function (group) { return group.c.length; });
 }
 
 function fetch(url, done, fail) {
