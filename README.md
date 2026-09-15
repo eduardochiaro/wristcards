@@ -87,19 +87,26 @@ field, and a box to paste or open a `.txt`. A pasted deck rides back in the
 webview's URL, so it is capped at 2,500 characters; anything longer belongs at a
 link. The page is the only thing that knows the list of ready-made decks.
 
+The app carries the page rather than linking to one: `npm run build` turns it
+into `src/pkjs/config.js` and the phone is handed the whole of it as a `data:`
+URL, the way Clay does. Nothing has to be published for a change to take, and no
+copy of the page can be older than the app that opened it. The deck in play is
+written into the page on the way out, so a second visit finds it chosen. The
+emulator takes the same page: `pebble-tool` decodes the URL to a file of its own
+and opens that, which is why the page reads its return address off the query
+string rather than assuming `pebblejs://close`.
+
 The deck only reaches the watch while the app is open on it: the transfer is
 started by the watch saying hello. Choose a deck with the app closed and it
 arrives the next time you open it.
 
 ## Publishing
 
-`npm run publish` splits `packs/` in two, because the two halves are served
-from different hosts. `config.html` goes to the site's `public/wristcards/`, in
-`static-portfolio`; the decks — every `.json` and `.txt`, `example.txt`
-included — go to `cdn/wristcards/` in `eduardochiaro.com-data`, which is
-`cdn.eduardochiaro.com/wristcards/`. Put a deck beside the page and the phone
-will not find it. This repository stays the source of truth for all of them, and
-`src/pkjs/index.js` names both URLs at the top.
+`npm run publish` copies the decks — every `.json` and `.txt`, `example.txt`
+included — to `cdn/wristcards/` in `eduardochiaro.com-data`, which is
+`cdn.eduardochiaro.com/wristcards/`. The settings page is not published: it goes
+out inside the app. This repository stays the source of truth for both, and
+`src/pkjs/index.js` names the deck URL at the top.
 
 ## Layout
 
@@ -107,3 +114,4 @@ will not find it. This repository stays the source of truth for all of them, and
     src/pkjs/index.js        the phone: downloads, caches and serves decks
     packs/                   the decks, the settings page, the example file
     scripts/check-groups.js  deck linter
+    scripts/inline-config.mjs  builds the settings page into the phone half

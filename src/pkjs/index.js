@@ -10,8 +10,9 @@
 // watch's JS has read it, and a second one arriving in that gap overwrites the
 // first unread.
 
+var PAGE = require("./config.js");	// packs/config.html, built in by npm run build
+
 var PACKS = "https://cdn.eduardochiaro.com/wristcards/";
-var CONFIG = "https://eduardochiaro.com/wristcards/config.html";
 var MAX_LEVELS = 12;
 var MAX_ORDERED = 50;		// an ordered level is read through; this is one sitting
 var CACHE = "c2:";		// bump when the cached shape changes
@@ -208,19 +209,22 @@ function stop() {
 
 // ---- the user's choice ------------------------------------------------------
 
-// The page opens with whatever is in play already filled in, so a second visit
-// finds the deck still chosen. A pack is named by its id; anything else has to
-// carry its link, or its text, because nothing on the page could find it again.
-// ponytail: the page caps a pasted deck at 2000 characters, so the query stays
-// under ~6 KB. Move it to the fragment if a phone ever balks at the length.
+// The settings page is part of the app: the phone is handed the page itself, not
+// a link to one, so nothing has to be published for a change to it to take and no
+// copy of it can be older than the app that opened it. The deck in play is
+// written in on the way out, which is what makes a second visit find it chosen.
 Pebble.addEventListener("showConfiguration", function () {
 	var want = get("want") || {};
-	var query = "?v=" + encodeURIComponent(want.id || "");
-	if (want.url && (0 !== want.url.indexOf(PACKS)))
-		query += "&u=" + encodeURIComponent(want.url);
-	if (want.text)
-		query += "&t=" + encodeURIComponent(want.title || "") + "&d=" + encodeURIComponent(want.text);
-	Pebble.openURL(CONFIG + query);
+	// A deck's own text is about to sit inside the page's script, so the one
+	// character that could end it early is spelled out instead.
+	var deck = JSON.stringify(want).replace(/</g, "\\u003c");
+
+	// Replaced through a function: a pasted deck may hold "$&" and the like, which
+	// a string replacement would read as instructions of its own.
+	var page = PAGE.replace("var WANT = null; //$$WANT$$", function () {
+		return "var WANT = " + deck + ";";
+	});
+	Pebble.openURL("data:text/html;charset=utf-8," + encodeURIComponent(page));
 });
 
 Pebble.addEventListener("webviewclosed", function (e) {

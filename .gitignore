@@ -5,3 +5,4 @@ node_modules/
 .lock-waf_darwin_build
 .vscode/settings.json
 dist/
+src/pkjs/config.js

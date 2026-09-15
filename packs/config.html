@@ -97,14 +97,21 @@
 	];
 	var CAP = 2000;
 
+	// What the watch is playing now, so it comes back chosen. The app carries this
+	// page and writes the deck into the line below before opening it.
+	var WANT = null; //$$WANT$$
 	var params = new URLSearchParams(location.search);
-	var current = params.get("v") || "";
-	// What the watch is playing now, so it comes back selected. A pasted deck
-	// arrives whole, a link as its url, a ready-made one as nothing but its id.
-	var kind = params.get("d") ? "text" : (params.get("u") ? "url" : "pack");
+	var want = WANT || {};
+	// A ready-made deck and a link are both kept as a url, so the id is what tells
+	// them apart: only a ready-made one is named above.
+	var kind = want.text ? "text" : ((want.url && !named(want.id)) ? "url" : "pack");
 	// The emulator hands back a localhost URL to navigate to; a real phone takes
 	// the pebblejs://close form. Same payload either way.
 	var returnTo = params.get("return_to");
+
+	function named(id) {
+		return PACKS.some(function (pack) { return pack.id === id; });
+	}
 
 	var list = document.getElementById("packs");
 	PACKS.forEach(function (pack) {
@@ -112,7 +119,7 @@
 		label.className = "deck";
 		label.innerHTML = '<input type="radio" name="choice" value="pack:' + pack.id + '">' +
 			'<span>' + pack.name + '<br><span class="sub">' + pack.sub + '</span></span>';
-		if (("pack" === kind) && (pack.id === current))
+		if (("pack" === kind) && (pack.id === want.id))
 			label.querySelector("input").checked = true;
 		list.appendChild(label);
 	});
@@ -122,10 +129,10 @@
 	var save = document.getElementById("save");
 
 	if ("url" === kind)
-		document.getElementById("url").value = params.get("u");
+		document.getElementById("url").value = want.url;
 	else if ("text" === kind) {
-		text.value = params.get("d");
-		document.getElementById("title").value = params.get("t") || "";
+		text.value = want.text;
+		document.getElementById("title").value = want.title || "";
 	}
 	if ("pack" !== kind)
 		document.querySelector('input[value="' + kind + '"]').checked = true;
@@ -182,7 +189,6 @@
 		var payload = encodeURIComponent(JSON.stringify(result));
 		location.href = returnTo ? (returnTo + payload) : ("pebblejs://close#" + payload);
 	});
-
 	tally();
 })();
 </script>

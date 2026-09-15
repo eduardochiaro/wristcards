@@ -13,14 +13,14 @@
   ],
   "private": true,
   "scripts": {
-    "build": "pebble clean && pebble build",
-    "emulator": "pebble build && pebble install --emulator emery",
-    "phone": "pebble build && pebble install --phone",
-    "config": "pebble emu-app-config --emulator emery",
+    "build": "node scripts/inline-config.mjs && pebble clean && pebble build",
+    "emulator": "node scripts/inline-config.mjs && pebble build && pebble install --emulator",
+    "phone": "node scripts/inline-config.mjs && pebble build && pebble install --phone",
+    "config": "pebble emu-app-config --emulator",
     "logs": "pebble logs",
     "check": "node scripts/check-groups.js",
     "packs": "python3 -m http.server 8000 --directory packs",
-    "publish": "cp packs/config.html ../static-portfolio/public/wristcards/ && mkdir -p ../eduardochiaro.com-data/cdn/wristcards && cp packs/*.json packs/*.txt ../eduardochiaro.com-data/cdn/wristcards/",
+    "publish": "mkdir -p ../eduardochiaro.com-data/cdn/wristcards && cp packs/*.json packs/*.txt ../eduardochiaro.com-data/cdn/wristcards/",
     "screenshot": "./scripts/screenshot.sh"
   },
   "pebble": {
