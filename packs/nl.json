@@ -1,4 +1,5 @@
 {
+	"id": "nl",
 	"appTitle": "Learn Dutch",
 	"levels": [
 		{
@@ -13,5 +14,6 @@
 			"name": "Advanced",
 			"file": "nl-advanced.txt"
 		}
-	]
+	],
+	"colors": [[170, 255, 255], [0, 170, 170]]
 }

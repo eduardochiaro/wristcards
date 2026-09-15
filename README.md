@@ -1,56 +1,105 @@
 # Wristcards
 
-Pebble watchapp for language vocabulary drills. Dutch, French, German, Italian
-and Spanish, each shipping as its own watchapp built from this one source tree.
+One Pebble watchapp for vocabulary drills, with the deck chosen on the phone.
+Dutch, French, German, Italian and Spanish are ready-made; any text file of
+cards will do.
 
-## Why one app per language
+## How it works
 
-A Moddable mod is resident in the watchapp's RAM — code and every packed
-resource — and a Pebble app gets about 122 KB in total. One build carrying all
-five decks came to 113 KB and left the JS heap roughly 3 KB, which is not
-enough to open a session; the watch faults with `fxAbort memory full`. Each
-language on its own keeps a build near 39 KB, the size that was known good.
+The watch holds no deck. It has about 32 KB for everything it does — code,
+objects and all — and a deck plus the code to read one does not fit beside the
+app. So the deck lives on the phone: `src/pkjs/index.js` downloads it, keeps it,
+and hands the watch one session at a time, a card per message. The watch asks;
+nothing is ever pushed at it.
+
+What the watch keeps is small and deliberate: the deck's name, colours and level
+names, so its menus draw before the phone answers, and the words you saved, so
+reviewing them works with the phone nowhere nearby. Starting a new session needs
+the phone.
+
+    watch                    phone
+    ──────────────────────────────────────────────
+    hello            ──▶
+                     ◀──     the deck's name, colours, levels
+    want level 2     ──▶
+                     ◀──     card, card, card … done
+
+Every message is answered by its own number, and that answer, not the radio's,
+is what lets the next one go — the firmware acknowledges a message before the
+watch's JavaScript has read it, and a second one arriving in that gap overwrites
+the first unread.
 
 ## Building
 
-    npm run emulator             # Dutch, on the emery emulator
-    npm run emulator -- fr       # French instead
-    npm run phone -- de          # German, on the watch
-    npm run release              # every app in apps.json, into dist/
-    npm run release -- fr de     # just those
+    npm run emulator             # build and install on the emery emulator
+    npm run phone                # build and install on the watch
+    npm run config               # open the settings page against the emulator
+    npm run logs                 # pkjs logging; the watch itself cannot log
+    npm run screenshot emery
 
-Bare words are language codes; the emulator takes its name attached to the
-flag, as in `node scripts/release.js fr --emulator=gabbro`.
-
-`npm run build` compiles the tree as it stands, every language at once. That is
-a syntax check, not something to install: it is the build that overruns the
-watchapp's memory.
-
-`release` copies the project to a temp directory, strips it to one language,
-sets that app's UUID and name from `apps.json`, and leaves a `.pbw` in `dist/`.
-Your working tree is not touched. The Dutch app keeps the original UUID, so it
-upgrades in place and its saved words survive.
-
-Each entry's `colors` is the session card's pair, face down and revealed, as
-`[r, g, b]` in multiples of 85 — the Pebble palette — dark enough to tell apart
-and light enough for black text. Review mode keeps its yellow in every app.
-
-`"ordered": true` turns sampling off: the whole group becomes the session, in
-the deck's own order, unshuffled. The opera app is a libretto, read first line
-to last; every other app draws `sessionSize` cards at random.
-
-`apps.json` is the record of the UUIDs and must stay in the repository. A watch
-identifies an app by its UUID alone: reissue one and the watch installs a
-second, empty copy alongside the old one instead of upgrading it, and the saved
-words stay with the app nobody opens any more. Add a language by appending an
-entry with a fresh UUID; never edit one that has shipped.
-
-The Dutch UUID also appears in `package.json`, where it serves plain
-`npm run build` and the emulator. `release` overwrites that field in its own
-copy, so `apps.json` is what every released `.pbw` is built from.
+`npm run packs` serves `packs/` on port 8000, so the settings page's link field
+can point at `http://localhost:8000/nl.json` and a deck can be changed without
+deploying anything. `npm run check` checks the shape of every deck file.
 
 ## Decks
 
-`src/embeddedjs/levels/<code>-<level>.txt` — one card per line, `front|back`,
-under `# Group` headers. `src/embeddedjs/langs/<code>.json` names the levels.
-`node scripts/check-groups.js` checks the shape of every deck.
+A **pack** is `<id>.json` naming its levels, with the level files beside it:
+
+    {
+      "appTitle": "Learn Dutch",
+      "levels": [{ "name": "Basic", "file": "nl-basic.txt" }],
+      "colors": [[170, 255, 255], [0, 170, 170]],
+      "ordered": false
+    }
+
+`colors` is the session card's pair — face down, then revealed — in multiples of
+85, the Pebble palette, dark enough to tell apart and light enough for black
+text. Review mode keeps its yellow in every deck. `ordered` turns sampling off:
+the level is read from the first line to the last, for a deck that is a text
+rather than a pile. `sessionSize` sets how many cards a session draws, default
+ten.
+
+### Level files
+
+A level file is one card per line, `front|back`, under `# Group` headings. The
+headings are there for whoever edits the file; the watch never sees them, and
+neither does the phone — it keeps the lines that hold a `|`, drops the rest, and
+streams them one by one. Blank lines are fine.
+
+    # Greetings
+    hallo|hello
+    dank je wel|thank you
+
+A single `.txt` works on its own as a one-level deck, which is what the settings
+page's link and paste fields take; `packs/example.txt` is one, and doubles as
+the format's documentation. `npm run check` reads every pack's levels and fails
+on a header with no name, a duplicate group, a card above the first header, a
+line with no `|`, an empty group, or a missing trailing newline.
+
+## The settings page
+
+`packs/config.html` is a plain static page — five ready-made decks, a link
+field, and a box to paste or open a `.txt`. A pasted deck rides back in the
+webview's URL, so it is capped at 2,500 characters; anything longer belongs at a
+link. The page is the only thing that knows the list of ready-made decks.
+
+The deck only reaches the watch while the app is open on it: the transfer is
+started by the watch saying hello. Choose a deck with the app closed and it
+arrives the next time you open it.
+
+## Publishing
+
+`npm run publish` splits `packs/` in two, because the two halves are served
+from different hosts. `config.html` goes to the site's `public/wristcards/`, in
+`static-portfolio`; the decks — every `.json` and `.txt`, `example.txt`
+included — go to `cdn/wristcards/` in `eduardochiaro.com-data`, which is
+`cdn.eduardochiaro.com/wristcards/`. Put a deck beside the page and the phone
+will not find it. This repository stays the source of truth for all of them, and
+`src/pkjs/index.js` names both URLs at the top.
+
+## Layout
+
+    src/embeddedjs/main.js   the watchapp: menus, cards, saved words, messaging
+    src/pkjs/index.js        the phone: downloads, caches and serves decks
+    packs/                   the decks, the settings page, the example file
+    scripts/check-groups.js  deck linter

@@ -2,20 +2,19 @@
 // and every line under it is a "front|back" card, up to the next header or the
 // end of the file. Nothing records how many cards a group has, so the only way
 // to break a level is to break that shape. Run: node scripts/check-groups.js
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import assert from "node:assert";
 
-const root = new URL("../src/embeddedjs/", import.meta.url);
-const apps = JSON.parse(readFileSync(new URL("../apps.json", import.meta.url)));
+const root = new URL("../packs/", import.meta.url);
 
-// Every language's levels, checked as one list. Each ships as its own app, but
-// they are all built from these files.
-const levels = apps.flatMap(({ code, name }) =>
-	JSON.parse(readFileSync(new URL(`langs/${code}.json`, root))).levels
-		.map(level => ({ ...level, name: `${name} ${level.name}` })));
+// Every pack's levels, checked as one list. A pack is what the phone downloads:
+// <id>.json naming the levels, and the level files beside it.
+const levels = readdirSync(root).filter(file => file.endsWith(".json")).flatMap(file =>
+	JSON.parse(readFileSync(new URL(file, root))).levels
+		.map(level => ({ ...level, name: `${file.slice(0, -5)} ${level.name}` })));
 
 for (const level of levels) {
-	const text = readFileSync(new URL(`levels/${level.file}`, root), "utf8");
+	const text = readFileSync(new URL(level.file, root), "utf8");
 	assert.ok(text.endsWith("\n"), `${level.file}: needs a trailing newline`);
 
 	const groups = new Map();

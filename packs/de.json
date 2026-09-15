@@ -1,4 +1,5 @@
 {
+	"id": "de",
 	"appTitle": "Learn German",
 	"levels": [
 		{
@@ -13,5 +14,6 @@
 			"name": "Advanced",
 			"file": "de-advanced.txt"
 		}
-	]
+	],
+	"colors": [[255, 170, 170], [255, 85, 85]]
 }

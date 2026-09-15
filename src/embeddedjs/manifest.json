@@ -5,12 +5,5 @@
 	],
 	"modules": {
 		"*": "./main"
-	},
-	"data": {
-		"*": [
-			"./data.json",
-			"./langs/*",
-			"./levels/*"
-		]
 	}
 }

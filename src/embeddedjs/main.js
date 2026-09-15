@@ -1,24 +1,35 @@
 import Poco from "commodetto/Poco";
 import Button from "pebble/button";
+import Message from "pebble/message";
 
-// One build carries one language: data.json holds the wording every build
-// shares and names the language, langs/<code>.json its title and levels. The
-// mod archive is resident in the app's RAM, so a build that carried every
-// language's decks left the JS heap with nothing to work in.
+// No deck ships with the app. The phone downloads a pack and pushes it here,
+// where it is written to the watch's own filesystem and read back a session at a
+// time. The mod archive is resident in the app's RAM, so decks that lived in it
+// left the JS heap with nothing to work in — on the filesystem they cost nothing
+// until they are read.
 //
-// Nothing keeps the parsed files alive; only the handful of values below stay.
-let UI, SESSION_SIZE, LEVELS, APP_TITLE, CARD_RGB, ORDERED;
+// Everything about the deck in play — its title, levels, colours and order —
+// comes from the pack and lives in DECK. The wording stays here: it has to fit
+// in one 512-byte message beside everything else if it travels, and it does not.
+//
+// The deck itself never comes here. The phone holds it and hands over one
+// session at a time, which is what lets this app carry any deck at all: the
+// machine has 32 KB for everything, and a file layer and a line scanner cost
+// more than the cards they would have fetched.
+let LEVELS, APP_TITLE, DECK;
 
-function readShared() {
-	const data = JSON.parse(String.fromArrayBuffer(new Resource("data.json")));
-	UI = data.ui;
-	SESSION_SIZE = data.sessionSize;
-	CARD_RGB = data.colors;		// release.js copies these from apps.json
-	ORDERED = !!data.ordered;
-	return data.language;
-}
-
-const LANGUAGE = readShared();
+const UI = {
+	startSession: "Start Session",
+	reviewBookmarked: "Review Saved",
+	chooseLevel: "Choose Level",
+	noBookmarks: "No saved words",
+	sessionComplete: "Session done",
+	savedCount: "saved",
+	saveFull: "SAVE LIST FULL",
+	loading: "Loading",
+	noCards: "Nothing to study",
+	noPhone: "Phone not connected"
+};
 
 const render = new Poco(screen);
 const black = render.makeColor(0, 0, 0);
@@ -46,12 +57,12 @@ const HEADER_BOTTOM = EDGE + BOLD[2].height + 8;	// first row below the dotted r
 let gutter = 0;
 const maxWidth = () => W - (MARGIN * 2) - gutter;
 
-// The session pair is the language's own, so one app is told apart from another
-// at a glance; review mode keeps the same yellow everywhere, it marks the mode.
-// A plain `pebble build` has no app entry to read, so the Dutch pair stands in.
-const SESSION_RGB = CARD_RGB ?? [[170, 255, 255], [0, 170, 170]];
+// The session pair is the pack's own, so one deck is told apart from another at a
+// glance; review mode keeps the same yellow everywhere, it marks the mode. The
+// pair below stands in for a pack that names no colours of its own.
+const PLAIN_RGB = [[170, 255, 255], [0, 170, 170]];
 const CARD_COLORS = {			// [face down, translation shown]
-	session: SESSION_RGB.map(c => render.makeColor(c[0], c[1], c[2])),
+	session: [],			// applyDeck() fills this from the pack
 	review: [render.makeColor(255, 255, 170), render.makeColor(255, 255, 0)]
 };
 const BRIGHT = render.makeColor(255, 0, 0);	// a saved card's bookmark
@@ -59,150 +70,23 @@ const BRIGHT = render.makeColor(255, 0, 0);	// a saved card's bookmark
 // ---- bookmarks -------------------------------------------------------------
 
 // A card is one "front|back" string, the same text as its line in the deck file.
-// Each language is its own watchapp, so each has its own storage and there is
-// nothing to keep apart here.
-const BM_KEY = "bookmarks";
+// One app now plays every deck, so each deck's saved words get their own key and
+// switching decks and back finds them still there.
 const MAX_BOOKMARKS = 50;		// Pebble's persistent storage is only a few KB
-let bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
+let BM_KEY, bookmarks = [];
 
+// Every deck's list shares one 8 KB store, so saving can fail on a watch that
+// has played a few of them. The decks not in play are the ones to give up.
 function saveBookmarks() {
-	localStorage.setItem(BM_KEY, JSON.stringify(bookmarks));
-}
-
-// ---- language ---------------------------------------------------------------
-
-function loadLang(code) {
-	const lang = JSON.parse(String.fromArrayBuffer(new Resource(`${code}.json`)));
-	LEVELS = lang.levels;
-	APP_TITLE = lang.appTitle;
-}
-
-// ---- deck ------------------------------------------------------------------
-
-// Each level is one file, opened only while that level is played. A line
-// starting with "#" names the group the lines below it belong to; every other
-// line is a "front|back" card. The file stays in flash and the mod's JS heap is
-// a couple of kilobytes, so only the ten lines a session needs are ever decoded
-// — and where each group starts is counted off the file rather than recorded
-// anywhere, which is why nothing can fall out of step with the cards.
-const BLOCK = 512;
-const HASH = 35, NEWLINE = 10;		// neither is ever a UTF-8 continuation byte
-
-// Hand every line's byte range to `each`, until it returns false.
-function eachLine(deck, each) {
-	const total = deck.byteLength;
-	let start = 0, line = 0, pos = 0, first = 0;
-
-	while (pos < total) {
-		const end = Math.min(pos + BLOCK, total);
-		const bytes = new Uint8Array(deck.slice(pos, end));
-		for (let i = 0; i < bytes.length; i++) {
-			if ((pos + i) === start)	// the line may have begun in an earlier block
-				first = bytes[i];
-			if (NEWLINE !== bytes[i])
-				continue;
-			if (false === each(line, start, pos + i, first))
-				return;
-			line += 1;
-			start = pos + i + 1;
-		}
-		pos = end;
+	try {
+		localStorage.setItem(BM_KEY, JSON.stringify(bookmarks));
 	}
-}
-
-// Every question below is answered by one pass over the file, keeping a couple
-// of numbers. Holding the group list in RAM instead costs about a kilobyte,
-// which is enough to run the heap out mid-session.
-function countGroups(file) {
-	const deck = new Resource(file);
-	let groups = 0;
-	eachLine(deck, (line, start, stop, first) => {
-		if (HASH === first)
-			groups += 1;
-	});
-	return groups;
-}
-
-function countCards(file) {
-	const deck = new Resource(file);
-	let cards = 0;
-	eachLine(deck, (line, start, stop, first) => {
-		if (HASH !== first)
-			cards += 1;
-	});
-	return cards;
-}
-
-// The name on group `index`'s header line.
-function groupName(file, index) {
-	const deck = new Resource(file);
-	let group = -1, name = "";
-
-	eachLine(deck, (line, start, stop, first) => {
-		if (HASH !== first)
-			return;
-		group += 1;
-		if (group < index)
-			return;
-		name = String.fromArrayBuffer(deck.slice(start + 2, stop));	// past "# "
-		return false;
-	});
-	return name;
-}
-
-// How many cards come before group `index`, and how many are in it.
-function groupRange(file, index) {
-	const deck = new Resource(file);
-	let group = -1, from = 0, count = 0;
-
-	eachLine(deck, (line, start, stop, first) => {
-		if (HASH === first) {
-			group += 1;
-			return (group <= index) ? undefined : false;
-		}
-		if (group < index)
-			from += 1;
-		else
-			count += 1;
-	});
-	return { from, count };
-}
-
-function readCards(file, wanted) {		// wanted: card numbers, ascending
-	const deck = new Resource(file);
-	const cards = [];
-	let card = 0, next = 0;
-
-	eachLine(deck, (line, start, stop, first) => {
-		if (HASH === first)		// a header is not a card
-			return;
-		if (card === wanted[next]) {
-			cards.push(String.fromArrayBuffer(deck.slice(start, stop)));
-			next += 1;
-			if (next === wanted.length)
-				return false;
-		}
-		card += 1;
-	});
-	return cards;
-}
-
-// An ordered deck is a text to be read, not a pile to be sampled: every line of
-// the group is in the session and the file's own order is the session's order.
-function pickLines(count, total) {
-	const lines = [];
-	if (ORDERED) {
-		for (let i = 0; i < total; i++)
-			lines.push(i);
-		return lines;
+	catch {
+		// ponytail: every deck's list shares one 8 KB store, and a watch that has
+		// played several can fill it. Give the word back rather than evict a deck
+		// the user may still want; evict if that turns out to be too blunt.
+		bookmarks.pop();
 	}
-	count = Math.min(count, total);
-	while (lines.length < count) {
-		const line = (Math.random() * total) | 0;
-		if (lines.indexOf(line) < 0)
-			lines.push(line);
-	}
-	return lines.sort((a, b) => a - b);
 }
 
 // ---- drawing ---------------------------------------------------------------
@@ -263,7 +147,7 @@ function insetAt(y, height) {
 // App name on the left, clock on the right, dotted rule under both.
 function drawHeader() {
 	const pad = insetAt(EDGE, BOLD[2].height);
-	render.drawText(UI.appName, BOLD[2], black, pad, EDGE);
+	render.drawText("Wristcards", BOLD[2], black, pad, EDGE);
 	const now = clockText();
 	render.drawText(now, BOLD[2], black, W - pad - render.getTextWidth(now, BOLD[2]), EDGE);
 
@@ -416,8 +300,11 @@ function listView(title, count, label, onSelect, onBack) {
 	};
 }
 
-function messageView(lines) {
+// `atTop` is for a screen with nothing behind it: BACK leaves the app, the way
+// it does from the main menu, and no button pretends to go back to one.
+function messageView(lines, atTop) {
 	return {
+		exitOnBack: atTop,
 		draw() {
 			render.begin();
 			render.fillRectangle(white, 0, 0, W, H);
@@ -426,7 +313,8 @@ function messageView(lines) {
 			render.end();
 		},
 		onButton() {
-			go(mainMenu());
+			if (!atTop)
+				go(mainMenu());
 		}
 	};
 }
@@ -530,15 +418,6 @@ function cardView(cards, title, reviewMode) {
 
 // ---- sessions --------------------------------------------------------------
 
-function shuffled(array) {
-	const copy = array.slice();
-	for (let i = copy.length - 1; i > 0; i--) {
-		const j = (Math.random() * (i + 1)) | 0;
-		[copy[i], copy[j]] = [copy[j], copy[i]];
-	}
-	return copy;
-}
-
 // Built per visit rather than once: switching language rewrites UI.
 function mainMenu() {
 	const labels = [UI.startSession, UI.reviewBookmarked];
@@ -552,31 +431,126 @@ function mainMenu() {
 	});		// no onBack: BACK leaves the app
 }
 
-function startSession(file, title, wanted) {
-	const cards = readCards(file, wanted);
-	go(cardView(ORDERED ? cards : shuffled(cards), title, false));
+// Asking for a session is all the watch does: the phone picks the cards, shuffles
+// them if the deck is not an ordered one, and sends them over one at a time.
+function startSession(level) {
+	session = { level, cards: [] };
+	say(WANT, level);
+	go(messageView([UI.loading], !DECK));
+	// Asking costs nothing if the phone is not there, but waiting forever does.
+	waiting = setTimeout(() => go(messageView([UI.noPhone], !DECK)), 8000);
 }
 
 function levelMenu() {
-	return listView(UI.chooseLevel, LEVELS.length, i => LEVELS[i].name,
-		sel => go(groupMenu(LEVELS[sel].file, LEVELS[sel].name)),
+	return listView(UI.chooseLevel, LEVELS.length, i => LEVELS[i],
+		sel => startSession(sel),
 		() => go(mainMenu()));
 }
 
-// The level itself is the first entry: it draws from every group at once.
-function groupMenu(file, title) {
-	return listView(title, countGroups(file) + 1,
-		i => (0 === i) ? UI.allGroups : groupName(file, i - 1),
-		sel => {
-			if (0 === sel)
-				return startSession(file, title, pickLines(SESSION_SIZE, countCards(file)));
-			const group = groupRange(file, sel - 1);
-			startSession(file, groupName(file, sel - 1),
-				pickLines(SESSION_SIZE, group.count).map(i => i + group.from));
-		},
-		() => go(levelMenu()));
+// ---- the phone --------------------------------------------------------------
+
+// The deck lives on the phone; this app asks for what it needs and holds only
+// that. Nothing arrives unasked — the hello below is what starts the
+// conversation, and the phone answers it with whatever deck the user chose.
+//
+// The keys are numbered as package.json's messageKeys list is numbered. Numbers
+// rather than names because a name table is memory this app does not have.
+const HELLO = 10000, ACK = 10001, OOPS = 10002, WANT = 10003, META = 10004,
+	CARD = 10005, DONE = 10006, FAIL = 10007, SEQ = 10008;
+
+const NO_DECK = ["No cards yet", "Use the phone app"];
+
+let session, waiting, outbox, greeted = false, lastSeq = -1;
+
+const message = new Message({
+	input: 512,		// the deck's description has to arrive in one piece, and
+	output: 64,		// a wider inbox than this is more than the heap can hold
+	// A message is only delivered here if one of its keys is in this map, and
+	// every message from the phone carries its number — so one entry buys them
+	// all, and a full name table is memory this app does not have. read() renames
+	// a mapped key to its name, which is why the number arrives as "s".
+	keys: new Map([["s", SEQ]]),
+
+	// The firmware acknowledges a message before this code has read it, and a
+	// second one arriving first overwrites it unread — so every message is
+	// answered by its own number, and the phone waits for that, not the radio.
+	onReadable() {
+		const map = message.read();
+		clearTimeout(waiting);
+		const seq = map.get("s");
+		if (seq === lastSeq)			// a resend of what was applied
+			return say(ACK, seq);
+		if (seq !== (lastSeq + 1))		// one went missing; rewind the phone
+			return say(OOPS, lastSeq);
+
+		const card = map.get(CARD);
+		if (card)
+			session?.cards.push(card);
+		else if (map.has(META)) {
+			// Kept as it arrived; parsing it, or drawing, while a message is in
+			// flight costs heap this machine does not have.
+			localStorage.setItem("m", map.get(META));
+			applyDeck();
+		}
+		else if (map.has(DONE)) {
+			if (session?.cards.length)
+				go(cardView(session.cards, LEVELS[session.level], false));
+			else
+				go(messageView([UI.noCards], !DECK));
+			session = undefined;
+		}
+		else if (map.has(FAIL)) {
+			session = undefined;
+			go(messageView(["Deck failed", map.get(FAIL)], !DECK));
+		}
+
+		lastSeq = seq;
+		say(ACK, seq);
+	},
+	onWritable() {
+		if (!greeted) {
+			greeted = true;
+			outbox = new Map([[HELLO, 1]]);
+		}
+		say();
+	}
+});
+
+function say(key, value) {
+	if (undefined !== key)
+		outbox = new Map([[key, value]]);
+	try {				// write() throws while a message is still in
+		if (outbox) {		// flight, so a refused one waits for onWritable
+			message.write(outbox);
+			outbox = undefined;
+		}
+	}
+	catch {
+	}
 }
 
-loadLang(LANGUAGE);
-go(mainMenu());
+// Everything the deck decides, in one place, so a deck that arrives while the
+// app is running takes hold the same way one remembered from last time does.
+function applyDeck() {
+	// The pack describes itself in one letter per field, because the whole of it
+	// has to cross in a single message: i id · t title · c colours · l level names.
+	DECK = JSON.parse(localStorage.getItem("m") ?? "null");
+	LEVELS = DECK?.l;
+	APP_TITLE = DECK?.t;
+	CARD_COLORS.session = (DECK?.c ?? PLAIN_RGB).map(c => render.makeColor(c[0], c[1], c[2]));
+
+	BM_KEY = `bm:${DECK ? DECK.i : ""}`;
+	// Wristcards NL upgrades in place and its saved words are under the old
+	// unqualified key. Carry them over once.	//@@ drop after a release or two
+	const kept = localStorage.getItem("bookmarks");
+	if (kept && ("bm:nl" === BM_KEY)) {
+		localStorage.setItem(BM_KEY, kept);
+		localStorage.removeItem("bookmarks");
+	}
+	bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
+
+	go(DECK ? mainMenu() : messageView(NO_DECK, true));
+}
+
+applyDeck();
 watch.addEventListener("minutechange", () => view.draw());		// keep the header clock honest

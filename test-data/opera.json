@@ -1,9 +1,12 @@
 {
+	"id": "opera",
 	"appTitle": "Learn French Opera",
 	"levels": [
 		{
 			"name": "Basic",
 			"file": "opera-basic.txt"
 		}
-	]
+	],
+	"colors": [[255, 170, 255], [255, 85, 255]],
+	"ordered": true
 }

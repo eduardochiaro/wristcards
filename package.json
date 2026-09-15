@@ -14,11 +14,13 @@
   "private": true,
   "scripts": {
     "build": "pebble clean && pebble build",
-    "emulator": "node scripts/release.js --emulator",
-    "phone": "node scripts/release.js --phone",
-    "config": "pebble emu-app-config --emulator",
+    "emulator": "pebble build && pebble install --emulator emery",
+    "phone": "pebble build && pebble install --phone",
+    "config": "pebble emu-app-config --emulator emery",
     "logs": "pebble logs",
-    "release": "node scripts/release.js",
+    "check": "node scripts/check-groups.js",
+    "packs": "python3 -m http.server 8000 --directory packs",
+    "publish": "cp packs/config.html ../static-portfolio/public/wristcards/ && mkdir -p ../eduardochiaro.com-data/cdn/wristcards && cp packs/*.json packs/*.txt ../eduardochiaro.com-data/cdn/wristcards/",
     "screenshot": "./scripts/screenshot.sh"
   },
   "pebble": {
@@ -34,8 +36,19 @@
     "watchapp": {
       "watchface": false
     },
+    "capabilities": [
+      "configurable"
+    ],
     "messageKeys": [
-      "dummy"
+      "hello",
+      "ack",
+      "oops",
+      "want",
+      "meta",
+      "card",
+      "done",
+      "fail",
+      "seq"
     ],
     "resources": {
       "media": [

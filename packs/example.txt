@@ -1,0 +1,17 @@
+# Greetings
+hallo|hello
+goedemorgen|good morning
+tot ziens|goodbye
+dank je wel|thank you
+
+# At the table
+het brood|the bread
+de kaas|the cheese
+een glas water|a glass of water
+de rekening|the bill
+
+# Notes on this file
+elke regel is een kaart|every line is a card
+voor de streep is de voorkant|before the bar is the front
+erna de vertaling|after it, the translation
+een regel met # opent een groep|a line starting with # opens a group

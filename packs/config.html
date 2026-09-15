@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wristcards</title>
+<style>
+	:root {
+		color-scheme: light dark;
+		--ink: #1a1a1a;
+		--paper: #fbfbf9;
+		--line: #d8d6cf;
+		--soft: #6b6862;
+		--pick: #00aaaa;
+	}
+	@media (prefers-color-scheme: dark) {
+		:root { --ink: #ecebe7; --paper: #15161a; --line: #34363d; --soft: #9a988f; }
+	}
+	* { box-sizing: border-box; }
+	body {
+		margin: 0;
+		padding: 24px 16px 48px;
+		background: var(--paper);
+		color: var(--ink);
+		font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	}
+	main { max-width: 34rem; margin: 0 auto; }
+	h1 { font-size: 1.5rem; margin: 0 0 4px; }
+	p.lede { margin: 0 0 24px; color: var(--soft); }
+	h2 { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: var(--soft); margin: 28px 0 8px; }
+	label.deck {
+		display: flex; align-items: baseline; gap: 10px;
+		padding: 12px 14px; border: 1px solid var(--line); border-radius: 10px;
+		margin-bottom: 8px; cursor: pointer;
+	}
+	label.deck:has(input:checked) { border-color: var(--pick); box-shadow: inset 0 0 0 1px var(--pick); }
+	label.deck span.sub { color: var(--soft); font-size: .85rem; }
+	input[type=radio] { accent-color: var(--pick); margin: 0; }
+	input[type=url], textarea, input[type=text] {
+		width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
+		background: transparent; color: inherit; font: inherit;
+	}
+	textarea { min-height: 9rem; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .85rem; }
+	.row { display: flex; gap: 8px; align-items: center; margin-top: 8px; }
+	.count { font-size: .8rem; color: var(--soft); margin-top: 6px; }
+	.count.over { color: #c0392b; font-weight: 600; }
+	button {
+		width: 100%; margin-top: 28px; padding: 14px; border: 0; border-radius: 10px;
+		background: var(--pick); color: #07201f; font: inherit; font-weight: 700; cursor: pointer;
+	}
+	button:disabled { opacity: .45; cursor: not-allowed; }
+	.note { font-size: .85rem; color: var(--soft); margin-top: 16px; }
+	a { color: var(--pick); }
+</style>
+</head>
+<body>
+<main>
+	<h1>Wristcards</h1>
+	<p class="lede">Pick a deck. It downloads to the watch while the app is open.</p>
+
+	<form id="form">
+		<h2>Ready-made</h2>
+		<div id="packs"></div>
+
+		<h2>Your own deck</h2>
+		<label class="deck">
+			<input type="radio" name="choice" value="url">
+			<span>From a link<br><span class="sub">A .json pack or a single .txt of cards</span></span>
+		</label>
+		<input type="url" id="url" placeholder="https://example.com/mydeck.txt" autocapitalize="off" autocorrect="off" spellcheck="false">
+
+		<label class="deck" style="margin-top:16px">
+			<input type="radio" name="choice" value="text">
+			<span>Pasted in<br><span class="sub">Small decks only — see the <a id="example" href="https://cdn.eduardochiaro.com/wristcards/example.txt">example file</a></span></span>
+		</label>
+		<div class="row"><input type="text" id="title" placeholder="Deck name"></div>
+		<div class="row"><input type="file" id="pick" accept=".txt,text/plain"></div>
+		<textarea id="text" placeholder="# Greetings&#10;hallo|hello&#10;dank je|thank you"></textarea>
+		<div class="count" id="count">0 / 2000 characters</div>
+
+		<button type="submit" id="save">Save</button>
+	</form>
+
+	<p class="note">The watch only receives a deck while the Wristcards app is open on it. Open the app, then save.</p>
+</main>
+
+<script>
+(function () {
+	"use strict";
+
+	var PACKS = [
+		{ id: "nl", name: "Dutch", sub: "Basic, Intermediate, Advanced" },
+		{ id: "fr", name: "French", sub: "Basic, Intermediate, Advanced" },
+		{ id: "de", name: "German", sub: "Basic, Intermediate, Advanced" },
+		{ id: "it", name: "Italian", sub: "Basic, Intermediate, Advanced" },
+		{ id: "es", name: "Spanish", sub: "Basic, Intermediate, Advanced" }
+	];
+	var CAP = 2000;
+
+	var params = new URLSearchParams(location.search);
+	var current = params.get("v") || "";
+	// The emulator hands back a localhost URL to navigate to; a real phone takes
+	// the pebblejs://close form. Same payload either way.
+	var returnTo = params.get("return_to");
+
+	var list = document.getElementById("packs");
+	PACKS.forEach(function (pack) {
+		var label = document.createElement("label");
+		label.className = "deck";
+		label.innerHTML = '<input type="radio" name="choice" value="pack:' + pack.id + '">' +
+			'<span>' + pack.name + '<br><span class="sub">' + pack.sub + '</span></span>';
+		if (pack.id === current)
+			label.querySelector("input").checked = true;
+		list.appendChild(label);
+	});
+
+	var text = document.getElementById("text");
+	var count = document.getElementById("count");
+	var save = document.getElementById("save");
+
+	function tally() {
+		var over = text.value.length > CAP;
+		count.textContent = text.value.length + " / " + CAP + " characters" +
+			(over ? " — too long, put it at a link instead" : "");
+		count.className = over ? "count over" : "count";
+		save.disabled = over;
+	}
+	text.addEventListener("input", tally);
+
+	document.getElementById("pick").addEventListener("change", function (e) {
+		var file = e.target.files && e.target.files[0];
+		if (!file)
+			return;
+		var reader = new FileReader();
+		reader.onload = function () {
+			text.value = reader.result;
+			var title = document.getElementById("title");
+			if (!title.value)
+				title.value = file.name.replace(/\.txt$/i, "");
+			document.querySelector('input[value="text"]').checked = true;
+			tally();
+		};
+		reader.readAsText(file);
+	});
+
+	document.getElementById("form").addEventListener("submit", function (e) {
+		e.preventDefault();
+		var picked = document.querySelector('input[name="choice"]:checked');
+		if (!picked)
+			return;
+
+		var result;
+		if (0 === picked.value.indexOf("pack:"))
+			result = { pack: picked.value.slice(5) };
+		else if ("url" === picked.value) {
+			var url = document.getElementById("url").value.trim();
+			if (!url)
+				return;
+			result = { url: url };
+		}
+		else {
+			var body = text.value;
+			if (!body.trim() || (body.length > CAP))
+				return;
+			if ("\n" !== body.charAt(body.length - 1))
+				body += "\n";			// the watch reads a line only once it ends
+			result = { text: body, title: document.getElementById("title").value.trim() || "My deck" };
+		}
+
+		var payload = encodeURIComponent(JSON.stringify(result));
+		location.href = returnTo ? (returnTo + payload) : ("pebblejs://close#" + payload);
+	});
+
+	tally();
+})();
+</script>
+</body>
+</html>
