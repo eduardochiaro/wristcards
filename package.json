@@ -18,9 +18,9 @@
     "phone": "node scripts/inline-config.mjs && pebble build && pebble install --phone",
     "config": "pebble emu-app-config --emulator",
     "logs": "pebble logs",
-    "check": "node scripts/check-groups.js",
+    "check": "node scripts/check-groups.js && node scripts/check-deck.js",
     "packs": "python3 -m http.server 8000 --directory packs",
-    "publish": "mkdir -p ../eduardochiaro.com-data/cdn/wristcards && cp packs/*.json packs/*.txt ../eduardochiaro.com-data/cdn/wristcards/",
+    "publish": "mkdir -p ../eduardochiaro.com-data/cdn/wristcards && cp packs/*.json packs/*.txt ../eduardochiaro.com-data/cdn/wristcards/ && rm -f ../eduardochiaro.com-data/cdn/wristcards/example-pack.zip && zip -jq ../eduardochiaro.com-data/cdn/wristcards/example-pack.zip packs/example*",
     "screenshot": "./scripts/screenshot.sh"
   },
   "pebble": {

@@ -287,26 +287,23 @@ function load(want, done, fail) {
 		return done();
 	}
 
-	if (want.text) {
+	// A pasted deck and a lone .txt are the same deck once the text is in hand:
+	// one level, named after whatever the deck itself is called.
+	function single(text, title) {
 		keep({
 			id: want.id,
 			size: 10,
-			meta: { i: want.id, t: want.title, l: [want.title] },
-			levels: [parse(want.text)]
+			meta: { i: want.id, t: title, l: [title] },
+			levels: [parse(text)]
 		});
-		return done();
+		done();
 	}
 
+	if (want.text)
+		return single(want.text, want.title);
+
 	if (/\.txt($|\?)/.test(want.url))
-		return fetch(want.url, function (text) {
-			keep({
-				id: want.id,
-				size: 10,
-				meta: { i: want.id, t: want.id, l: [want.id] },
-				levels: [parse(text)]
-			});
-			done();
-		}, fail);
+		return fetch(want.url, function (text) { single(text, want.id); }, fail);
 
 	fetch(want.url, function (body) {
 		var pack;

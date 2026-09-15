@@ -1,0 +1,15 @@
+// The pack's second level, named "Out and about" by example.json. A level file
+// knows nothing about the pack it belongs to: the name and the order live in the
+// .json, and this file is only its cards.
+
+# Getting around
+de trein|the train
+het station|the station
+links|left
+rechts|right
+
+# Numbers
+een|one
+twee|two
+drie|three
+vier|four

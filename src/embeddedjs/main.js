@@ -118,7 +118,7 @@ function fitLines(text, family) {
 			break;
 		}
 	}
-	return { font, lines: lines ?? wrapText(text, font) };
+	return { font, lines };
 }
 
 function drawCentered(text, font, color, y) {
@@ -160,9 +160,9 @@ function drawHeader() {
 
 // ---- button icons ----------------------------------------------------------
 
-// Redrawn from assets/*.svg with Poco rectangles. The .pdc files in resources/
-// are only readable through the native C draw command API, which this app,
-// being pure JS on Poco, never calls.
+// Redrawn from assets/*.svg with Poco rectangles: a .pdc would only be readable
+// through the native C draw command API, which this app, being pure JS on Poco,
+// never calls.
 const CHEV = 7;					// chevron half width; 3px stroke, as in the SVG
 const CHEV_H = CHEV + 3;
 const MARK_W = 13, MARK_H = 19;
@@ -487,8 +487,6 @@ const HELLO = 10000, ACK = 10001, OOPS = 10002, WANT = 10003, META = 10004,
 	CARD = 10005, DONE = 10006, FAIL = 10007, SEQ = 10008, GROUPS = 10009,
 	PICK = 10010;
 
-const NO_DECK = ["No cards yet", "Use the phone app"];
-
 let session, waiting, outbox, greeted = false, lastSeq = -1;
 
 const message = new Message({
@@ -573,7 +571,7 @@ function applyDeck() {
 	BM_KEY = `bm:${DECK ? DECK.i : ""}`;
 	bookmarks = JSON.parse(localStorage.getItem(BM_KEY) ?? "[]");
 
-	go(DECK ? mainMenu() : messageView(NO_DECK, true));
+	go(DECK ? mainMenu() : messageView(["No cards yet", "Use the phone app"], true));
 }
 
 applyDeck();

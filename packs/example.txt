@@ -1,3 +1,9 @@
+// A deck in one file: paste its address into "From a link", or the text itself
+// into the settings page's box. Each line below is a card, split by a bar. A
+// "# " line opens a group, which is what the watch's second menu lists. Blank
+// lines and "//" lines are skipped — keep the bar out of those, or the watch
+// reads one as a card.
+
 # Greetings
 hallo|hello
 goedemorgen|good morning

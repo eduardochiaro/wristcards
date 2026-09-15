@@ -1,7 +1,8 @@
 // A level file is read on the watch by scanning bytes: "# Name" opens a group
 // and every line under it is a "front|back" card, up to the next header or the
-// end of the file. Nothing records how many cards a group has, so the only way
-// to break a level is to break that shape. Run: node scripts/check-groups.js
+// end of the file. Blank lines and "//" comments are skipped. Nothing records
+// how many cards a group has, so the only way to break a level is to break that
+// shape. Run: node scripts/check-groups.js
 import { readFileSync, readdirSync } from "node:fs";
 import assert from "node:assert";
 
@@ -21,6 +22,14 @@ for (const level of levels) {
 	let open = null;
 	for (const [i, line] of text.split("\n").slice(0, -1).entries()) {
 		const where = `${level.file}:${i + 1}`;
+		if (!line.trim())
+			continue;		// the watch skips a line with no "|", so a gap costs nothing
+		if (line.startsWith("//")) {
+			// The watch skips these the same way, unless one holds a "|" — that is a
+			// card as far as it can tell, and it would deal the comment out.
+			assert.ok(!line.includes("|"), `${where}: a comment with a "|" is read as a card`);
+			continue;
+		}
 		if (line.startsWith("#")) {
 			assert.ok(line.startsWith("# ") && (line.length > 2), `${where}: "${line}" needs a name`);
 			open = line.slice(2);

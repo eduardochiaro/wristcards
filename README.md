@@ -67,7 +67,8 @@ A level file is one card per line, `front|back`, under `# Group` headings. A
 heading opens a group and the cards below it belong to it, which is what the
 watch's second menu is: pick a level, then one group of it or all of them at
 once. The phone keeps the groups; the watch is sent their names, one line each,
-and only for the level being played. Blank lines are fine.
+and only for the level being played. Blank lines are fine, and a line starting
+with `//` is a comment — keep a `|` out of it, or it is read as a card.
 
     # Greetings
     hallo|hello
@@ -75,16 +76,27 @@ and only for the level being played. Blank lines are fine.
 
 A file with no headings at all is one group, and the watch goes straight from the
 level to the cards. A single `.txt` works on its own as a one-level deck, which
-is what the settings page's link and paste fields take; `packs/example.txt` is
-one, and doubles as the format's documentation. `npm run check` reads every pack's levels and fails
-on a header with no name, a duplicate group, a card above the first header, a
-line with no `|`, an empty group, or a missing trailing newline.
+is what the settings page's link and paste fields take. `npm run check` reads
+every pack's levels and fails on a header with no name, a duplicate group, a
+card above the first header, a line with no `|`, a `|` inside a comment, an
+empty group, or a missing trailing newline.
+
+### The example deck
+
+`packs/example.*` is a working pack that exists to be read: `example.json` and
+its two level files, `example.txt` for the single-file case, and
+`example-readme.txt` explaining both. The files document themselves in `//`
+comments, so unzipping them is the answer to "what should mine look like".
+`npm run publish` zips them into `example-pack.zip`, which the settings page's
+link field offers as a download. `npm run check` lints its level files with all
+the others and then loads the whole pack through `src/pkjs/index.js`, so a
+broken example is caught here rather than on a stranger's first try.
 
 ## The settings page
 
 `packs/config.html` is a plain static page — five ready-made decks, a link
 field, and a box to paste or open a `.txt`. A pasted deck rides back in the
-webview's URL, so it is capped at 2,500 characters; anything longer belongs at a
+webview's URL, so it is capped at 2,000 characters; anything longer belongs at a
 link. The page is the only thing that knows the list of ready-made decks.
 
 The app carries the page rather than linking to one: `npm run build` turns it
@@ -102,16 +114,19 @@ arrives the next time you open it.
 
 ## Publishing
 
-`npm run publish` copies the decks — every `.json` and `.txt`, `example.txt`
+`npm run publish` copies the decks — every `.json` and `.txt`, the example files
 included — to `cdn/wristcards/` in `eduardochiaro.com-data`, which is
-`cdn.eduardochiaro.com/wristcards/`. The settings page is not published: it goes
-out inside the app. This repository stays the source of truth for both, and
-`src/pkjs/index.js` names the deck URL at the top.
+`cdn.eduardochiaro.com/wristcards/`, and zips `packs/example*` into
+`example-pack.zip` beside them. The settings page is not published: it goes out
+inside the app, so its link to that zip only works once publish has run. This
+repository stays the source of truth for both, and `src/pkjs/index.js` names the
+deck URL at the top.
 
 ## Layout
 
     src/embeddedjs/main.js   the watchapp: menus, cards, saved words, messaging
     src/pkjs/index.js        the phone: downloads, caches and serves decks
-    packs/                   the decks, the settings page, the example file
+    packs/                   the decks, the settings page, the example pack
     scripts/check-groups.js  deck linter
+    scripts/check-deck.js    loads the example pack the way the phone does
     scripts/inline-config.mjs  builds the settings page into the phone half

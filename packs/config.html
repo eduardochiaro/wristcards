@@ -65,13 +65,13 @@
 		<h2>Your own deck</h2>
 		<label class="deck">
 			<input type="radio" name="choice" value="url">
-			<span>From a link<br><span class="sub">A .json pack or a single .txt of cards</span></span>
+			<span>From a link<br><span class="sub">A .json pack or a single .txt of cards — <a href="https://cdn.eduardochiaro.com/wristcards/example-pack.zip">download an example</a></span></span>
 		</label>
 		<input type="url" id="url" placeholder="https://example.com/mydeck.txt" autocapitalize="off" autocorrect="off" spellcheck="false">
 
 		<label class="deck" style="margin-top:16px">
 			<input type="radio" name="choice" value="text">
-			<span>Pasted in<br><span class="sub">Small decks only — see the <a id="example" href="https://cdn.eduardochiaro.com/wristcards/example.txt">example file</a></span></span>
+			<span>Pasted in<br><span class="sub">Small decks only — see the <a href="https://cdn.eduardochiaro.com/wristcards/example.txt">example file</a></span></span>
 		</label>
 		<div class="row"><input type="text" id="title" placeholder="Deck name"></div>
 		<div class="row"><input type="file" id="pick" accept=".txt,text/plain"></div>
@@ -181,8 +181,6 @@
 			var body = text.value;
 			if (!body.trim() || (body.length > CAP))
 				return;
-			if ("\n" !== body.charAt(body.length - 1))
-				body += "\n";			// the watch reads a line only once it ends
 			result = { text: body, title: document.getElementById("title").value.trim() || "My deck" };
 		}
 

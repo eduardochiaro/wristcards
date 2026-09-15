@@ -1,0 +1,17 @@
+{
+	"note": "A Wristcards pack: this file names the levels, the .txt files beside it hold the cards. See example-readme.txt. Anything the app does not know, this line included, is ignored.",
+	"appTitle": "Example Deck",
+	"levels": [
+		{
+			"name": "Basic",
+			"file": "example-basic.txt"
+		},
+		{
+			"name": "Out and about",
+			"file": "example-more.txt"
+		}
+	],
+	"colors": [[170, 255, 255], [0, 170, 170]],
+	"ordered": false,
+	"sessionSize": 10
+}

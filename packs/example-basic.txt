@@ -1,0 +1,18 @@
+// A level file. One card per line: the side the watch shows first, then a bar
+// character, then the answer it reveals — the cards below are the shape. A "# "
+// line opens a group and names it, and the watch's second menu is those names,
+// so a level can be drilled one group at a time or all at once. Blank lines and
+// lines starting with "//" are skipped, so notes like this cost nothing. Keep
+// the bar out of a comment, or the watch reads the comment as a card.
+
+# Greetings
+hallo|hello
+goedemorgen|good morning
+tot ziens|goodbye
+dank je wel|thank you
+
+# At the table
+het brood|the bread
+de kaas|the cheese
+een glas water|a glass of water
+de rekening|the bill
