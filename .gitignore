@@ -7,3 +7,4 @@ node_modules/
 dist/
 src/pkjs/config.js
 assets/banner.af~lock~
+/.claude

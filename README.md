@@ -4,129 +4,30 @@ One Pebble watchapp for vocabulary drills, with the deck chosen on the phone.
 Dutch, French, German, Italian and Spanish are ready-made; any text file of
 cards will do.
 
-## How it works
+## Screenshots
+### Pebble Time 2
+![Emery 1](assets/emery_1.png)
+![Emery 2](assets/emery_2.png)
+![Emery 3](assets/emery_3.png)
+![Emery 3](assets/emery_4.png)
 
-The watch holds no deck. It has about 32 KB for everything it does — code,
-objects and all — and a deck plus the code to read one does not fit beside the
-app. So the deck lives on the phone: `src/pkjs/index.js` downloads it, keeps it,
-and hands the watch one session at a time, a card per message. The watch asks;
-nothing is ever pushed at it.
+### Pebble Time Round 2
+![Gabbro 1](assets/gabbro_1.png)
+![Gabbro 2](assets/gabbro_2.png)
+![Gabbro 3](assets/gabbro_3.png)
+![Gabbro 4](assets/gabbro_4.png)
 
-What the watch keeps is small and deliberate: the deck's name, colours and level
-names, so its menus draw before the phone answers, and the words you saved, so
-reviewing them works with the phone nowhere nearby. Starting a new session needs
-the phone.
+## Store
+[Pebble App Store](https://apps.repebble.com/6aae5837cf733a0009498c16)
 
-    watch                    phone
-    ──────────────────────────────────────────────
-    hello            ──▶
-                     ◀──     the deck's name, colours, levels
-    want level 2     ──▶
-                     ◀──     the level's group names
-    group 4          ──▶
-                     ◀──     card, card, card … done
+[Rebble App Store](https://apps.rebble.io/en_US/application/6aae5837cf733a0009498c16)
 
-Every message is answered by its own number, and that answer, not the radio's,
-is what lets the next one go — the firmware acknowledges a message before the
-watch's JavaScript has read it, and a second one arriving in that gap overwrites
-the first unread.
+## Features
+### Customizable Deck
+- Pick one of premade deck or make your own
+- Download a deck and self-host it, or load a single file for quick test
 
-## Building
+## License
 
-    npm run emulator             # build and install on the emery emulator
-    npm run phone                # build and install on the watch
-    npm run config               # open the settings page against the emulator
-    npm run logs                 # pkjs logging; the watch itself cannot log
-    npm run screenshot emery
+MIT License - feel free to modify and share!
 
-`npm run packs` serves `packs/` on port 8000, so the settings page's link field
-can point at `http://localhost:8000/nl.json` and a deck can be changed without
-deploying anything. `npm run check` checks the shape of every deck file.
-
-## Decks
-
-A **pack** is `<id>.json` naming its levels, with the level files beside it:
-
-    {
-      "appTitle": "Learn Dutch",
-      "levels": [{ "name": "Basic", "file": "nl-basic.txt" }],
-      "colors": [[170, 255, 255], [0, 170, 170]],
-      "ordered": false
-    }
-
-`colors` is the session card's pair — face down, then revealed — in multiples of
-85, the Pebble palette, dark enough to tell apart and light enough for black
-text. Review mode keeps its yellow in every deck. `ordered` turns sampling off:
-the level is read from the first line to the last, for a deck that is a text
-rather than a pile. `sessionSize` sets how many cards a session draws, default
-ten.
-
-### Level files
-
-A level file is one card per line, `front|back`, under `# Group` headings. A
-heading opens a group and the cards below it belong to it, which is what the
-watch's second menu is: pick a level, then one group of it or all of them at
-once. The phone keeps the groups; the watch is sent their names, one line each,
-and only for the level being played. Blank lines are fine, and a line starting
-with `//` is a comment — keep a `|` out of it, or it is read as a card.
-
-    # Greetings
-    hallo|hello
-    dank je wel|thank you
-
-A file with no headings at all is one group, and the watch goes straight from the
-level to the cards. A single `.txt` works on its own as a one-level deck, which
-is what the settings page's link and paste fields take. `npm run check` reads
-every pack's levels and fails on a header with no name, a duplicate group, a
-card above the first header, a line with no `|`, a `|` inside a comment, an
-empty group, or a missing trailing newline.
-
-### The example deck
-
-`packs/example.*` is a working pack that exists to be read: `example.json` and
-its two level files, `example.txt` for the single-file case, and
-`example-readme.txt` explaining both. The files document themselves in `//`
-comments, so unzipping them is the answer to "what should mine look like".
-`npm run publish` zips them into `example-pack.zip`, which the settings page's
-link field offers as a download. `npm run check` lints its level files with all
-the others and then loads the whole pack through `src/pkjs/index.js`, so a
-broken example is caught here rather than on a stranger's first try.
-
-## The settings page
-
-`packs/config.html` is a plain static page — five ready-made decks, a link
-field, and a box to paste or open a `.txt`. A pasted deck rides back in the
-webview's URL, so it is capped at 2,000 characters; anything longer belongs at a
-link. The page is the only thing that knows the list of ready-made decks.
-
-The app carries the page rather than linking to one: `npm run build` turns it
-into `src/pkjs/config.js` and the phone is handed the whole of it as a `data:`
-URL, the way Clay does. Nothing has to be published for a change to take, and no
-copy of the page can be older than the app that opened it. The deck in play is
-written into the page on the way out, so a second visit finds it chosen. The
-emulator takes the same page: `pebble-tool` decodes the URL to a file of its own
-and opens that, which is why the page reads its return address off the query
-string rather than assuming `pebblejs://close`.
-
-The deck only reaches the watch while the app is open on it: the transfer is
-started by the watch saying hello. Choose a deck with the app closed and it
-arrives the next time you open it.
-
-## Publishing
-
-`npm run publish` copies the decks — every `.json` and `.txt`, the example files
-included — to `cdn/wristcards/` in `eduardochiaro.com-data`, which is
-`cdn.eduardochiaro.com/wristcards/`, and zips `packs/example*` into
-`example-pack.zip` beside them. The settings page is not published: it goes out
-inside the app, so its link to that zip only works once publish has run. This
-repository stays the source of truth for both, and `src/pkjs/index.js` names the
-deck URL at the top.
-
-## Layout
-
-    src/embeddedjs/main.js   the watchapp: menus, cards, saved words, messaging
-    src/pkjs/index.js        the phone: downloads, caches and serves decks
-    packs/                   the decks, the settings page, the example pack
-    scripts/check-groups.js  deck linter
-    scripts/check-deck.js    loads the example pack the way the phone does
-    scripts/inline-config.mjs  builds the settings page into the phone half

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="144" height="144" viewBox="0 0 144 144">
+  <rect width="144" height="144" fill="#26161e"/>
+  <!-- back card -->
+  <rect x="-40" y="-29" width="80" height="58" rx="9" fill="#785060" transform="translate(66 64) rotate(-14)"/>
+  <!-- front card -->
+  <g transform="translate(78 80) rotate(8)">
+    <rect x="-44" y="-32" width="88" height="64" rx="10" fill="#e86c78"/>
+    <text y="17" font-family="Montserrat" font-weight="900" font-size="48" fill="#ffffff" text-anchor="middle">W</text>
+  </g>
+</svg>
