@@ -81,7 +81,7 @@ Pebble.addEventListener("appmessage", function (e) {
 		queue.shift();
 		seq += 1;
 		tries = 0;
-		step();
+		send();
 		return;
 	}
 	if ("oops" in payload) {
@@ -126,10 +126,7 @@ function names(groups) {
 }
 
 function every(groups) {
-	var cards = [];
-	for (var i = 0; i < groups.length; i++)
-		cards = cards.concat(groups[i].c);
-	return cards;
+	return groups.reduce(function (cards, group) { return cards.concat(group.c); }, []);
 }
 
 // A session: the cards themselves, one per message, then the word that they are
@@ -162,20 +159,17 @@ function serve(level, group) {
 function push(messages) {
 	queue = messages;
 	tries = 0;
-	step();
+	send();
 }
 
-function step() {
+function send() {
 	if (!queue)
 		return;
 	if (!queue.length) {
 		queue = null;
 		return;
 	}
-	send();
-}
 
-function send() {
 	var message = queue[0], out = {};
 	for (var key in message)
 		out[key] = message[key];

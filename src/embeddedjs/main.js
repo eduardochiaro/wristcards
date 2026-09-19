@@ -420,7 +420,6 @@ function cardView(cards, title, reviewMode) {
 
 // ---- sessions --------------------------------------------------------------
 
-// Built per visit rather than once: switching language rewrites UI.
 function mainMenu() {
 	const labels = [UI.startSession, UI.reviewBookmarked];
 	return listView(APP_TITLE, labels.length, i => labels[i], sel => {
